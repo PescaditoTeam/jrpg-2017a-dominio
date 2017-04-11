@@ -12,12 +12,12 @@
 
 ### Integrantes del equipo
 
+* Completas ([xxxx](https://github.com/xxxx))
 * Completar ([xxxx](https://github.com/xxxx))
 * Completar ([xxxx](https://github.com/xxxx))
 * Completar ([xxxx](https://github.com/xxxx))
 * Completar ([xxxx](https://github.com/xxxx))
-* Completar ([xxxx](https://github.com/xxxx))
-* Completar ([xxxx](https://github.com/xxxx))
+* Robles Martin
 
 ## Sobre la tecnología
 
