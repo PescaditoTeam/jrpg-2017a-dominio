@@ -58,6 +58,6 @@ public class Orco extends Personaje {
 
   @Override
   public boolean esAfectadoPorHechizo() {
-    return false;
+    return true;
   }
 }

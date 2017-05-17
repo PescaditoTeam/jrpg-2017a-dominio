@@ -14,9 +14,17 @@ public class TestAlianza {
 
   @Test
   public void testAlianza() {
-    LinkedList<Elfo> aliados = new LinkedList<Elfo>();
+    LinkedList<Personaje> aliados = new LinkedList<Personaje>();
     aliados.add(new Elfo("elfito", new Guerrero(1, 2, 3), 34));
     Alianza a = new Alianza("miAlianza");
+    a.setAliados(aliados);
+    for (Personaje al : a.getAliados()) {
+      System.out.println(al.getNombre());
+    }
+    if (aliados == a.getAliados()) {
+      System.out.println("Son iguales");
+    }
+    Assert.assertNotSame(aliados, a.getAliados()); // Clone funcionó.
     Assert.assertNotNull(a.getAliados());
   }
 
@@ -45,14 +53,6 @@ public class TestAlianza {
     Alianza a = new Alianza("miAlianza");
     a.setAliados(aliados);
     Assert.assertNotNull(a.getAliados());
-  }
-
-  // Para el caso positivo y negativo el Coverage test no incrementa.
-  @Test
-  public void testSetAlianzaNull() {
-    Alianza a = new Alianza("miAlianza");
-    a.setAliados(null);
-    Assert.assertNull(a.getAliados());
   }
 
 }

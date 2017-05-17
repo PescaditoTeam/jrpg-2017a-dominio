@@ -8,7 +8,7 @@ import java.io.Serializable;
  * apropiados para tener todo en cuenta
  *
  */
-public abstract class Personaje extends Character implements Serializable {
+public abstract class Personaje extends Character implements Serializable, Cloneable {
   private static final long serialVersionUID = 1L;
   protected int energia;
   protected int ataque;// depende de la fuerza
@@ -717,4 +717,5 @@ public abstract class Personaje extends Character implements Serializable {
   public abstract boolean habilidadRaza1(Peleable atacado);
 
   public abstract boolean habilidadRaza2(Peleable atacado);
+
 }

@@ -64,6 +64,6 @@ public class Humano extends Personaje {
 
   @Override
   public boolean esAfectadoPorHechizo() {
-    return false;
+    return true;
   }
 }
