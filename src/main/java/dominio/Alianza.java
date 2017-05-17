@@ -30,14 +30,6 @@ public class Alianza {
   }
 
   /**
-   * @param aliados
-   *          Permite guardar la lista de aliados que le pase en la Alianza
-   */
-  public void setAliados(LinkedList<Personaje> aliados) {
-    this.aliados = aliados;
-  }
-
-  /**
    * @return devuelve el nombre
    */
   public String obtenerNombre() {

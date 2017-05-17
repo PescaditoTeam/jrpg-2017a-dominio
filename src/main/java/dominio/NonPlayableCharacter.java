@@ -20,7 +20,8 @@ public class NonPlayableCharacter extends Character {
     this.nivel = nivel;
     int dificultad;
     if (dificultadNPC == dificultadAleatoria) {
-      dificultad = MyRandom.nextInt(3);
+      MyRandom mr = new MyRandom(3);
+      dificultad = mr.nextInt();
     } else {
       dificultad = dificultadNPC;
     }
@@ -77,8 +78,8 @@ public class NonPlayableCharacter extends Character {
    */
   @Override
   public int atacar(Peleable atacado) {
-
-    if (MyRandom.nextDouble() <= 0.15) {// los NPC tienen 15% de golpes criticos
+    MyRandom mr = new MyRandom(5);
+    if (mr.nextDouble() <= 0.15) {// los NPC tienen 15% de golpes criticos
       return atacado.serAtacado((int) (this.getAtaque() * 1.5));
     } else {
       return atacado.serAtacado(this.getAtaque());
@@ -92,7 +93,8 @@ public class NonPlayableCharacter extends Character {
    */
   @Override
   public int serAtacado(int daño) {
-    if (MyRandom.nextDouble() >= 0.15) {
+    MyRandom mr = new MyRandom(5);
+    if (mr.nextDouble() >= 0.15) {
       daño -= this.getDefensa() / 2;
       if (daño > 0) {
         salud -= daño;

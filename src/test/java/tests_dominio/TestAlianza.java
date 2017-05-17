@@ -17,14 +17,6 @@ public class TestAlianza {
     LinkedList<Personaje> aliados = new LinkedList<Personaje>();
     aliados.add(new Elfo("elfito", new Guerrero(1, 2, 3), 34));
     Alianza a = new Alianza("miAlianza");
-    a.setAliados(aliados);
-    for (Personaje al : a.getAliados()) {
-      System.out.println(al.getNombre());
-    }
-    if (aliados == a.getAliados()) {
-      System.out.println("Son iguales");
-    }
-    Assert.assertNotSame(aliados, a.getAliados()); // Clone funcionó.
     Assert.assertNotNull(a.getAliados());
   }
 
@@ -51,7 +43,7 @@ public class TestAlianza {
     LinkedList<Personaje> aliados = new LinkedList<Personaje>();
     aliados.add(new Elfo("elfito", new Guerrero(1, 2, 3), 34));
     Alianza a = new Alianza("miAlianza");
-    a.setAliados(aliados);
+
     Assert.assertNotNull(a.getAliados());
   }
 

@@ -1,17 +1,19 @@
 package dominio;
 
-public class MyRandom {
+public class MyRandom extends RandomGenerator {
+  double maximo;
 
-  public MyRandom() {
-    // SOLO PARA SILENCIAR EL COVERAGE TEST
+  MyRandom(int max) {
+
+    maximo = max;
   }
 
-  public static double nextDouble() {
-    return 0.49;
+  public double nextDouble() {
+    return Math.random() % maximo;
   }
 
-  public static int nextInt(int val) {
-    return val - 1;
+  public int nextInt() {
+    return (int) Math.random() % (int) maximo;
   }
 
 }
