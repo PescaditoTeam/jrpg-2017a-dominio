@@ -28,7 +28,7 @@ public class Humano extends Personaje {
    * @param idPersonaje
    */
   public Humano(String nombre, int salud, int energia, int fuerza, int destreza, int inteligencia, Casta casta, int experiencia, int nivel, int idPersonaje) {
-    super(nombre, salud, energia, fuerza, destreza, inteligencia, casta, experiencia, nivel, idPersonaje,  "Humano", "Incentivar", "Golpe Fatal");
+    super(nombre, salud, energia, fuerza, destreza, inteligencia, casta, experiencia, nivel, idPersonaje, "Humano", "Incentivar", "Golpe Fatal");
 
   }
 
@@ -59,6 +59,11 @@ public class Humano extends Personaje {
       }
     }
     this.setEnergia(this.getEnergia() - 10);
+    return false;
+  }
+
+  @Override
+  public boolean esAfectadoPorHechizo() {
     return false;
   }
 }

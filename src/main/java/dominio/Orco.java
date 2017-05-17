@@ -20,7 +20,7 @@ public class Orco extends Personaje {
   }
 
   public Orco(String nombre, int salud, int energia, int fuerza, int destreza, int inteligencia, Casta casta, int experiencia, int nivel, int idPersonaje) {
-    super(nombre, salud, energia, fuerza, destreza, inteligencia, casta, experiencia, nivel, idPersonaje,  "Orco", "Golpe Defensa", "Mordisco de Vida");
+    super(nombre, salud, energia, fuerza, destreza, inteligencia, casta, experiencia, nivel, idPersonaje, "Orco", "Golpe Defensa", "Mordisco de Vida");
 
   }
 
@@ -53,6 +53,11 @@ public class Orco extends Personaje {
         return true;
       }
     }
+    return false;
+  }
+
+  @Override
+  public boolean esAfectadoPorHechizo() {
     return false;
   }
 }

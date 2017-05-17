@@ -133,4 +133,10 @@ public class Character implements Peleable {
     return false;
   }
 
+  @Override
+  public boolean esAfectadoPorHechizo() {
+    // TODO Auto-generated method stub
+    return false;
+  }
+
 }

@@ -31,4 +31,6 @@ public interface Peleable {
 
   public boolean esPersonaje();
 
+  public boolean esAfectadoPorHechizo();
+
 }

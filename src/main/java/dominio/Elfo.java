@@ -17,11 +17,11 @@ public class Elfo extends Personaje {
     energiaTope += 10;
     salud = saludTope;
     energia = energiaTope;
-    
+
   }
 
   public Elfo(String nombre, int salud, int energia, int fuerza, int destreza, int inteligencia, Casta casta, int experiencia, int nivel, int idPersonaje) {
-    super(nombre, salud, energia, fuerza, destreza, inteligencia, casta, experiencia, nivel, idPersonaje,  "Elfo", "Golpe Level", "Ataque Bosque");
+    super(nombre, salud, energia, fuerza, destreza, inteligencia, casta, experiencia, nivel, idPersonaje, "Elfo", "Golpe Level", "Ataque Bosque");
   }
 
   // Golpe Level
@@ -52,5 +52,10 @@ public class Elfo extends Personaje {
       }
     }
     return false;
+  }
+
+  @Override
+  public boolean esAfectadoPorHechizo() {
+    return true;
   }
 }
