@@ -69,15 +69,6 @@ public class Hechicero extends Casta {
         caster.serCurado(salud_robada);
         return true;
       }
-      /*
-       * if (atacado instanceof Personaje) { int energia_robada = ((Personaje)
-       * atacado).serDesernegizado(caster.calcularPuntosDeMagia()); int
-       * salud_robada = ((Personaje)
-       * atacado).serRobadoSalud(caster.calcularPuntosDeMagia() / 2);
-       * caster.serEnergizado(energia_robada); caster.serCurado(salud_robada);
-       * return true; }
-       */
-
     }
     return false;
   }

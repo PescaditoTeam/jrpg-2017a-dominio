@@ -81,13 +81,8 @@ public abstract class Personaje extends Character implements Serializable {
     destreza = 10;
 
     fuerza += casta.addFuerzaInicial();
-    fuerza += casta.addInteligenciaInicial();
-    fuerza += casta.addDestrezaInicial();
-    /*
-     * if (casta instanceof Guerrero) { fuerza += 5; } if (casta instanceof
-     * Hechicero) { inteligencia += 5; } if (casta instanceof Asesino) {
-     * destreza += 5; }
-     */
+    inteligencia += casta.addInteligenciaInicial();
+    destreza += casta.addDestrezaInicial();
 
     posX = 0;
     posY = 0;

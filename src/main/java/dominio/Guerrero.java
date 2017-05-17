@@ -72,13 +72,6 @@ public class Guerrero extends Casta {
           return true;
         }
       }
-      /*
-       * if (atacado instanceof Personaje) { int defensa_original = ((Personaje)
-       * atacado).getDefensa(); ((Personaje) atacado).setDefensa(0); if
-       * (atacado.serAtacado(caster.ataque) > 0) { ((Personaje)
-       * atacado).setDefensa(defensa_original); return true; } }
-       */
-
     }
     return false;
   }

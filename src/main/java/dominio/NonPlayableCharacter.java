@@ -41,15 +41,6 @@ public class NonPlayableCharacter extends Character {
       this.salud = 50 + ((nivel - 1) * 25);
       this.defensa = 4 + ((nivel - 1) * 4);
     }
-    /*
-     * switch (dificultad) { case 0: this.fuerza = 10 + ((nivel - 1) * 3);// 30%
-     * this.salud = 30 + ((nivel - 1) * 15); this.defensa = 2 + ((nivel - 1) *
-     * 1); break; case 1: this.fuerza = 20 + ((nivel - 1) * 6);// 50% this.salud
-     * = 40 + ((nivel - 1) * 20); this.defensa = 5 + ((nivel - 1) * 2); break;
-     * case 2: this.fuerza = 30 + ((nivel - 1) * 10);// 50% this.salud = 50 +
-     * ((nivel - 1) * 25); this.defensa = 4 + ((nivel - 1) * 4); break; }
-     *
-     */
   }
 
   @Override
