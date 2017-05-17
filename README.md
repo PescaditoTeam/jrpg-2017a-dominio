@@ -1,5 +1,7 @@
 # World Of Middle Earth (WOME) - dominio
 
+https://travis-ci.org/PescaditoTeam/jrpg-2017a-dominio.svg?branch=master
+
 ## Sobre las personas
 
 > Para ver los participantes anteriores, referirse al archivo [humans.md](humans.md)
@@ -23,7 +25,7 @@
 
 ### Herramientas utilizadas
 
-* Java 1.7
+* Java 1.8
 * JUnit 4
 
 ## Cómo hacer andar el proyecto
