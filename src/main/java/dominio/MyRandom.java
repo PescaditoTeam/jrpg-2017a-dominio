@@ -3,7 +3,7 @@ package dominio;
 public class MyRandom extends RandomGenerator {
   double maximo;
 
-  MyRandom(int max) {
+  public MyRandom(int max) {
 
     maximo = max;
   }

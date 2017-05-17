@@ -1,16 +1,24 @@
 package tests_dominio;
+import dominio.MyRandom;
+import dominio.MyRandomStub;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-import dominio.MyRandom;
+
 
 //Como testeo una clase con metodos static? arme un constructor al divino boton para pasar el test
 public class TestMyRandom {
   @Test
   public void testMyRandom() {
-    new MyRandom();
-    Assert.assertNotNull(MyRandom.nextDouble());
-    Assert.assertNotNull(MyRandom.nextInt(3));
+    MyRandom myRandom = new MyRandom(7);
+    Assert.assertNotNull(myRandom.nextDouble());
+    Assert.assertNotNull(myRandom.nextInt());
   }
+@Test
+public void testMyRandomStub(){
+	MyRandomStub stub = new MyRandomStub(2,3);
+	Assert.assertNotNull(stub.nextDouble());
+    Assert.assertNotNull(stub.nextInt());
+}
 }
