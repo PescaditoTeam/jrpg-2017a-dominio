@@ -224,13 +224,6 @@ public abstract class Personaje extends Character implements Serializable, Clone
   }
 
   /**
-   * @param salud
-   */
-  public void setSalud(int salud) {
-    this.salud = salud;
-  }
-
-  /**
    * @return devuelve la energia
    */
   public int getEnergia() {

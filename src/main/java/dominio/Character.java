@@ -5,7 +5,7 @@ public class Character implements Peleable {
   protected String nombre;
   protected int nivel;
   protected int defensa;
-  protected int salud;
+  public int salud;
 
   public Character() {
 
