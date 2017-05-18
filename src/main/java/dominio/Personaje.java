@@ -222,6 +222,9 @@ public abstract class Personaje extends Character implements Serializable, Clone
   public int getSalud() {
     return salud;
   }
+  public void setSalud(int salud){
+	  this.salud = salud;
+  }
 
   /**
    * @return devuelve la energia
