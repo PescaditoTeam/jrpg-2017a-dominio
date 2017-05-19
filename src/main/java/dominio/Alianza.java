@@ -24,9 +24,17 @@ public class Alianza {
   /**
    * Devuelve una lista de personajes donde estan todos los aliados.
    */
-  @SuppressWarnings("unchecked")
   public LinkedList<Personaje> getAliados() {
-    return (LinkedList<Personaje>) aliados.clone();
+	  LinkedList<Personaje> copia= new LinkedList<Personaje>();
+			  for(Personaje p: aliados){
+				  try {
+					copia.add((Personaje)p.clone());
+				} catch (CloneNotSupportedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			  }
+    return copia;
   }
 
   /**
