@@ -2,6 +2,7 @@ package dominio;
 
 import java.io.Serializable;
 
+
 /**
  * Personaje. Siendo una de las clases mas importantes, es la que une a todos
  * los tipos de personajes En ella se encuentran todos los atributos y metodos
@@ -27,6 +28,23 @@ public abstract class Personaje extends Character implements Serializable, Clone
   protected Alianza clan = null;
   public static int[] tablaDeNiveles;
   protected String[] habilidadesRaza;
+  
+  
+  
+  public void recibirDatosReplicadosDePersonaje(DatosDePersonajeAReplicar datos){
+	  salud=datos.getSalud();
+	  energia=datos.getEnergia();
+	  fuerza=datos.getFuerza();
+	  destreza=datos.getDestreza();
+	  inteligencia=datos.getInteligencia();
+	  casta=datos.getCasta();
+	  experiencia=datos.getExperiencia();
+	  nivel=datos.getNivel();
+	  idPersonaje=datos.getIdPersonaje();
+	  defensa=datos.getDefensa();
+	  saludTope=datos.getSaludTope();
+	  energiaTope=datos.getEnergiaTope();
+  }
 
   /**
    * getHabilidadesRaza().
@@ -212,20 +230,20 @@ public abstract class Personaje extends Character implements Serializable, Clone
     this.clan = clan;
     clan.añadirPersonaje(this);
   }
-
-  /*
-   * (non-Javadoc)
-   *
-   * @see dominio.Peleable#getSalud()
-   */
-  @Override
-  public int getSalud() {
-    return salud;
-  }
-  public void setSalud(int salud){
-	  this.salud = salud;
-  }
-
+							
+							  /*
+							   * (non-Javadoc)
+							   *
+							   * @see dominio.Peleable#getSalud()
+							   */
+							/*  @Override
+							  public int getSalud() {
+							    return salud;
+							  }
+							  public void setSalud(int salud){
+								  this.salud = salud;
+							  }
+							*/
   /**
    * @return devuelve la energia
    */
