@@ -33,6 +33,23 @@ public class DatosDePersonajeAReplicar {
 		this.energiaTope = energiaTope;
 		this.casta = casta;
 	}
+	  public DatosDePersonajeAReplicar() {
+		
+	}
+	public void empaquetarDatos(Personaje p){
+		this.salud = p.getSalud();
+		this.energia = p.getEnergia();
+		this.fuerza = p.getFuerza();
+		this.destreza = p.getDestreza();
+		this.inteligencia = p.getInteligencia();
+		this.experiencia = p.getExperiencia();
+		this.nivel = p.getNivel();
+		this.idPersonaje = p.getIdPersonaje();
+		this.defensa = p.getDefensa();
+		this.saludTope = p.saludTope;
+		this.energiaTope = p.energiaTope;
+		this.casta = p.getCasta();
+	}
 	//----------------------------
 	  //Getters Setters.
 	  //----------------------------
