@@ -16,8 +16,7 @@ public class TestHechicero {
     Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1);
 
     Assert.assertTrue(e.getSalud() == 100);
-    e.setSalud(65);
-    Assert.assertTrue(e.getSalud() == 65);
+
     h.habilidadCasta2(e);
     Assert.assertTrue(e.getSalud() > 65);
   }
@@ -39,7 +38,6 @@ public class TestHechicero {
     Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1);
 
     Assert.assertTrue(e.getSalud() == 100);
-    h.setSalud(50);
     h.setEnergia(50);
     if (h.habilidadCasta3(e)) {
       Assert.assertTrue(e.getSalud() < 100);
