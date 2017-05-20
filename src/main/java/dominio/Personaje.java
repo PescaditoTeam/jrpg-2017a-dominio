@@ -716,4 +716,23 @@ public abstract class Personaje extends Character implements Serializable, Clone
 
   public abstract boolean habilidadRaza2(Peleable atacado);
 
+public void recibirDatosReplicadosDePersonaje(DatosDePersonajeAReplicar p) {
+
+    this.salud = p.getSalud();
+    this.energia = p.getEnergia();
+    this.fuerza = p.getFuerza();
+    this.destreza = p.getDestreza();
+    this.inteligencia = p.getInteligencia();
+    this.casta = p.getCasta();
+    this.experiencia = p.getExperiencia();
+    this.nivel = p.getSalud();
+
+    this.saludTope = p.getSaludTope();
+    this.energiaTope = p.getEnergiaTope();
+
+    this.idPersonaje = p.getIdPersonaje();
+    
+    this.defensa = p.getDefensa();	
+}
+
 }
