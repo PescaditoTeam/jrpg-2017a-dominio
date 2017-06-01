@@ -16,10 +16,10 @@ https://travis-ci.org/PescaditoTeam/jrpg-2017a-dominio.svg?branch=master
 
 * Ramos Maximiliano ([MaxiARG](https://github.com/MaxiARG))
 * Robles Martin ([mrleonel](https://github.com/mrleonel))
-* Galluzzo Luciano ([luchogalluzzo](https://github.com/xxxx))
+* Galluzzo Luciano ([LuchoGalluzzo](https://github.com/LuchoGalluzzo))
 * Diego Andrada ([dandradagithub](https://github.com/dandradagithub))
 * Nahuel Coronel ([coronelnah](https://github.com/coronelnah))
-* Completar ([xxxx](https://github.com/xxxx))
+* Agustin Riva ([AgusRiva](https://github.com/AgusRiva))
 
 ## Sobre la tecnología
 
