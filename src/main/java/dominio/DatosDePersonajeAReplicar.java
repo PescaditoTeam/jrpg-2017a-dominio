@@ -33,7 +33,9 @@ public class DatosDePersonajeAReplicar {
 		this.energiaTope = energiaTope;
 		this.casta = casta;
 	}
-	  public DatosDePersonajeAReplicar() {
+	  public DatosDePersonajeAReplicar(int nuevasalud, int nuevaenergia) {
+		  salud = nuevasalud;
+		  energia = nuevaenergia;
 		
 	}
 	public void empaquetarDatos(Personaje p){
