@@ -15,14 +15,16 @@ public class Alianza {
 private String nombre;
 
 
-LinkedList<Personaje> aliados;
+/**
+ * lista de personajes de la alianza.
+ */
+private LinkedList<Personaje> aliados;
 
   /**
    * Constructo parametrizado.
-   * @param nombre
-   *      
+   * @param 'nombre'.
    */
-  public Alianza(String nombre) {
+  public Alianza(final String nombre) {
     this.nombre = nombre;
     this.aliados = new LinkedList<Personaje>();
   }
