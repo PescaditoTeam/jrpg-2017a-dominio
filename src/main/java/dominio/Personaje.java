@@ -16,7 +16,6 @@ public abstract class Personaje extends Character implements Serializable, Clone
   protected String nombreRaza;
   protected int saludTope;
   protected int energiaTope;
-
   protected int destreza;
   protected int inteligencia;
   protected Casta casta;
@@ -381,8 +380,8 @@ public abstract class Personaje extends Character implements Serializable, Clone
       return 0;
     }
     if (atacado.getSalud() > 0) {
-      MyRandom mr = new MyRandom(5);
-      if (mr.nextDouble() <= (this.casta.getProbabilidadGolpeCritico() + (this.destreza / 1000))) {
+      MyRandom mr = new MyRandom();
+      if (mr.obtenerAleatorioMenorQue(5) <= (this.casta.getProbabilidadGolpeCritico() + (this.destreza / 1000))) {
         return atacado.serAtacado(this.golpe_critico());
       } else {
         return atacado.serAtacado(this.ataque);
@@ -458,8 +457,8 @@ public abstract class Personaje extends Character implements Serializable, Clone
    */
   @Override
   public int serAtacado(int daño) {
-    MyRandom mr = new MyRandom(5);
-    if (mr.nextDouble() >= this.getCasta().getProbabilidadEvitarDaño()) {
+    MyRandom mr = new MyRandom();
+    if (mr.obtenerAleatorioMenorQue(5) >= this.getCasta().getProbabilidadEvitarDaño()) {
       daño -= this.defensa;
 
       if (daño > 0) {

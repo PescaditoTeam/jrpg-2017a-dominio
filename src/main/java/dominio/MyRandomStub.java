@@ -1,20 +1,17 @@
 package dominio;
 
 public class MyRandomStub extends RandomGenerator {
-  private double _nextDouble;
-  private int _nextInt;
+  private int valor;
 
-  public MyRandomStub(double d, int i) {
-    _nextDouble = d;
-    _nextInt = i;
+
+  public MyRandomStub(int valorfijo) {
+	  this.valor = valorfijo;
   }
 
-  public double nextDouble() {
-    return _nextDouble;
-  }
 
-  public int nextInt() {
-    return _nextInt;
-  }
+@Override
+public int obtenerAleatorioMenorQue(int maximo) {
+	return this.valor;
+}
 
 }

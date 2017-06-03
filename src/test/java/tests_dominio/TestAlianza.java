@@ -12,6 +12,7 @@ import dominio.Personaje;
 
 public class TestAlianza {
 
+
   @Test
   public void testAlianza() {
     LinkedList<Personaje> aliados = new LinkedList<Personaje>();

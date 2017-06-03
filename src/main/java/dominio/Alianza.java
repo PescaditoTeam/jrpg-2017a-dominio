@@ -9,12 +9,18 @@ import java.util.LinkedList;
  */
 public class Alianza {
 
-  String nombre;
-  LinkedList<Personaje> aliados;
+  /**
+ * atributos de la clase alianza.
+ */
+private String nombre;
+
+
+LinkedList<Personaje> aliados;
 
   /**
-   * @param Constructor
-   *          parametrizado
+   * Constructo parametrizado.
+   * @param nombre
+   *      
    */
   public Alianza(String nombre) {
     this.nombre = nombre;

@@ -11,14 +11,12 @@ import org.junit.Test;
 public class TestMyRandom {
   @Test
   public void testMyRandom() {
-    MyRandom myRandom = new MyRandom(7);
-    Assert.assertNotNull(myRandom.nextDouble());
-    Assert.assertNotNull(myRandom.nextInt());
+    MyRandom myRandom = new MyRandom();
+    Assert.assertNotNull(myRandom.obtenerAleatorioMenorQue(8));
   }
 @Test
 public void testMyRandomStub(){
-	MyRandomStub stub = new MyRandomStub(2,3);
-	Assert.assertNotNull(stub.nextDouble());
-    Assert.assertNotNull(stub.nextInt());
+	MyRandomStub stub = new MyRandomStub(3);
+	Assert.assertNotNull(stub.obtenerAleatorioMenorQue(9));
 }
 }
