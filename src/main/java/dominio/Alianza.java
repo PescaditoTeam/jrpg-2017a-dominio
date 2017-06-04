@@ -9,63 +9,64 @@ import java.util.LinkedList;
  */
 public class Alianza {
 
-  /**
- * atributos de la clase alianza.
- */
-private String nombre;
+	/**
+	 * atributos de la clase alianza.
+	 */
+	private String nombre;
 
+	/**
+	 * lista de personajes de la alianza.
+	 */
+	private LinkedList<Personaje> aliados;
 
-/**
- * lista de personajes de la alianza.
- */
-private LinkedList<Personaje> aliados;
+	/**
+	 *
+	 * @param
+	 * Constructor parametizado.
+	 */
+	public Alianza(final String nombre) {
+		this.nombre = nombre;
+		this.aliados = new LinkedList<Personaje>();
+	}
 
-  /**
-   * Constructo parametrizado.
-   * @param 'nombre'.
-   */
-  public Alianza(final String nombre) {
-    this.nombre = nombre;
-    this.aliados = new LinkedList<Personaje>();
-  }
+	/**
+	 * @return
+	 * Devuelve una lista de personajes donde estan todos los aliados.
+	 */
+	public LinkedList<Personaje> getAliados() {
+		LinkedList<Personaje> copia = new LinkedList<Personaje>();
+		for (Personaje p : aliados) {
+			try {
+				copia.add((Personaje) p.clone());
+			} catch (CloneNotSupportedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return copia;
+	}
 
-  /**
-   * Devuelve una lista de personajes donde estan todos los aliados.
-   */
-  public LinkedList<Personaje> getAliados() {
-	  LinkedList<Personaje> copia= new LinkedList<Personaje>();
-			  for(Personaje p: aliados){
-				  try {
-					copia.add((Personaje)p.clone());
-				} catch (CloneNotSupportedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			  }
-    return copia;
-  }
+	/**
+	 * @return devuelve el nombre
+	 */
+	public String obtenerNombre() {
+		return nombre;
+	}
 
-  /**
-   * @return devuelve el nombre
-   */
-  public String obtenerNombre() {
-    return nombre;
-  }
+	/**
+	 * @param
+	 * Elimina un personaje de la alianza.
+	 */
+	public void eliminarPersonaje(final Personaje pj) {
+		aliados.remove(pj);
+	}
 
-  /**
-   * @param Elimina
-   *          un personaje de la alianza
-   */
-  public void eliminarPersonaje(Personaje pj) {
-    aliados.remove(pj);
-  }
-
-  /**
-   * @param Personaje
-   *          pj un personaje a la alianza
-   * @return void
-   */
-  public void añadirPersonaje(Personaje pj) {
-    aliados.add(pj);
-  }
+	/**
+	 * @param
+	 * Personaje pj un personaje a la alianza.
+	 *
+	 */
+	public void añadirPersonaje(final Personaje pj) {
+		aliados.add(pj);
+	}
 }

@@ -6,13 +6,19 @@ package dominio;
  */
 public class Asesino extends Casta {
 
-  public Asesino(double prob_crit, double evasion, double daño_crit) {
+  /**
+ * @param prob_crit
+ * @param evasion
+ * @param daño_crit
+ * Constructor parametrizado.
+ */
+public Asesino(final double prob_crit, final double evasion, final double daño_crit) {
     super(prob_crit, evasion, daño_crit);
     this.nombreCasta = "Asesino";
   }
 
   /**
-   * Constructor por defecto
+   * Constructor por defecto.
    */
   public Asesino() {
     super();
@@ -31,7 +37,7 @@ public class Asesino extends Casta {
    * si el personaje que le pasamos tiene la habilidad pedida
    */
   @Override
-  public boolean habilidad1(Personaje caster, Peleable atacado) {
+  public boolean habilidad1(final Personaje caster, final Peleable atacado) {
     if (caster.getEnergia() > 10) {
       caster.setEnergia(caster.getEnergia() - 10);
       if (atacado.serAtacado((int) (caster.ataque * caster.getCasta().getDañoCritico())) > 0) {
