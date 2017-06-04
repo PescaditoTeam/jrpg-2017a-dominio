@@ -42,8 +42,11 @@ protected String[] habilidadesCasta;
 
   /**
    * @param prob_crit
+   * .
    * @param evasion
+   * .
    * @param daño_crit
+   * .
    */
   public Casta(final double prob_crit, final double evasion, final double daño_crit) {
     this.probabilidadGolpeCritico = prob_crit;
@@ -51,11 +54,35 @@ protected String[] habilidadesCasta;
     this.dañoCritico = daño_crit;
   }
 
-  public abstract boolean habilidad1(Personaje caster, Peleable atacado);
+  /**
+ * @param caster
+ * .
+ * @param atacado
+ * .
+ * @return
+ * .
+ */
+public abstract boolean habilidad1(Personaje caster, Peleable atacado);
 
-  public abstract boolean habilidad2(Personaje caster, Peleable atacado);
+  /**
+ * @param caster
+ * .
+ * @param atacado
+ * .
+ * @return
+ * .
+ */
+public abstract boolean habilidad2(Personaje caster, Peleable atacado);
 
-  public abstract boolean habilidad3(Personaje caster, Peleable atacado);
+  /**
+ * @param caster
+ * .
+ * @param atacado
+ * .
+ * @return
+ * .
+ */
+public abstract boolean habilidad3(Personaje caster, Peleable atacado);
 
   /**
    * @return Devuelve el nombre de la Casta pedido
@@ -75,7 +102,8 @@ protected String[] habilidadesCasta;
   }
 
   /**
-   * @return devuelve la probabilidad de golpe critico
+   * @return
+   * devuelve la probabilidad de golpe critico.
    */
   public double getProbabilidadGolpeCritico() {
     return probabilidadGolpeCritico;
@@ -83,13 +111,15 @@ protected String[] habilidadesCasta;
 
   /**
    * @param probabilidadGolpeCritico
+   * .
    */
   public void setProbabilidadGolpeCritico(final double probabilidadGolpeCritico) {
     this.probabilidadGolpeCritico = probabilidadGolpeCritico;
   }
 
   /**
-   * @return devuelve la probabilidad de Evitar Daño
+   * @return
+   * devuelve la probabilidad de Evitar Daño.
    */
   public double getProbabilidadEvitarDaño() {
     return probabilidadEvitarDaño;
@@ -97,13 +127,15 @@ protected String[] habilidadesCasta;
 
   /**
    * @param probabilidadEvitarDa�o
+   * .
    */
   public void setProbabilidadEvitarDaño(final double probabilidadEvitarDaño) {
     this.probabilidadEvitarDaño = probabilidadEvitarDaño;
   }
 
   /**
-   * @return devuelve el daño critico
+   * @return
+   * devuelve el daño critico.
    */
   public double getDañoCritico() {
     return dañoCritico;
@@ -111,6 +143,7 @@ protected String[] habilidadesCasta;
 
   /**
    * @param dañoCritico
+   * .
    */
   public void setDañoCritico(final double dañoCritico) {
     this.dañoCritico = dañoCritico;
@@ -119,7 +152,8 @@ protected String[] habilidadesCasta;
   /**
    * addFuerzaInicial().
    *
-   * @return el numero a sumarle a la fuerza inicial
+   * @return
+   * el numero a sumarle a la fuerza inicial.
    */
   protected int addFuerzaInicial() {
     return 0;

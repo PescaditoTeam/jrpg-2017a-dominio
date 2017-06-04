@@ -6,13 +6,22 @@ package dominio;
  */
 public class Guerrero extends Casta {
 
-  public Guerrero(double prob_crit, double evasion, double daño_crit) {
+  /**
+   * constructor parametrizado.
+ * @param prob_crit
+ * .
+ * @param evasion
+ * .
+ * @param daño_crit
+ * .
+ */
+public Guerrero(final double prob_crit, final double evasion, final double daño_crit) {
     super(prob_crit, evasion, daño_crit);
     this.nombreCasta = "Guerrero";
   }
 
   /**
-   * Constructor por defecto de guerrero
+   * Constructor por defecto de guerrero.
    */
   public Guerrero() {
     super();
@@ -32,7 +41,7 @@ public class Guerrero extends Casta {
    * si el personaje que le pasamos tiene la habilidad pedida
    */
   @Override
-  public boolean habilidad1(Personaje caster, Peleable atacado) {
+  public boolean habilidad1(final Personaje caster, final Peleable atacado) {
     if (caster.getEnergia() > 10) {
       caster.setEnergia(caster.getEnergia() - 10);
       if (atacado.serAtacado(caster.ataque * 2) > 0) {
@@ -49,7 +58,7 @@ public class Guerrero extends Casta {
 
   // Aumentar Defensa
   @Override
-  public boolean habilidad2(Personaje caster, Peleable atacado) {
+  public boolean habilidad2(final Personaje caster, final Peleable atacado) {
     if (caster.getEnergia() > 10) {
       caster.setEnergia(caster.getEnergia() - 10);
       caster.setDefensa(caster.getDefensa() + caster.magia);

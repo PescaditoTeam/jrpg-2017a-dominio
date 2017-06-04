@@ -8,11 +8,15 @@ package dominio;
 public class Elfo extends Personaje {
 
   /**
+   * constructor parametrizado.
    * @param nombre
+   * nombre del elfo.
    * @param casta
+   * casta del elfo.
    * @param id
+   * id del elfo.
    */
-  public Elfo(String nombre, Casta casta, int id) {
+  public Elfo(final String nombre, final Casta casta, final int id) {
     super(nombre, casta, id, "Elfo", "Golpe Level", "Ataque Bosque");
     energiaTope += 10;
     salud = saludTope;
@@ -20,7 +24,29 @@ public class Elfo extends Personaje {
 
   }
 
-  public Elfo(String nombre, int salud, int energia, int fuerza, int destreza, int inteligencia, Casta casta, int experiencia, int nivel, int idPersonaje) {
+  /**
+ * @param nombre
+ * .
+ * @param salud
+ * .
+ * @param energia
+ * .
+ * @param fuerza
+ * .
+ * @param destreza
+ * .
+ * @param inteligencia
+ * .
+ * @param casta
+ * .
+ * @param experiencia
+ * .
+ * @param nivel
+ * .
+ * @param idPersonaje
+ * .
+ */
+public Elfo(final String nombre, final int salud, final int energia, final int fuerza, final int destreza, final int inteligencia, final Casta casta, final int experiencia, final int nivel, final int idPersonaje) {
     super(nombre, salud, energia, fuerza, destreza, inteligencia, casta, experiencia, nivel, idPersonaje, "Elfo", "Golpe Level", "Ataque Bosque");
   }
 
@@ -32,7 +58,7 @@ public class Elfo extends Personaje {
    * personaje en cuestion tiene o no la habilidad requerida
    */
   @Override
-  public boolean habilidadRaza1(Peleable atacado) {
+  public boolean habilidadRaza1(final Peleable atacado) {
     if (this.getEnergia() > 10) {
       this.setEnergia(this.getEnergia() - 10);
       if (atacado.serAtacado(this.getFuerza() + (this.getNivel() * 10)) > 0) {
@@ -44,7 +70,7 @@ public class Elfo extends Personaje {
 
   // Ataque Bosque
   @Override
-  public boolean habilidadRaza2(Peleable atacado) {
+  public boolean habilidadRaza2(final Peleable atacado) {
     if (this.getEnergia() > 10) {
       this.setEnergia(this.getEnergia() - 10);
       if (atacado.serAtacado((this.magia)) > 0) {

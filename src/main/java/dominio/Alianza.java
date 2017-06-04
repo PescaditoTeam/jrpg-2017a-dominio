@@ -21,7 +21,7 @@ public class Alianza {
 
 	/**
 	 *
-	 * @param
+	 * @param nombre
 	 * Constructor parametizado.
 	 */
 	public Alianza(final String nombre) {
@@ -54,7 +54,7 @@ public class Alianza {
 	}
 
 	/**
-	 * @param
+	 * @param pj
 	 * Elimina un personaje de la alianza.
 	 */
 	public void eliminarPersonaje(final Personaje pj) {
@@ -62,7 +62,7 @@ public class Alianza {
 	}
 
 	/**
-	 * @param
+	 * @param pj
 	 * Personaje pj un personaje a la alianza.
 	 *
 	 */

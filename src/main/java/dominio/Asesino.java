@@ -8,8 +8,11 @@ public class Asesino extends Casta {
 
   /**
  * @param prob_crit
+ * .
  * @param evasion
+ * .
  * @param daño_crit
+ * .
  * Constructor parametrizado.
  */
 public Asesino(final double prob_crit, final double evasion, final double daño_crit) {

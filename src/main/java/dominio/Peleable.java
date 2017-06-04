@@ -7,30 +7,85 @@ package dominio;
  *
  */
 public interface Peleable {
-  public int serAtacado(int daño);
+  /**
+ * @param daño
+ * .
+ * @return
+ * .
+ */
+int serAtacado(int daño);
 
-  public int getSalud();
+  /**
+ * @return
+ * .
+ */
+int getSalud();
 
-  public void despuesDeTurno();
+  /**
+ *
+ */
+void despuesDeTurno();
 
-  public int atacar(Peleable atacado);
+  /**
+ * @param atacado
+ * .
+ * @return
+ * .
+ */
+int atacar(Peleable atacado);
 
-  public int otorgarExp();
+  /**
+ * @return
+ * .
+ */
+int otorgarExp();
 
-  public int getAtaque();
+  /**
+ * @return
+ * .
+ */
+int getAtaque();
 
-  public void setAtaque(int ataque);
+  /**
+ * @param ataque
+ * .
+ */
+void setAtaque(int ataque);
 
-  public boolean estaVivo();
+  /**
+ * @return
+ * .
+ */
+boolean estaVivo();
 
-  public String getNombre();
+  /**
+ * @return
+ * .
+ */
+String getNombre();
 
-  public int getDefensa();
+  /**
+ * @return
+ * .
+ */
+int getDefensa();
 
-  public void setDefensa(int defensa);
+  /**
+ * @param defensa
+ * .
+ */
+void setDefensa(int defensa);
 
-  public boolean esPersonaje();
+  /**
+ * @return
+ * .
+ */
+boolean esPersonaje();
 
-  public boolean esAfectadoPorHechizo();
+  /**
+ * @return
+ * .
+ */
+boolean esAfectadoPorHechizo();
 
 }

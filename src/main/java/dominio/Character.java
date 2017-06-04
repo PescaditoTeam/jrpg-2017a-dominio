@@ -36,7 +36,9 @@ public Character() {
   /**
    * metodo ganar experiencia.
    * @param exp
+   * .
    * @return
+   * .
    */
   public boolean ganarExperiencia(final int exp) {
     return false;
@@ -65,6 +67,7 @@ public Character() {
 
   /**
    * @param fuerza
+   * .
    */
   public void setFuerza(final int fuerza) {
     this.fuerza = fuerza;
@@ -84,6 +87,7 @@ public Character() {
   /**
  * metodo para setear el nombre.
  * @param nombre
+ * .
  */
 public void setNombre(final String nombre) {
     this.nombre = nombre;
@@ -98,6 +102,7 @@ public void setNombre(final String nombre) {
 
   /**
    * @param nivel
+   * .
    */
   public void setNivel(final int nivel) {
     this.nivel = nivel;
@@ -113,6 +118,7 @@ public void setNombre(final String nombre) {
 
   /**
    * @param defensa
+   * .
    */
   @Override
   public void setDefensa(final int defensa) {
