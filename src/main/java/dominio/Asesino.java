@@ -50,7 +50,7 @@ public Asesino(final double prob_crit, final double evasion, final double daño_
   // Aumentar Evasion
 
   @Override
-  public boolean habilidad2(Personaje caster, Peleable atacado) {
+  public boolean habilidad2(final Personaje caster, final Peleable atacado) {
     if (caster.getEnergia() > 10) {
       caster.setEnergia(caster.getEnergia() - 10);
       if ((this.getProbabilidadEvitarDaño() + 0.15) < 0.5) {
@@ -65,7 +65,7 @@ public Asesino(final double prob_crit, final double evasion, final double daño_
 
   // Robar
   @Override
-  public boolean habilidad3(Personaje caster, Peleable atacado) {
+  public boolean habilidad3(final Personaje caster, final Peleable atacado) {
     return false;
   }
 
