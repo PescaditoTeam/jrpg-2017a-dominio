@@ -9,17 +9,42 @@ public class Orco extends Personaje {
 
   /**
    * @param nombre
+   * .
    * @param casta
+   * .
    * @param id
+   * .
    */
-  public Orco(String nombre, Casta casta, int id) {
+  public Orco(final String nombre, final Casta casta, final int id) {
     super(nombre, casta, id, "Orco", "Golpe Defensa", "Mordisco de Vida");
     saludTope += 10;
     salud = saludTope;
     energia = energiaTope;
   }
 
-  public Orco(String nombre, int salud, int energia, int fuerza, int destreza, int inteligencia, Casta casta, int experiencia, int nivel, int idPersonaje) {
+  /**
+ * @param nombre
+ * .
+ * @param salud
+ * .
+ * @param energia
+ * .
+ * @param fuerza
+ * .
+ * @param destreza
+ * .
+ * @param inteligencia
+ * .
+ * @param casta
+ * .
+ * @param experiencia
+ * .
+ * @param nivel
+ * .
+ * @param idPersonaje
+ * .
+ */
+public Orco(final String nombre, final int salud, final int energia, final int fuerza, final int destreza, final int inteligencia, final Casta casta, final int experiencia, final int nivel, final int idPersonaje) {
     super(nombre, salud, energia, fuerza, destreza, inteligencia, casta, experiencia, nivel, idPersonaje, "Orco", "Golpe Defensa", "Mordisco de Vida");
 
   }
@@ -32,7 +57,7 @@ public class Orco extends Personaje {
    * personaje en cuestion tiene o no la habilidad requerida
    */
   @Override
-  public boolean habilidadRaza1(Peleable atacado) {
+  public boolean habilidadRaza1(final Peleable atacado) {
     if (this.getEnergia() > 10) {
       this.setEnergia(this.getEnergia() - 10);
       if (atacado.serAtacado(this.getDefensa() * 2) > 0) {
@@ -44,7 +69,7 @@ public class Orco extends Personaje {
 
   // Mordisco de Vida
   @Override
-  public boolean habilidadRaza2(Peleable atacado) {
+  public boolean habilidadRaza2(final Peleable atacado) {
     if (this.getEnergia() > 10) {
       this.setEnergia(this.getEnergia() - 10);
       int danioCausado = atacado.serAtacado(this.getFuerza());

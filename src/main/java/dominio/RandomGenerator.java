@@ -1,6 +1,16 @@
 package dominio;
 
+/**
+ * @author Usuario
+ * clase randomGenerator.
+ */
 public abstract class RandomGenerator {
 
-	public abstract int obtenerAleatorioMenorQue (int maximo);
+	/**
+	 * @param maximo
+	 * .
+	 * @return
+	 * .
+	 */
+	public abstract int obtenerAleatorioMenorQue(int maximo);
 }

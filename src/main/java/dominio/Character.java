@@ -1,20 +1,46 @@
 package dominio;
 
+/**
+ * @author Usuario
+ * clase character que implementa peleable.
+ */
 public class Character implements Peleable {
-  protected int fuerza;
-  protected String nombre;
-  protected int nivel;
-  protected int defensa;
-  protected int salud;
+  /**
+ * atributo que representa la fuerza del character.
+ */
+protected int fuerza;
+  /**
+ * atributo que representa el nombre del character.
+ */
+protected String nombre;
+  /**
+ * atributo que representa el nivel del character.
+ */
+protected int nivel;
+  /**
+ * atributo que representa la defensa del character.
+ */
+protected int defensa;
+  /**
+ * atributo que representa la salud del character.
+ */
+protected int salud;
 
-  public Character() {
+  /**
+ * construdcto por defecto.
+ */
+public Character() {
 
   }
 
   /**
+   * metodo ganar experiencia.
    * @param exp
+   * .
+   * @return
+   * .
    */
-  public boolean ganarExperiencia(int exp) {
+  public boolean ganarExperiencia(final int exp) {
     return false;
   }
 
@@ -41,8 +67,9 @@ public class Character implements Peleable {
 
   /**
    * @param fuerza
+   * .
    */
-  public void setFuerza(int fuerza) {
+  public void setFuerza(final int fuerza) {
     this.fuerza = fuerza;
   }
 
@@ -57,7 +84,12 @@ public class Character implements Peleable {
     return nombre;
   }
 
-  public void setNombre(String nombre) {
+  /**
+ * metodo para setear el nombre.
+ * @param nombre
+ * .
+ */
+public void setNombre(final String nombre) {
     this.nombre = nombre;
   }
 
@@ -70,8 +102,9 @@ public class Character implements Peleable {
 
   /**
    * @param nivel
+   * .
    */
-  public void setNivel(int nivel) {
+  public void setNivel(final int nivel) {
     this.nivel = nivel;
   }
 
@@ -85,14 +118,15 @@ public class Character implements Peleable {
 
   /**
    * @param defensa
+   * .
    */
   @Override
-  public void setDefensa(int defensa) {
+  public void setDefensa(final int defensa) {
     this.defensa = defensa;
   }
 
   @Override
-  public int serAtacado(int daño) {
+  public int serAtacado(final int daño) {
     // TODO Auto-generated method stub
     return 0;
   }
@@ -104,7 +138,7 @@ public class Character implements Peleable {
   }
 
   @Override
-  public int atacar(Peleable atacado) {
+  public int atacar(final Peleable atacado) {
     // TODO Auto-generated method stub
     return 0;
   }
@@ -122,7 +156,7 @@ public class Character implements Peleable {
   }
 
   @Override
-  public void setAtaque(int ataque) {
+  public void setAtaque(final int ataque) {
     // TODO Auto-generated method stub
 
   }

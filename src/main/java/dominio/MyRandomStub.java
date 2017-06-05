@@ -1,17 +1,30 @@
 package dominio;
 
+/**
+ * @author Usuario
+ * clase myRandomStub.
+ *
+ */
 public class MyRandomStub extends RandomGenerator {
-  private int valor;
+  /**
+ * atributo valor.
+ */
+private int valor;
 
 
-  public MyRandomStub(int valorfijo) {
-	  this.valor = valorfijo;
+  /**
+   * constructor parametrizado.
+ * @param valorfijo
+ * .
+ */
+public MyRandomStub(final int valorfijo) {
+this.valor = valorfijo;
   }
 
 
 @Override
-public int obtenerAleatorioMenorQue(int maximo) {
-	return this.valor;
+public int obtenerAleatorioMenorQue(final int maximo) {
+return this.valor;
 }
 
 }

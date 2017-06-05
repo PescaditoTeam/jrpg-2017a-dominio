@@ -8,15 +8,30 @@ import java.io.Serializable;
  *
  */
 public abstract class Casta implements Serializable {
-  protected double probabilidadGolpeCritico;
-  protected double probabilidadEvitarDaño;
-  protected double dañoCritico;
-  protected String nombreCasta;
-
-  protected String[] habilidadesCasta;
+  /**
+ * atributo que representa la probabilidad del golpe critico.
+ */
+private double probabilidadGolpeCritico;
+  /**
+ * atributo que representa la probabilidad de evitar daño.
+ */
+protected double probabilidadEvitarDaño;
+  /**
+ * atributo que representa el daño critico.
+ */
+private double dañoCritico;
+  /**
+ * atributo que represenra el nombre de la casta.
+ */
+protected String nombreCasta;
 
   /**
-   * Constructor por defecto
+ * atributo que representa las habilidades de la casta.
+ */
+protected String[] habilidadesCasta;
+
+  /**
+   * Constructor por defecto.
    */
   public Casta() {
     this.probabilidadGolpeCritico = 0.2;
@@ -27,20 +42,47 @@ public abstract class Casta implements Serializable {
 
   /**
    * @param prob_crit
+   * .
    * @param evasion
-   * @param da�o_crit
+   * .
+   * @param daño_crit
+   * .
    */
-  public Casta(double prob_crit, double evasion, double daño_crit) {
+  public Casta(final double prob_crit, final double evasion, final double daño_crit) {
     this.probabilidadGolpeCritico = prob_crit;
     this.probabilidadEvitarDaño = evasion;
     this.dañoCritico = daño_crit;
   }
 
-  public abstract boolean habilidad1(Personaje caster, Peleable atacado);
+  /**
+ * @param caster
+ * .
+ * @param atacado
+ * .
+ * @return
+ * .
+ */
+public abstract boolean habilidad1(Personaje caster, Peleable atacado);
 
-  public abstract boolean habilidad2(Personaje caster, Peleable atacado);
+  /**
+ * @param caster
+ * .
+ * @param atacado
+ * .
+ * @return
+ * .
+ */
+public abstract boolean habilidad2(Personaje caster, Peleable atacado);
 
-  public abstract boolean habilidad3(Personaje caster, Peleable atacado);
+  /**
+ * @param caster
+ * .
+ * @param atacado
+ * .
+ * @return
+ * .
+ */
+public abstract boolean habilidad3(Personaje caster, Peleable atacado);
 
   /**
    * @return Devuelve el nombre de la Casta pedido
@@ -60,7 +102,8 @@ public abstract class Casta implements Serializable {
   }
 
   /**
-   * @return devuelve la probabilidad de golpe critico
+   * @return
+   * devuelve la probabilidad de golpe critico.
    */
   public double getProbabilidadGolpeCritico() {
     return probabilidadGolpeCritico;
@@ -68,13 +111,15 @@ public abstract class Casta implements Serializable {
 
   /**
    * @param probabilidadGolpeCritico
+   * .
    */
-  public void setProbabilidadGolpeCritico(double probabilidadGolpeCritico) {
+  public void setProbabilidadGolpeCritico(final double probabilidadGolpeCritico) {
     this.probabilidadGolpeCritico = probabilidadGolpeCritico;
   }
 
   /**
-   * @return devuelve la probabilidad de Evitar Daño
+   * @return
+   * devuelve la probabilidad de Evitar Daño.
    */
   public double getProbabilidadEvitarDaño() {
     return probabilidadEvitarDaño;
@@ -82,13 +127,15 @@ public abstract class Casta implements Serializable {
 
   /**
    * @param probabilidadEvitarDa�o
+   * .
    */
-  public void setProbabilidadEvitarDaño(double probabilidadEvitarDaño) {
+  public void setProbabilidadEvitarDaño(final double probabilidadEvitarDaño) {
     this.probabilidadEvitarDaño = probabilidadEvitarDaño;
   }
 
   /**
-   * @return devuelve el daño critico
+   * @return
+   * devuelve el daño critico.
    */
   public double getDañoCritico() {
     return dañoCritico;
@@ -96,15 +143,17 @@ public abstract class Casta implements Serializable {
 
   /**
    * @param dañoCritico
+   * .
    */
-  public void setDañoCritico(double dañoCritico) {
+  public void setDañoCritico(final double dañoCritico) {
     this.dañoCritico = dañoCritico;
   }
 
   /**
    * addFuerzaInicial().
    *
-   * @return el numero a sumarle a la fuerza inicial
+   * @return
+   * el numero a sumarle a la fuerza inicial.
    */
   protected int addFuerzaInicial() {
     return 0;

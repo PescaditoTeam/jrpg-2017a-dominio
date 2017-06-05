@@ -6,13 +6,21 @@ package dominio;
  */
 public class Hechicero extends Casta {
 
-  public Hechicero(double prob_crit, double evasion, double daño_crit) {
+  /**
+ * @param prob_crit
+ * .
+ * @param evasion
+ * .
+ * @param daño_crit
+ * .
+ */
+public Hechicero(final double prob_crit, final double evasion, final double daño_crit) {
     super(prob_crit, evasion, daño_crit);
     this.nombreCasta = "Hechicero";
   }
 
   /**
-   * Constructor por defecto de Hechicero
+   * Constructor por defecto de Hechicero.
    */
   public Hechicero() {
     super();
@@ -31,7 +39,7 @@ public class Hechicero extends Casta {
    * si el personaje que le pasamos tiene la habilidad pedida
    */
   @Override
-  public boolean habilidad1(Personaje caster, Peleable atacado) {
+  public boolean habilidad1(final Personaje caster, final Peleable atacado) {
     if (caster.getEnergia() > 10) {
       caster.setEnergia(caster.getEnergia() - 10);
       if (atacado.serAtacado((int) (caster.calcularPuntosDeMagia() * 1.5)) > 0) {
@@ -43,7 +51,7 @@ public class Hechicero extends Casta {
 
   // Curar Aliado
   @Override
-  public boolean habilidad2(Personaje caster, Peleable aliado) {
+  public boolean habilidad2(final Personaje caster, final Peleable aliado) {
     if (caster.getEnergia() > 10) {
       caster.setEnergia(caster.getEnergia() - 10);
       // es personaje esta sobreescrito en Personaje y NPC. cada uno devolvera V
@@ -58,7 +66,7 @@ public class Hechicero extends Casta {
 
   // Robar Energia y Salud
   @Override
-  public boolean habilidad3(Personaje caster, Peleable atacado) {
+  public boolean habilidad3(final Personaje caster, final Peleable atacado) {
     if (caster.getEnergia() > 10) {
       caster.setEnergia(caster.getEnergia() - 10);
 
