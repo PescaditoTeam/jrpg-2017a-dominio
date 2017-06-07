@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Personaje. Siendo una de las clases mas importantes, es la que une a todos
  * los tipos de personajes En ella se encuentran todos los atributos y metodos
- * apropiados para tener todo en cuenta
+ * apropiados para tener todo en cuenta.
  *
  */
 public abstract class Personaje extends Character implements Serializable, Cloneable {
