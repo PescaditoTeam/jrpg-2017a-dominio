@@ -718,9 +718,6 @@ public abstract class Personaje extends Character implements Serializable, Clone
   public abstract boolean habilidadRaza2(Peleable atacado);
   
   public void efectuarItem (Item item){
-	  if(mochila.getInventario()[item.getId() - 1] == 0){
-		  return;
-	  }
 	  String at = item.getAtributoAModificar();
 	  if(at == "salud"){
 		  salud = salud + salud*item.getValor()/100;

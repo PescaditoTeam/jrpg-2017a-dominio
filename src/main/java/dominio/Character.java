@@ -17,6 +17,7 @@ protected String nombre;
  * atributo que representa el nivel del character.
  */
 protected int nivel;
+
   public Mochila getMochila() {
 	return mochila;
 }
