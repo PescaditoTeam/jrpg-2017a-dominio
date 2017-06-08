@@ -70,6 +70,7 @@ public abstract class Personaje extends Character implements Serializable, Clone
    */
   public Personaje(String nombre, Casta casta, int id, String nomRaza, String hab1, String hab2) {
 
+	super();
     this.nombre = nombre;
     this.casta = casta;
     this.idPersonaje = id;
@@ -125,6 +126,7 @@ public abstract class Personaje extends Character implements Serializable, Clone
    */
   public Personaje(String nombre, int salud, int energia, int fuerza, int destreza, int inteligencia, Casta casta, int experiencia, int nivel, int idPersonaje, String nomRaza, String hab1, String hab2) {
 
+	  super();
     this.nombre = nombre;
     this.salud = salud;
     this.energia = energia;
@@ -714,6 +716,36 @@ public abstract class Personaje extends Character implements Serializable, Clone
   public abstract boolean habilidadRaza1(Peleable atacado);
 
   public abstract boolean habilidadRaza2(Peleable atacado);
+  
+  public void efectuarItem (Item item){
+	  if(mochila.getInventario()[item.getId() - 1] == 0){
+		  return;
+	  }
+	  String at = item.getAtributoAModificar();
+	  if(at == "salud"){
+		  salud = salud + salud*item.getValor()/100;
+		  return;
+	  }
+	  if(at == "energia"){
+		  energia = energia + energia*item.getValor()/100;
+		  return;
+	  }
+	  if(at == "destreza"){
+		  destreza = destreza + destreza*item.getValor()/100;
+		  return;
+	  }
+	  if(at == "inteligencia"){
+		  inteligencia = inteligencia + inteligencia*item.getValor()/100;
+		  return;
+	  }
+	  if(at == "defensa"){
+		  defensa = defensa + defensa*item.getValor()/100;
+		  return;
+	  }
+	  if(at == "magia"){
+		  magia = magia + magia*item.getValor()/100;
+	  }
+  }
 
 public void recibirDatosReplicadosDePersonaje(DatosDePersonajeAReplicar p) {
 

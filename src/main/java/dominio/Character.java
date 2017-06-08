@@ -17,7 +17,15 @@ protected String nombre;
  * atributo que representa el nivel del character.
  */
 protected int nivel;
-  /**
+  public Mochila getMochila() {
+	return mochila;
+}
+
+public void setMochila(Mochila mochila) {
+	this.mochila = mochila;
+}
+
+/**
  * atributo que representa la defensa del character.
  */
 protected int defensa;
@@ -29,7 +37,9 @@ protected int salud;
   /**
  * construdcto por defecto.
  */
+protected Mochila mochila;
 public Character() {
+	mochila = new Mochila();
 
   }
 
