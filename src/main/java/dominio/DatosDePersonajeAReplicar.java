@@ -59,12 +59,6 @@ public class DatosDePersonajeAReplicar {
 	 */
 	private int energiaTope; //*
 	  /**
-	 * atributo que hace referencia a la casta del personaje a replicar.
-	 */
-	private Casta casta; //*
-
-
-	  /**
 	 * @param salud
 	 * .
 	 * @param energia
@@ -83,15 +77,9 @@ public class DatosDePersonajeAReplicar {
 	 * .
 	 * @param defensa
 	 * .
-	 * @param saludTope
-	 * .
-	 * @param energiaTope
-	 * .
-	 * @param casta
-	 * .
 	 */
 	public DatosDePersonajeAReplicar(final int salud, final int energia, final int fuerza, final int destreza, final int inteligencia,
-			final int experiencia, final int nivel, final int idPersonaje, final int defensa, final int saludTope, final int energiaTope, final Casta casta) {
+			final int experiencia, final int nivel, final int idPersonaje, final int defensa) {
 		super();
 		this.salud = salud;
 		this.energia = energia;
@@ -102,9 +90,6 @@ public class DatosDePersonajeAReplicar {
 		this.nivel = nivel;
 		this.idPersonaje = idPersonaje;
 		this.defensa = defensa;
-		this.saludTope = saludTope;
-		this.energiaTope = energiaTope;
-		this.casta = casta;
 	}
 	  /**
 	   * @param nuevasalud
@@ -115,7 +100,6 @@ public class DatosDePersonajeAReplicar {
 	public DatosDePersonajeAReplicar(final int nuevasalud, final int nuevaenergia) {
 		  salud = nuevasalud;
 		  energia = nuevaenergia;
-
 	}
 	/**
 	 * @param p
@@ -131,9 +115,6 @@ public class DatosDePersonajeAReplicar {
 		this.nivel = p.getNivel();
 		this.idPersonaje = p.getIdPersonaje();
 		this.defensa = p.getDefensa();
-		this.saludTope = p.saludTope;
-		this.energiaTope = p.energiaTope;
-		this.casta = p.getCasta();
 	}
 	//----------------------------
 	  //Getters Setters.
@@ -224,20 +205,6 @@ public class DatosDePersonajeAReplicar {
 	}
 	/**
 	 * @return
-	 * getter de casta
-	 */
-	public Casta getCasta() {
-		return casta;
-	}
-	/**
-	 * @param casta
-	 * setter de casta.
-	 */
-	public void setCasta(final Casta casta) {
-		this.casta = casta;
-	}
-	/**
-	 * @return
 	 * getter de nievl.
 	 */
 	public int getNivel() {
@@ -278,35 +245,6 @@ public class DatosDePersonajeAReplicar {
 	public void setDefensa(final int defensa) {
 		this.defensa = defensa;
 	}
-	/**
-	 * @return
-	 * getter de la salud tope.
-	 */
-	public int getSaludTope() {
-		return saludTope;
-	}
-	/**
-	 * @param saludTope
-	 * setter de la salud tope.
-	 */
-	public void setSaludTope(final int saludTope) {
-		this.saludTope = saludTope;
-	}
-	/**
-	 * @return
-	 * getter de la energia tope.
-	 */
-	public int getEnergiaTope() {
-		return energiaTope;
-	}
-	/**
-	 * @param energiaTope
-	 * setter de la energia tope.
-	 */
-	public void setEnergiaTope(final int energiaTope) {
-		this.energiaTope = energiaTope;
-	}
-
   
 	  
 }

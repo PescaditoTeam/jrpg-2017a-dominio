@@ -60,7 +60,7 @@ public Orco(final String nombre, final int salud, final int energia, final int f
   public boolean habilidadRaza1(final Peleable atacado) {
     if (this.getEnergia() > 10) {
       this.setEnergia(this.getEnergia() - 10);
-      if (atacado.serAtacado(this.getDefensa() * 2) > 0) {
+      if (atacado.serAtacado(this.getDefensa() * 2) > 0) { // Pregunta si pudo hacer daño
         return true;
       }
     }

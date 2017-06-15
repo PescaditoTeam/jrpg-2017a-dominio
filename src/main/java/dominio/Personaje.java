@@ -718,30 +718,25 @@ public abstract class Personaje extends Character implements Serializable, Clone
   public abstract boolean habilidadRaza2(Peleable atacado);
   
   public void efectuarItem (Item item){
-	  String at = item.getAtributoAModificar();
-	  if(at == "salud"){
-		  salud = salud + salud*item.getValor()/100;
-		  return;
-	  }
-	  if(at == "energia"){
-		  energia = energia + energia*item.getValor()/100;
-		  return;
-	  }
-	  if(at == "destreza"){
-		  destreza = destreza + destreza*item.getValor()/100;
-		  return;
-	  }
-	  if(at == "inteligencia"){
-		  inteligencia = inteligencia + inteligencia*item.getValor()/100;
-		  return;
-	  }
-	  if(at == "defensa"){
-		  defensa = defensa + defensa*item.getValor()/100;
-		  return;
-	  }
-	  if(at == "magia"){
-		  magia = magia + magia*item.getValor()/100;
-	  }
+		  int saludnueva = salud + salud*item.getValorSalud()/100;
+		  if(saludnueva > saludTope){
+			  salud = saludTope;
+		  }
+		  else{
+			  salud = saludnueva;
+		  }
+		  int energianueva = energia + energia*item.getValorEnergia()/100;
+		  if(energianueva > energiaTope){
+			  energia = energiaTope;
+		  }
+		  else{
+			  energia = energianueva;
+		  }
+		  destreza = destreza + destreza*item.getValorDestreza()/100;
+		  inteligencia = inteligencia + inteligencia*item.getValorInteligencia()/100;
+		  defensa = defensa + defensa*item.getValorDefensa()/100;
+		  magia = magia + magia*item.getValorMagia()/100;
+		  fuerza = fuerza + fuerza*item.getValorFuerza()/100;
   }
 
 public void recibirDatosReplicadosDePersonaje(DatosDePersonajeAReplicar p) {
@@ -751,16 +746,20 @@ public void recibirDatosReplicadosDePersonaje(DatosDePersonajeAReplicar p) {
     this.fuerza = p.getFuerza();
     this.destreza = p.getDestreza();
     this.inteligencia = p.getInteligencia();
-    this.casta = p.getCasta();
     this.experiencia = p.getExperiencia();
     this.nivel = p.getSalud();
-
-    this.saludTope = p.getSaludTope();
-    this.energiaTope = p.getEnergiaTope();
-
     this.idPersonaje = p.getIdPersonaje();
-    
     this.defensa = p.getDefensa();	
+}
+public void recibirDatosReplicadosDePersonajeAtacar(int nuevaSalud, int nuevaEnergia) {
+
+	this.salud = nuevaSalud;
+	this.energia = nuevaEnergia;
+}
+
+public void setMochila2(Item item) {
+	this.mochila.add(item);
+	
 }
 
 }

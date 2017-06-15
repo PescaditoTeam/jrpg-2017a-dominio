@@ -3,7 +3,7 @@ package dominio;
 public class Mochila {
 	
 	//private ArrayList<Item> items;
-	private int[] inventario = {0,0,0,0,0,0,0,0,0,0};
+	private int[] inventario = {1,0,0,0,0,1,0,1,0,1};
 	
 	public Mochila(){
 		////items = new ArrayList<Item>();
