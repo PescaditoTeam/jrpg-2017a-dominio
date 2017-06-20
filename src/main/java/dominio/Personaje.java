@@ -735,7 +735,6 @@ public abstract class Personaje extends Character implements Serializable, Clone
 		  destreza = destreza + destreza*item.getValorDestreza()/100;
 		  inteligencia = inteligencia + inteligencia*item.getValorInteligencia()/100;
 		  defensa = defensa + defensa*item.getValorDefensa()/100;
-		  magia = magia + magia*item.getValorMagia()/100;
 		  fuerza = fuerza + fuerza*item.getValorFuerza()/100;
   }
 
@@ -748,13 +747,7 @@ public void recibirDatosReplicadosDePersonaje(DatosDePersonajeAReplicar p) {
     this.inteligencia = p.getInteligencia();
     this.experiencia = p.getExperiencia();
     this.nivel = p.getSalud();
-    this.idPersonaje = p.getIdPersonaje();
     this.defensa = p.getDefensa();	
-}
-public void recibirDatosReplicadosDePersonajeAtacar(int nuevaSalud, int nuevaEnergia) {
-
-	this.salud = nuevaSalud;
-	this.energia = nuevaEnergia;
 }
 
 public void setMochila2(Item item) {

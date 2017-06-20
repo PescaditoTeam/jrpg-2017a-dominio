@@ -35,10 +35,6 @@ public class Item {
 	 */
 	private int valorInteligencia;
 	/**
-	 * El porcentaje que va a aumentar o disminuir de Magia.
-	 */
-	private int valorMagia;
-	/**
 	 * El porcentaje que va a aumentar o disminuir de Fuerza.
 	 */
 	private int valorFuerza;
@@ -65,7 +61,6 @@ public class Item {
 		this.valorEnergia = valorEnergia;
 		this.valorDestreza = valorDestreza;
 		this.valorInteligencia = valorInteligencia;
-		this.valorMagia = valorMagia;
 		this.valorFuerza = valorFuerza;
 	}
 	/**
@@ -164,19 +159,6 @@ public class Item {
 	public void setValorInteligencia(int valorInteligencia) {
 		this.valorInteligencia = valorInteligencia;
 	}
-	/**
-	 * @return devuelve el valor de la Magia que modifica el Item.
-	 */
-	public int getValorMagia() {
-		return valorMagia;
-	}
-	/**
-	 * @param valorMagia.
-	 */
-	public void setValorMagia(int valorMagia) {
-		this.valorMagia = valorMagia;
-	}
-	
 
 
 

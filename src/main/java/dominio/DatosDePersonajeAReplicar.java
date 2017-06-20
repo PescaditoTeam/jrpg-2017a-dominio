@@ -43,21 +43,9 @@ public class DatosDePersonajeAReplicar {
 	 */
 	private int nivel; //*
 	  /**
-	 * atributo que hace referencia al id del personaje a replicar.
-	 */
-	private int idPersonaje; //*
-	  /**
 	 * atributo que hace referencia a la defensa del personaje a replicar.
 	 */
 	private int defensa; //*
-	  /**
-	 * atributo que hace referencia a la salud tope a replicar.
-	 */
-	private int saludTope; //*
-	  /**
-	 * atributo que hace referencia a la energia tope a replicar.
-	 */
-	private int energiaTope; //*
 	  /**
 	 * @param salud
 	 * .
@@ -80,7 +68,6 @@ public class DatosDePersonajeAReplicar {
 	 */
 	public DatosDePersonajeAReplicar(final int salud, final int energia, final int fuerza, final int destreza, final int inteligencia,
 			final int experiencia, final int nivel, final int idPersonaje, final int defensa) {
-		super();
 		this.salud = salud;
 		this.energia = energia;
 		this.fuerza = fuerza;
@@ -88,18 +75,7 @@ public class DatosDePersonajeAReplicar {
 		this.inteligencia = inteligencia;
 		this.experiencia = experiencia;
 		this.nivel = nivel;
-		this.idPersonaje = idPersonaje;
 		this.defensa = defensa;
-	}
-	  /**
-	   * @param nuevasalud
-	   * se requiere de la nueva salud y la nueva energia.
-	   * @param nuevaenergia
-	   * constructor parametrizado.
-	 */
-	public DatosDePersonajeAReplicar(final int nuevasalud, final int nuevaenergia) {
-		  salud = nuevasalud;
-		  energia = nuevaenergia;
 	}
 	/**
 	 * @param p
@@ -113,7 +89,6 @@ public class DatosDePersonajeAReplicar {
 		this.inteligencia = p.getInteligencia();
 		this.experiencia = p.getExperiencia();
 		this.nivel = p.getNivel();
-		this.idPersonaje = p.getIdPersonaje();
 		this.defensa = p.getDefensa();
 	}
 	//----------------------------
@@ -219,20 +194,6 @@ public class DatosDePersonajeAReplicar {
 	}
 	/**
 	 * @return
-	 * getter del id.
-	 */
-	public int getIdPersonaje() {
-		return idPersonaje;
-	}
-	/**
-	 * @param idPersonaje
-	 * setter de personaje.
-	 */
-	public void setIdPersonaje(final int idPersonaje) {
-		this.idPersonaje = idPersonaje;
-	}
-	/**
-	 * @return
 	 * getter de defensa.
 	 */
 	public int getDefensa() {
@@ -244,7 +205,5 @@ public class DatosDePersonajeAReplicar {
 	 */
 	public void setDefensa(final int defensa) {
 		this.defensa = defensa;
-	}
-  
-	  
+	} 
 }
