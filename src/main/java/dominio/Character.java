@@ -22,9 +22,6 @@ protected int nivel;
 	return mochila;
 }
 
-public void setMochila(Mochila mochila) {
-	this.mochila = mochila;
-}
 
 /**
  * atributo que representa la defensa del character.

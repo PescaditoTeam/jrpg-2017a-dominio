@@ -17,11 +17,11 @@ public class DatosDePersonajeAReplicar {
 	  /**
 	 * atributo que hace referencia a la salud del personaje a replicar.
 	 */
-	private int salud; //*
+	private int saludTope; //*
 	  /**
 	 * atributo que hace referencia a la energia del personaje a replicar.
 	 */
-	private int energia; //*
+	private int energiaTope; //*
 	  /**
 	 * atributo que hace referencia a la fuerza del personaje a replicar.
 	 */
@@ -41,15 +41,11 @@ public class DatosDePersonajeAReplicar {
 	  /**
 	 * atributo que hace referencia al nivel del personaje a replicar.
 	 */
-	private int nivel; //*
+	private int nivel; 
 	  /**
-	 * atributo que hace referencia a la defensa del personaje a replicar.
-	 */
-	private int defensa; //*
-	  /**
-	 * @param salud
+	 * @param saludTope
 	 * .
-	 * @param energia
+	 * @param energiaTope
 	 * .
 	 * @param fuerza
 	 * .
@@ -61,66 +57,69 @@ public class DatosDePersonajeAReplicar {
 	 * .
 	 * @param nivel
 	 * .
-	 * @param idPersonaje
-	 * .
 	 * @param defensa
 	 * .
 	 */
 	public DatosDePersonajeAReplicar(final int salud, final int energia, final int fuerza, final int destreza, final int inteligencia,
-			final int experiencia, final int nivel, final int idPersonaje, final int defensa) {
-		this.salud = salud;
-		this.energia = energia;
+			final int experiencia, final int nivel) {
+		this.saludTope = salud;
+		this.energiaTope = energia;
 		this.fuerza = fuerza;
 		this.destreza = destreza;
 		this.inteligencia = inteligencia;
 		this.experiencia = experiencia;
 		this.nivel = nivel;
-		this.defensa = defensa;
+	}
+	
+	/**
+	 * Constructor por defecto.
+	 */
+	public DatosDePersonajeAReplicar(){
+		
 	}
 	/**
 	 * @param p
 	 * metodo para empaquetar los datos del personaje p.
 	 */
-	public void empaquetarDatos(final Personaje p) {
-		this.salud = p.getSalud();
-		this.energia = p.getEnergia();
+	/*public void empaquetarDatos(final Personaje p) {
+		this.saludTope = p.getSalud();
+		this.energiaTope = p.getEnergia();
 		this.fuerza = p.getFuerza();
 		this.destreza = p.getDestreza();
 		this.inteligencia = p.getInteligencia();
 		this.experiencia = p.getExperiencia();
 		this.nivel = p.getNivel();
-		this.defensa = p.getDefensa();
-	}
+	}*/
 	//----------------------------
 	  //Getters Setters.
 	  //----------------------------
 	/**
 	 * @return
-	 * getter de salud.
+	 * getter de saludTope.
 	 */
-	public int getSalud() {
-		return salud;
+	public int getSaludTope() {
+		return saludTope;
 	}
 	/**
 	 * @param salud
-	 * setter de salud.
+	 * setter de saludTope.
 	 */
-	public void setSalud(final int salud) {
-		this.salud = salud;
+	public void setSaludTope(final int saludTope) {
+		this.saludTope = saludTope;
 	}
 	/**
 	 * @return
-	 * getter de energia.
+	 * getter de energiaTope.
 	 */
-	public int getEnergia() {
-		return energia;
+	public int getEnergiaTope() {
+		return energiaTope;
 	}
 	/**
 	 * @param energia
-	 * setter de energia.
+	 * setter de energiaTope.
 	 */
-	public void setEnergia(final int energia) {
-		this.energia = energia;
+	public void setEnergiaTope(final int energiaTope) {
+		this.energiaTope = energiaTope;
 	}
 	/**
 	 * @return
@@ -192,18 +191,4 @@ public class DatosDePersonajeAReplicar {
 	public void setNivel(final int nivel) {
 		this.nivel = nivel;
 	}
-	/**
-	 * @return
-	 * getter de defensa.
-	 */
-	public int getDefensa() {
-		return defensa;
-	}
-	/**
-	 * @param defensa
-	 * setter de defensa.
-	 */
-	public void setDefensa(final int defensa) {
-		this.defensa = defensa;
-	} 
 }

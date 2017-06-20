@@ -9,6 +9,7 @@ import dominio.Elfo;
 import dominio.Guerrero;
 import dominio.Hechicero;
 import dominio.Humano;
+import dominio.Item;
 import dominio.Orco;
 import dominio.Personaje;
 
@@ -175,5 +176,29 @@ public class TestPersonaje {
     nuevoAliado.setClan(new Alianza("Alianza Piedra"));
     nuevoAliado.crearAlianza("asda");
 
+  }
+  @Test
+  public void testEfectuarItem(){
+	  Personaje nuevo = new Humano("Juan", new Hechicero(), 11);
+	  Item item = new Item(1, "casco", 10, 10, 10, 10, 10, 10);
+	  nuevo.efectuarItem(item);
+	  Assert.assertTrue(nuevo.getInteligencia() == 16);
+	  Assert.assertTrue(nuevo.getFuerza() == 11);
+	  Assert.assertTrue(nuevo.getDestreza() == 11);
+	  Assert.assertTrue(nuevo.getDefensa() == 11);
+  }
+  @Test
+  public void testSetItemEnMochila(){
+	  Personaje nuevo = new Humano("Juan", new Hechicero(), 11);
+	  Item item = new Item(1, "casco", 10, 10, 10, 10, 10, 10);
+	  nuevo.setMochila2(item);
+	  Assert.assertTrue(nuevo.getMochila().getInventario()[0] == 1);
+  }
+  @Test
+  public void testRecibirDatos(){
+	  Personaje nuevo = new Humano("Juan", new Hechicero(), 11);
+	  nuevo.recibirDatosReplicadosDePersonajeAtacar(10, 15);
+	  Assert.assertTrue(nuevo.getEnergia() == 15);
+	  Assert.assertTrue(nuevo.getSalud() == 10);
   }
 }

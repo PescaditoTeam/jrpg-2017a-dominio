@@ -124,7 +124,9 @@ public abstract class Personaje extends Character implements Serializable, Clone
    * @param idPersonaje
    *          identificador del personaje
    */
-  public Personaje(String nombre, int salud, int energia, int fuerza, int destreza, int inteligencia, Casta casta, int experiencia, int nivel, int idPersonaje, String nomRaza, String hab1, String hab2) {
+  public Personaje(String nombre, int salud, int energia, int fuerza, int destreza, int inteligencia, 
+		  Casta casta, int experiencia, int nivel, int idPersonaje, String nomRaza, String hab1, 
+		  String hab2) {
 
 	  super();
     this.nombre = nombre;
@@ -223,10 +225,6 @@ public abstract class Personaje extends Character implements Serializable, Clone
   public int getSalud() {
     return salud;
   }
-  public void setSalud(int salud){
-	  this.salud = salud;
-  }
-
   /**
    * @return devuelve la energia
    */
@@ -738,21 +736,15 @@ public abstract class Personaje extends Character implements Serializable, Clone
 		  fuerza = fuerza + fuerza*item.getValorFuerza()/100;
   }
 
-public void recibirDatosReplicadosDePersonaje(DatosDePersonajeAReplicar p) {
-
-    this.salud = p.getSalud();
-    this.energia = p.getEnergia();
-    this.fuerza = p.getFuerza();
-    this.destreza = p.getDestreza();
-    this.inteligencia = p.getInteligencia();
-    this.experiencia = p.getExperiencia();
-    this.nivel = p.getSalud();
-    this.defensa = p.getDefensa();	
-}
 
 public void setMochila2(Item item) {
 	this.mochila.add(item);
 	
+}
+
+public void recibirDatosReplicadosDePersonajeAtacar(int nuevaSaludPersonaje, int nuevaEnergiaPersonaje) {
+	this.salud = nuevaSaludPersonaje;
+	this.energia = nuevaEnergiaPersonaje;
 }
 
 }

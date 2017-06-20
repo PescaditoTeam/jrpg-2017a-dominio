@@ -53,7 +53,7 @@ public class Item {
 	 * @param valorFuerza
 	 */
 	public Item(int id, String nombre, int valorDefensa, int valorSalud, int valorEnergia, int valorDestreza,
-			int valorInteligencia, int valorMagia, int valorFuerza) {
+			int valorInteligencia, int valorFuerza) {
 		this.id = id;
 		this.nombre = nombre;
 		this.valorDefensa = valorDefensa;
@@ -62,6 +62,10 @@ public class Item {
 		this.valorDestreza = valorDestreza;
 		this.valorInteligencia = valorInteligencia;
 		this.valorFuerza = valorFuerza;
+	}
+	
+	public Item(){
+		nombre = "nombrePrueba";
 	}
 	/**
 	 * @return devuelve el valor de la Fuerza que modifica el Item.
