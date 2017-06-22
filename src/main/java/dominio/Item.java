@@ -42,15 +42,14 @@ public class Item {
 	
 	
 	/**
-	 * @param id
-	 * @param nombre
-	 * @param valorDefensa
-	 * @param valorSalud
-	 * @param valorEnergia
-	 * @param valorDestreza
-	 * @param valorInteligencia
-	 * @param valorMagia
-	 * @param valorFuerza
+	 * @param id.
+	 * @param nombre.
+	 * @param valorDefensa.
+	 * @param valorSalud.
+	 * @param valorEnergia.
+	 * @param valorDestreza.
+	 * @param valorInteligencia.
+	 * @param valorFuerza.
 	 */
 	public Item(int id, String nombre, int valorDefensa, int valorSalud, int valorEnergia, int valorDestreza,
 			int valorInteligencia, int valorFuerza) {
@@ -62,6 +61,17 @@ public class Item {
 		this.valorDestreza = valorDestreza;
 		this.valorInteligencia = valorInteligencia;
 		this.valorFuerza = valorFuerza;
+	}
+	
+	public Item(Item item){
+		this.id = item.id;
+		this.nombre = item.nombre;
+		this.valorDefensa = item.valorDefensa;
+		this.valorSalud = item.valorSalud;
+		this.valorEnergia = item.valorEnergia;
+		this.valorDestreza = item.valorDestreza;
+		this.valorInteligencia = item.valorInteligencia;
+		this.valorFuerza = item.valorFuerza;
 	}
 	
 	public Item(){
