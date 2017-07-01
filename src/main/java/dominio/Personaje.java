@@ -126,6 +126,35 @@ public abstract class Personaje extends Character implements Serializable, Clone
    */
   public Personaje(String nombre, int salud, int energia, int fuerza, int destreza, int inteligencia, 
 		  Casta casta, int experiencia, int nivel, int idPersonaje, String nomRaza, String hab1, 
+		  String hab2, Mochila mochila) {
+
+	  super();
+    this.nombre = nombre;
+    this.salud = salud;
+    this.energia = energia;
+    this.fuerza = fuerza;
+    this.destreza = destreza;
+    this.inteligencia = inteligencia;
+    this.casta = casta;
+    this.experiencia = experiencia;
+    this.nivel = nivel;
+
+    this.saludTope = this.salud;
+    this.energiaTope = this.energia;
+
+    this.idPersonaje = idPersonaje;
+    this.defensa = this.calcularPuntosDeDefensa();
+    this.ataque = this.calcularPuntosDeAtaque();
+    this.magia = this.calcularPuntosDeMagia();
+    nombreRaza = nomRaza;
+    this.mochila = mochila;
+    habilidadesRaza = new String[2];
+    habilidadesRaza[0] = hab1;
+    habilidadesRaza[1] = hab2;
+  }
+  
+  public Personaje(String nombre, int salud, int energia, int fuerza, int destreza, int inteligencia, 
+		  Casta casta, int experiencia, int nivel, int idPersonaje, String nomRaza, String hab1, 
 		  String hab2) {
 
 	  super();
@@ -147,7 +176,6 @@ public abstract class Personaje extends Character implements Serializable, Clone
     this.ataque = this.calcularPuntosDeAtaque();
     this.magia = this.calcularPuntosDeMagia();
     nombreRaza = nomRaza;
-
     habilidadesRaza = new String[2];
     habilidadesRaza[0] = hab1;
     habilidadesRaza[1] = hab2;
