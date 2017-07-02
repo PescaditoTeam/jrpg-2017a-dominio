@@ -18,8 +18,8 @@ public class Mercado {
 	public void setOfertas(ArrayList<Ofertas> ofertas) {
 		this.ofertas = ofertas;
 	}
-	public void AddOferta(int o, int d){
-		ofertas.add(new Ofertas(o, d));
+	public void AddOferta(int o, int d, String user){
+		ofertas.add(new Ofertas(o, d, user));
 	}
 
 	
