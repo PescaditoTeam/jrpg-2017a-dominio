@@ -39,7 +39,6 @@ public class Alianza {
 			try {
 				copia.add((Personaje) p.clone());
 			} catch (CloneNotSupportedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}

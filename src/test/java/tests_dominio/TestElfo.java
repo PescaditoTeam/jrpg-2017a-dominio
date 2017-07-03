@@ -6,6 +6,7 @@ import org.junit.Test;
 import dominio.Asesino;
 import dominio.Elfo;
 import dominio.Humano;
+import dominio.Mochila;
 
 public class TestElfo {
 
@@ -20,6 +21,11 @@ public class TestElfo {
     }
   }
 
+  @Test
+  public void testNuevoConstructor(){
+	  Elfo e = new Elfo("Elfo", 10, 10, 10, 10, 10, new Asesino(),  10, 10, 10, new Mochila());
+	  Assert.assertTrue(e.getDefensa() == 10);
+  }
   @Test
   public void testAtaqueBosque() {
     Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1);

@@ -8,6 +8,8 @@ import org.junit.Test;
 import dominio.Alianza;
 import dominio.Elfo;
 import dominio.Guerrero;
+import dominio.Hechicero;
+import dominio.Orco;
 import dominio.Personaje;
 
 public class TestAlianza {
@@ -46,6 +48,19 @@ public class TestAlianza {
     Alianza a = new Alianza("miAlianza");
 
     Assert.assertNotNull(a.getAliados());
+  }
+  
+  @Test
+  public void getAlianza(){
+	  LinkedList<Personaje> nueva = new LinkedList<Personaje>();
+	  Alianza a = new Alianza("miAlianza");
+	  nueva = a.getAliados();
+	  
+	  Personaje p = new Orco("Orco", new Hechicero(), 5);
+	  nueva.add(p);
+	  Assert.assertNotNull(nueva.get(0));
+	  
+	  
   }
 
 }
