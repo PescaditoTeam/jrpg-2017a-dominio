@@ -16,6 +16,10 @@ public class Ofertas {
 		this.user = user;
 	}
 
+	public Ofertas() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public int getOfertado() {
 		return ofertado;
 	}

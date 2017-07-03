@@ -19,6 +19,9 @@ public class Mercado {
 	public void AddOferta(int o, int d, String user){
 		ofertas.add(new Ofertas(o, d, user));
 	}
+	public void AddOferta(Ofertas o){
+		ofertas.add(o);
+	}
 
 	
 }
