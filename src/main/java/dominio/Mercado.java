@@ -15,9 +15,7 @@ public class Mercado {
 	public ArrayList<Ofertas> getOfertas() {
 		return ofertas;
 	}
-	public void setOfertas(ArrayList<Ofertas> ofertas) {
-		this.ofertas = ofertas;
-	}
+	
 	public void AddOferta(int o, int d, String user){
 		ofertas.add(new Ofertas(o, d, user));
 	}

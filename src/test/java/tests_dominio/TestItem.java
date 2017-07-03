@@ -12,7 +12,6 @@ public class TestItem {
 		Mochila m = new Mochila();
 		Item item = new Item(1,"prueba", 0, 15, -1, 13, -20, 20);
 		m.add(item);
-		Assert.assertTrue(m.getInventario()[0] == 1);
 		Assert.assertTrue(item.getNombre() == "prueba");
 		Assert.assertTrue(item.getId() == 1 );
 		Assert.assertTrue(item.getValorDefensa() == 0);
@@ -42,6 +41,18 @@ public class TestItem {
 		Assert.assertTrue(item.getValorInteligencia() == -20);
 		Assert.assertTrue(item.getValorFuerza() == 20);
 	}
-	
+	@Test
+	public void testConstructorCopia(){
+		Item item1 = new Item(1,"prueba", 0, 15, -1, 13, -20, 20);
+		Item item2 = new Item(item1);
+		Assert.assertTrue(item2.getNombre() == "prueba");
+		Assert.assertTrue(item2.getId() == 1 );
+		Assert.assertTrue(item2.getValorDefensa() == 0);
+		Assert.assertTrue(item2.getValorSalud() == 15);
+		Assert.assertTrue(item2.getValorEnergia() == -1);
+		Assert.assertTrue(item2.getValorDestreza() == 13);
+		Assert.assertTrue(item2.getValorInteligencia() == -20);
+		Assert.assertTrue(item2.getValorFuerza() == 20);
+	}
 
 }
