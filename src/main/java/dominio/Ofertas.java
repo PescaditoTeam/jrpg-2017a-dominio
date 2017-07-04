@@ -6,14 +6,16 @@ package dominio;
  *
  */
 public class Ofertas {
+    private int idUser;
     private String user;
     private int ofertado;
     private int demandado;
 
-    public Ofertas(int ofertado, int demandado, String user) {
+    public Ofertas(int ofertado, int demandado, String user, int id) {
         this.ofertado = ofertado;
         this.demandado = demandado;
         this.user = user;
+        this.idUser = id;
     }
 
     public Ofertas() {
@@ -31,5 +33,10 @@ public class Ofertas {
     public String getUser() {
         return user;
     }
+
+    public int getIdUser() {
+        return idUser;
+    }
+    
 
 }

@@ -12,12 +12,12 @@ public class TestMercado {
 
     @Test
     public void testAgregarMercado() {
-        Ofertas o = new Ofertas(2, 3, "Pablo");
+        Ofertas o = new Ofertas(2, 3, "Pablo", 1);
         Assert.assertTrue(o.getUser() == "Pablo");
         Assert.assertTrue(o.getDemandado() == 3);
         Assert.assertTrue(o.getOfertado() == 2);
         Mercado m = new Mercado();
-        m.AddOferta(2, 3, "Pablo");
+        m.AddOferta(2, 3, "Pablo", 1);
         ArrayList<Ofertas> ao = new ArrayList<Ofertas>();
         ao = m.getOfertas();
         Ofertas o2 = ao.get(0);

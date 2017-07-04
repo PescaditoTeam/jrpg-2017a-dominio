@@ -25,7 +25,16 @@ public class Mochila {
     public void add(Item item) {
         inventario[item.getId() - 1]++;
     }
+    
+    public void add(int idItem){
+        inventario[idItem]++;
+    }
 
+    public void sacar(int idItem){
+        if(inventario[idItem] > 0){
+            inventario[idItem]--;
+        }
+    }
     /**
      * @return devuelve el Inventario.
      */
