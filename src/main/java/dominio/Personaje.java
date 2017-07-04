@@ -8,771 +8,782 @@ import java.io.Serializable;
  * apropiados para tener todo en cuenta.
  *
  */
-public abstract class Personaje extends Character implements Serializable, Cloneable {
-  private static final long serialVersionUID = 1L;
-  protected int energia;
-  protected int ataque;// depende de la fuerza
-  protected int magia;// depende de la inteligencia
-  protected String nombreRaza;
-  protected int saludTope;
-  protected int energiaTope;
-  protected int destreza;
-  protected int inteligencia;
-  protected Casta casta;
-  protected int posX;
-  protected int posY;
-  protected int experiencia;
-  protected int idPersonaje;
-  protected Alianza clan = null;
-  public static int[] tablaDeNiveles;
-  protected String[] habilidadesRaza;
+public abstract class Personaje extends Character
+        implements Serializable, Cloneable {
+    private static final long serialVersionUID = 1L;
+    protected int energia;
+    protected int ataque;// depende de la fuerza
+    protected int magia;// depende de la inteligencia
+    protected String nombreRaza;
+    protected int saludTope;
+    protected int energiaTope;
+    protected int destreza;
+    protected int inteligencia;
+    protected Casta casta;
+    protected int posX;
+    protected int posY;
+    protected int experiencia;
+    protected int idPersonaje;
+    protected Alianza clan = null;
+    public static int[] tablaDeNiveles;
+    protected String[] habilidadesRaza;
 
-  /**
-   * getHabilidadesRaza().
-   *
-   * @return Retorna las habilidades de la raza, en formato de String[]
-   */
-  public String[] getHabilidadesRaza() {
-    return habilidadesRaza;
-  }
-
-  /**
-   * getHabilidadesCasta().
-   *
-   * @return Retorna las habilidades de la casta, en formato de String[]
-   */
-  public String[] getHabilidadesCasta() {
-    return casta.getHabilidadesCasta();
-  }
-
-  /**
-   * cargarTablaNivel().
-   *
-   */
-  public static void cargarTablaNivel() {
-    Personaje.tablaDeNiveles = new int[101];
-    Personaje.tablaDeNiveles[0] = 0;
-    Personaje.tablaDeNiveles[1] = 0;
-    for (int i = 2; i < 101; i++) {
-      Personaje.tablaDeNiveles[i] = Personaje.tablaDeNiveles[i - 1] + 50;
+    /**
+     * getHabilidadesRaza().
+     *
+     * @return Retorna las habilidades de la raza, en formato de String[]
+     */
+    public String[] getHabilidadesRaza() {
+        return habilidadesRaza;
     }
-  }
 
-  /**
-   * Personaje(String, Casta, int).
-   *
-   * @param nombre
-   *          nombre del personaje
-   * @param casta
-   *          casta a la cual pertenece
-   * @param id
-   *          identificador
-   */
-  public Personaje(String nombre, Casta casta, int id, String nomRaza, String hab1, String hab2) {
-
-	super();
-    this.nombre = nombre;
-    this.casta = casta;
-    this.idPersonaje = id;
-    experiencia = 0;
-    nivel = 1;
-    fuerza = 10;
-    inteligencia = 10;
-    destreza = 10;
-
-    fuerza += casta.addFuerzaInicial();
-    inteligencia += casta.addInteligenciaInicial();
-    destreza += casta.addDestrezaInicial();
-
-    posX = 0;
-    posY = 0;
-    saludTope = 100;
-    energiaTope = 100;
-
-    ataque = this.calcularPuntosDeAtaque();
-    defensa = this.calcularPuntosDeDefensa();
-    magia = this.calcularPuntosDeMagia();
-    nombreRaza = nomRaza;
-
-    habilidadesRaza = new String[2];
-    habilidadesRaza[0] = hab1;
-    habilidadesRaza[1] = hab2;
-
-  }
-
-  /**
-   * Personaje().
-   *
-   * @param nombre
-   *          nombre del personaje
-   * @param salud
-   *          salud inicial
-   * @param energia
-   *          energia inicial
-   * @param fuerza
-   *          fuerza inicial
-   * @param destreza
-   *          destreza inicial
-   * @param inteligencia
-   *          inteligencia inicial
-   * @param casta
-   *          casta a la que pertenece
-   * @param experiencia
-   *          experiencia inicial
-   * @param nivel
-   *          nivel inicial
-   * @param idPersonaje
-   *          identificador del personaje
-   */
-  public Personaje(String nombre, int salud, int energia, int fuerza, int destreza, int inteligencia, 
-		  Casta casta, int experiencia, int nivel, int idPersonaje, String nomRaza, String hab1, 
-		  String hab2, Mochila mochila) {
-
-	  super();
-    this.nombre = nombre;
-    this.salud = salud;
-    this.energia = energia;
-    this.fuerza = fuerza;
-    this.destreza = destreza;
-    this.inteligencia = inteligencia;
-    this.casta = casta;
-    this.experiencia = experiencia;
-    this.nivel = nivel;
-
-    this.saludTope = this.salud;
-    this.energiaTope = this.energia;
-
-    this.idPersonaje = idPersonaje;
-    this.defensa = this.calcularPuntosDeDefensa();
-    this.ataque = this.calcularPuntosDeAtaque();
-    this.magia = this.calcularPuntosDeMagia();
-    nombreRaza = nomRaza;
-    this.mochila = mochila;
-    habilidadesRaza = new String[2];
-    habilidadesRaza[0] = hab1;
-    habilidadesRaza[1] = hab2;
-  }
-  
-  public Personaje(String nombre, int salud, int energia, int fuerza, int destreza, int inteligencia, 
-		  Casta casta, int experiencia, int nivel, int idPersonaje, String nomRaza, String hab1, 
-		  String hab2) {
-
-	  super();
-    this.nombre = nombre;
-    this.salud = salud;
-    this.energia = energia;
-    this.fuerza = fuerza;
-    this.destreza = destreza;
-    this.inteligencia = inteligencia;
-    this.casta = casta;
-    this.experiencia = experiencia;
-    this.nivel = nivel;
-
-    this.saludTope = this.salud;
-    this.energiaTope = this.energia;
-
-    this.idPersonaje = idPersonaje;
-    this.defensa = this.calcularPuntosDeDefensa();
-    this.ataque = this.calcularPuntosDeAtaque();
-    this.magia = this.calcularPuntosDeMagia();
-    nombreRaza = nomRaza;
-    habilidadesRaza = new String[2];
-    habilidadesRaza[0] = hab1;
-    habilidadesRaza[1] = hab2;
-  }
-
-  /**
-   * @return devuelve el nombre de la raza
-   */
-  public String getNombreRaza() {
-    return nombreRaza;
-  }
-
-  /**
-   * @param nombreRaza
-   */
-  public void setNombreRaza(String nombreRaza) {
-    this.nombreRaza = nombreRaza;
-  }
-
-  /*
-   * (non-Javadoc)
-   *
-   * @see dominio.Peleable#getAtaque()
-   */
-  @Override
-  public int getAtaque() {
-    return ataque;
-  }
-
-  /*
-   * (non-Javadoc)
-   *
-   * @see dominio.Peleable#setAtaque(int)
-   */
-  @Override
-  public void setAtaque(int ataque) {
-    this.ataque = ataque;
-  }
-
-  /**
-   * @return devuelve la magia
-   */
-  public int getMagia() {
-    return magia;
-  }
-
-  /**
-   * @param magia
-   */
-  public void setMagia(int magia) {
-    this.magia = magia;
-  }
-
-  /**
-   * @return devuelve el clan
-   */
-  public Alianza getClan() {
-    return clan;
-  }
-
-  /**
-   * @param clan
-   */
-  public void setClan(Alianza clan) {
-    this.clan = clan;
-    clan.añadirPersonaje(this);
-  }
-
-  /*
-   * (non-Javadoc)
-   *
-   * @see dominio.Peleable#getSalud()
-   */
-  @Override
-  public int getSalud() {
-    return salud;
-  }
-  /**
-   * @return devuelve la energia
-   */
-  public int getEnergia() {
-    return energia;
-  }
-
-  /**
-   * @param energia
-   */
-  public void setEnergia(int energia) {
-    this.energia = energia;
-  }
-
-  /**
-   * @return devuelve la destreza
-   */
-  public int getDestreza() {
-    return destreza;
-  }
-
-  /**
-   * @param destreza
-   */
-  public void setDestreza(int destreza) {
-    this.destreza = destreza;
-  }
-
-  /**
-   * @return devuelve la inteligencia
-   */
-  public int getInteligencia() {
-    return inteligencia;
-  }
-
-  /**
-   * @param inteligencia
-   */
-  public void setInteligencia(int inteligencia) {
-    this.inteligencia = inteligencia;
-  }
-
-  /**
-   * @return devuelve la casta a la que pertenece el personaje
-   */
-  public Casta getCasta() {
-    return casta;
-  }
-
-  /**
-   * @param casta
-   */
-  public void setCasta(Casta casta) {
-    this.casta = casta;
-  }
-
-  /**
-   * @return devuelve la experiencia del personaje
-   */
-  public int getExperiencia() {
-    return experiencia;
-  }
-
-  /**
-   * @param experiencia
-   */
-  public void setExperiencia(int experiencia) {
-    this.experiencia = experiencia;
-  }
-
-  /**
-   * @return devuelve el nivel
-   */
-  @Override
-  public int getNivel() {
-    return nivel;
-  }
-
-  /**
-   * @param nivel
-   */
-  @Override
-  public void setNivel(int nivel) {
-    this.nivel = nivel;
-  }
-
-  /**
-   * @return devuelve el id del personaje
-   */
-  public int getIdPersonaje() {
-    return idPersonaje;
-  }
-
-  /**
-   * @param idPersonaje
-   */
-  public void setIdPersonaje(int idPersonaje) {
-    this.idPersonaje = idPersonaje;
-  }
-
-  /**
-   * @return devuelve la defensa del personaje
-   */
-  @Override
-  public int getDefensa() {
-    return defensa;
-  }
-
-  /**
-   * @param defensa
-   */
-  @Override
-  public void setDefensa(int defensa) {
-    this.defensa = defensa;
-  }
-
-  /**
-   * @return devuelve el tope de salud
-   */
-  public int getSaludTope() {
-    return saludTope;
-  }
-
-  /**
-   * @param saludTope
-   */
-  public void setSaludTope(int saludTope) {
-    this.saludTope = saludTope;
-  }
-
-  /**
-   * @return devuelve el tope de energia
-   */
-  public int getEnergiaTope() {
-    return energiaTope;
-  }
-
-  /**
-   * @param energiaTope
-   */
-  public void setEnergiaTope(int energiaTope) {
-    this.energiaTope = energiaTope;
-  }
-
-  /*
-   * (non-Javadoc)
-   *
-   * @see dominio.Peleable#atacar(dominio.Peleable)
-   */
-  @Override
-  public int atacar(Peleable atacado) {
-    if (salud == 0) {
-      return 0;
+    /**
+     * getHabilidadesCasta().
+     *
+     * @return Retorna las habilidades de la casta, en formato de String[]
+     */
+    public String[] getHabilidadesCasta() {
+        return casta.getHabilidadesCasta();
     }
-    if (atacado.getSalud() > 0) {
-      MyRandom mr = new MyRandom();
-      if (mr.obtenerAleatorioMenorQue(5) <= (this.casta.getProbabilidadGolpeCritico() + (this.destreza / 1000))) {
-        return atacado.serAtacado(this.golpe_critico());
-      } else {
-        return atacado.serAtacado(this.ataque);
-      }
+
+    /**
+     * cargarTablaNivel().
+     *
+     */
+    public static void cargarTablaNivel() {
+        Personaje.tablaDeNiveles = new int[101];
+        Personaje.tablaDeNiveles[0] = 0;
+        Personaje.tablaDeNiveles[1] = 0;
+        for (int i = 2; i < 101; i++) {
+            Personaje.tablaDeNiveles[i] = Personaje.tablaDeNiveles[i - 1] + 50;
+        }
     }
-    return 0;
-  }
 
-  /**
-   * @return devuelve el valor del golpe critico
-   */
-  public int golpe_critico() {
-    return (int) (this.ataque * this.getCasta().getDañoCritico());
-  }
+    /**
+     * Personaje(String, Casta, int).
+     *
+     * @param nombre
+     *            nombre del personaje
+     * @param casta
+     *            casta a la cual pertenece
+     * @param id
+     *            identificador
+     */
+    public Personaje(String nombre, Casta casta, int id, String nomRaza,
+            String hab1, String hab2) {
 
-  /**
-   * @return devuelve si puede atacar o no
-   */
-  public boolean puedeAtacar() {
-    return energia > 10; // En el CT cuando esta asi probar por V y por F
-                         // siempre para tener luz verde
-  }
+        super();
+        this.nombre = nombre;
+        this.casta = casta;
+        this.idPersonaje = id;
+        experiencia = 0;
+        nivel = 1;
+        fuerza = 10;
+        inteligencia = 10;
+        destreza = 10;
 
-  /**
-   * @return devuelve los puntos de ataque
-   */
-  public int calcularPuntosDeAtaque() {
-    return (int) (this.getFuerza() * 1.5);
-  }
+        fuerza += casta.addFuerzaInicial();
+        inteligencia += casta.addInteligenciaInicial();
+        destreza += casta.addDestrezaInicial();
 
-  /**
-   * @return devuelve los puntos de defensa
-   */
-  public int calcularPuntosDeDefensa() {
-    return (this.getDestreza());
-  }
+        posX = 0;
+        posY = 0;
+        saludTope = 100;
+        energiaTope = 100;
 
-  /**
-   * @return devuelve los puntos de magia
-   */
-  public int calcularPuntosDeMagia() {
-    return (int) (this.getInteligencia() * 1.5);
-  }
+        ataque = this.calcularPuntosDeAtaque();
+        defensa = this.calcularPuntosDeDefensa();
+        magia = this.calcularPuntosDeMagia();
+        nombreRaza = nomRaza;
 
-  /**
-   * Reestablece la salud del personaje
-   */
-  public void restablecerSalud() {
-    this.salud = this.saludTope;
-  }
+        habilidadesRaza = new String[2];
+        habilidadesRaza[0] = hab1;
+        habilidadesRaza[1] = hab2;
 
-  /**
-   * Reestablece la energia del personaje
-   */
-  public void restablecerEnergia() {
-    this.energia = this.energiaTope;
-  }
+    }
 
-  /**
-   * modificarAtributos().
-   *
-   */
-  public void modificarAtributos() {
-    this.ataque = this.calcularPuntosDeAtaque();
-    this.defensa = this.calcularPuntosDeDefensa();
-    this.magia = this.calcularPuntosDeMagia();
-  }
+    /**
+     * Personaje().
+     *
+     * @param nombre
+     *            nombre del personaje
+     * @param salud
+     *            salud inicial
+     * @param energia
+     *            energia inicial
+     * @param fuerza
+     *            fuerza inicial
+     * @param destreza
+     *            destreza inicial
+     * @param inteligencia
+     *            inteligencia inicial
+     * @param casta
+     *            casta a la que pertenece
+     * @param experiencia
+     *            experiencia inicial
+     * @param nivel
+     *            nivel inicial
+     * @param idPersonaje
+     *            identificador del personaje
+     */
+    public Personaje(String nombre, int salud, int energia, int fuerza,
+            int destreza, int inteligencia, Casta casta, int experiencia,
+            int nivel, int idPersonaje, String nomRaza, String hab1,
+            String hab2, Mochila mochila) {
 
-  /*
-   * (non-Javadoc)
-   *
-   * @see dominio.Peleable#serAtacado(int)
-   */
-  @Override
-  public int serAtacado(int daño) {
-    MyRandom mr = new MyRandom();
-    if (mr.obtenerAleatorioMenorQue(5) >= this.getCasta().getProbabilidadEvitarDaño()) {
-      daño -= this.defensa;
+        super();
+        this.nombre = nombre;
+        this.salud = salud;
+        this.energia = energia;
+        this.fuerza = fuerza;
+        this.destreza = destreza;
+        this.inteligencia = inteligencia;
+        this.casta = casta;
+        this.experiencia = experiencia;
+        this.nivel = nivel;
 
-      if (daño > 0) {
-        if (salud <= daño) {
-          daño = salud;
-          salud = 0;
+        this.saludTope = this.salud;
+        this.energiaTope = this.energia;
+
+        this.idPersonaje = idPersonaje;
+        this.defensa = this.calcularPuntosDeDefensa();
+        this.ataque = this.calcularPuntosDeAtaque();
+        this.magia = this.calcularPuntosDeMagia();
+        nombreRaza = nomRaza;
+        this.mochila = mochila;
+        habilidadesRaza = new String[2];
+        habilidadesRaza[0] = hab1;
+        habilidadesRaza[1] = hab2;
+    }
+
+    public Personaje(String nombre, int salud, int energia, int fuerza,
+            int destreza, int inteligencia, Casta casta, int experiencia,
+            int nivel, int idPersonaje, String nomRaza, String hab1,
+            String hab2) {
+
+        super();
+        this.nombre = nombre;
+        this.salud = salud;
+        this.energia = energia;
+        this.fuerza = fuerza;
+        this.destreza = destreza;
+        this.inteligencia = inteligencia;
+        this.casta = casta;
+        this.experiencia = experiencia;
+        this.nivel = nivel;
+
+        this.saludTope = this.salud;
+        this.energiaTope = this.energia;
+
+        this.idPersonaje = idPersonaje;
+        this.defensa = this.calcularPuntosDeDefensa();
+        this.ataque = this.calcularPuntosDeAtaque();
+        this.magia = this.calcularPuntosDeMagia();
+        nombreRaza = nomRaza;
+        habilidadesRaza = new String[2];
+        habilidadesRaza[0] = hab1;
+        habilidadesRaza[1] = hab2;
+    }
+
+    /**
+     * @return devuelve el nombre de la raza
+     */
+    public String getNombreRaza() {
+        return nombreRaza;
+    }
+
+    /**
+     * @param nombreRaza
+     */
+    public void setNombreRaza(String nombreRaza) {
+        this.nombreRaza = nombreRaza;
+    }
+
+    /*
+     * (non-Javadoc)
+     *
+     * @see dominio.Peleable#getAtaque()
+     */
+    @Override
+    public int getAtaque() {
+        return ataque;
+    }
+
+    /*
+     * (non-Javadoc)
+     *
+     * @see dominio.Peleable#setAtaque(int)
+     */
+    @Override
+    public void setAtaque(int ataque) {
+        this.ataque = ataque;
+    }
+
+    /**
+     * @return devuelve la magia
+     */
+    public int getMagia() {
+        return magia;
+    }
+
+    /**
+     * @param magia
+     */
+    public void setMagia(int magia) {
+        this.magia = magia;
+    }
+
+    /**
+     * @return devuelve el clan
+     */
+    public Alianza getClan() {
+        return clan;
+    }
+
+    /**
+     * @param clan
+     */
+    public void setClan(Alianza clan) {
+        this.clan = clan;
+        clan.añadirPersonaje(this);
+    }
+
+    /*
+     * (non-Javadoc)
+     *
+     * @see dominio.Peleable#getSalud()
+     */
+    @Override
+    public int getSalud() {
+        return salud;
+    }
+
+    /**
+     * @return devuelve la energia
+     */
+    public int getEnergia() {
+        return energia;
+    }
+
+    /**
+     * @param energia
+     */
+    public void setEnergia(int energia) {
+        this.energia = energia;
+    }
+
+    /**
+     * @return devuelve la destreza
+     */
+    public int getDestreza() {
+        return destreza;
+    }
+
+    /**
+     * @param destreza
+     */
+    public void setDestreza(int destreza) {
+        this.destreza = destreza;
+    }
+
+    /**
+     * @return devuelve la inteligencia
+     */
+    public int getInteligencia() {
+        return inteligencia;
+    }
+
+    /**
+     * @param inteligencia
+     */
+    public void setInteligencia(int inteligencia) {
+        this.inteligencia = inteligencia;
+    }
+
+    /**
+     * @return devuelve la casta a la que pertenece el personaje
+     */
+    public Casta getCasta() {
+        return casta;
+    }
+
+    /**
+     * @param casta
+     */
+    public void setCasta(Casta casta) {
+        this.casta = casta;
+    }
+
+    /**
+     * @return devuelve la experiencia del personaje
+     */
+    public int getExperiencia() {
+        return experiencia;
+    }
+
+    /**
+     * @param experiencia
+     */
+    public void setExperiencia(int experiencia) {
+        this.experiencia = experiencia;
+    }
+
+    /**
+     * @return devuelve el nivel
+     */
+    @Override
+    public int getNivel() {
+        return nivel;
+    }
+
+    /**
+     * @param nivel
+     */
+    @Override
+    public void setNivel(int nivel) {
+        this.nivel = nivel;
+    }
+
+    /**
+     * @return devuelve el id del personaje
+     */
+    public int getIdPersonaje() {
+        return idPersonaje;
+    }
+
+    /**
+     * @param idPersonaje
+     */
+    public void setIdPersonaje(int idPersonaje) {
+        this.idPersonaje = idPersonaje;
+    }
+
+    /**
+     * @return devuelve la defensa del personaje
+     */
+    @Override
+    public int getDefensa() {
+        return defensa;
+    }
+
+    /**
+     * @param defensa
+     */
+    @Override
+    public void setDefensa(int defensa) {
+        this.defensa = defensa;
+    }
+
+    /**
+     * @return devuelve el tope de salud
+     */
+    public int getSaludTope() {
+        return saludTope;
+    }
+
+    /**
+     * @param saludTope
+     */
+    public void setSaludTope(int saludTope) {
+        this.saludTope = saludTope;
+    }
+
+    /**
+     * @return devuelve el tope de energia
+     */
+    public int getEnergiaTope() {
+        return energiaTope;
+    }
+
+    /**
+     * @param energiaTope
+     */
+    public void setEnergiaTope(int energiaTope) {
+        this.energiaTope = energiaTope;
+    }
+
+    /*
+     * (non-Javadoc)
+     *
+     * @see dominio.Peleable#atacar(dominio.Peleable)
+     */
+    @Override
+    public int atacar(Peleable atacado) {
+        if (salud == 0) {
+            return 0;
+        }
+        if (atacado.getSalud() > 0) {
+            MyRandom mr = new MyRandom();
+            if (mr.obtenerAleatorioMenorQue(
+                    5) <= (this.casta.getProbabilidadGolpeCritico()
+                            + (this.destreza / 1000))) {
+                return atacado.serAtacado(this.golpe_critico());
+            } else {
+                return atacado.serAtacado(this.ataque);
+            }
+        }
+        return 0;
+    }
+
+    /**
+     * @return devuelve el valor del golpe critico
+     */
+    public int golpe_critico() {
+        return (int) (this.ataque * this.getCasta().getDañoCritico());
+    }
+
+    /**
+     * @return devuelve si puede atacar o no
+     */
+    public boolean puedeAtacar() {
+        return energia > 10; // En el CT cuando esta asi probar por V y por F
+                             // siempre para tener luz verde
+    }
+
+    /**
+     * @return devuelve los puntos de ataque
+     */
+    public int calcularPuntosDeAtaque() {
+        return (int) (this.getFuerza() * 1.5);
+    }
+
+    /**
+     * @return devuelve los puntos de defensa
+     */
+    public int calcularPuntosDeDefensa() {
+        return (this.getDestreza());
+    }
+
+    /**
+     * @return devuelve los puntos de magia
+     */
+    public int calcularPuntosDeMagia() {
+        return (int) (this.getInteligencia() * 1.5);
+    }
+
+    /**
+     * Reestablece la salud del personaje
+     */
+    public void restablecerSalud() {
+        this.salud = this.saludTope;
+    }
+
+    /**
+     * Reestablece la energia del personaje
+     */
+    public void restablecerEnergia() {
+        this.energia = this.energiaTope;
+    }
+
+    /**
+     * modificarAtributos().
+     *
+     */
+    public void modificarAtributos() {
+        this.ataque = this.calcularPuntosDeAtaque();
+        this.defensa = this.calcularPuntosDeDefensa();
+        this.magia = this.calcularPuntosDeMagia();
+    }
+
+    /*
+     * (non-Javadoc)
+     *
+     * @see dominio.Peleable#serAtacado(int)
+     */
+    @Override
+    public int serAtacado(int daño) {
+        MyRandom mr = new MyRandom();
+        if (mr.obtenerAleatorioMenorQue(5) >= this.getCasta()
+                .getProbabilidadEvitarDaño()) {
+            daño -= this.defensa;
+
+            if (daño > 0) {
+                if (salud <= daño) {
+                    daño = salud;
+                    salud = 0;
+                } else {
+                    salud -= daño;
+                }
+                return daño;
+            }
+
+            return 0;
+        }
+        return 0;
+    }
+
+    /**
+     * serRobadoSalud(int danio).
+     *
+     * @param danio
+     *            da�o producido
+     * @return da�o restante?_verificar
+     */
+    public int serRobadoSalud(int daño) {
+        daño -= this.defensa;
+        if (daño <= 0) {
+            return 0;
+        }
+        if ((salud - daño) >= 0) {
+            salud -= daño;
         } else {
-          salud -= daño;
+            daño = salud;// le queda menos salud que el da�o inflingido
+            salud = 0;
         }
         return daño;
-      }
-
-      return 0;
-    }
-    return 0;
-  }
-
-  /**
-   * serRobadoSalud(int danio).
-   *
-   * @param danio
-   *          da�o producido
-   * @return da�o restante?_verificar
-   */
-  public int serRobadoSalud(int daño) {
-    daño -= this.defensa;
-    if (daño <= 0) {
-      return 0;
-    }
-    if ((salud - daño) >= 0) {
-      salud -= daño;
-    } else {
-      daño = salud;// le queda menos salud que el da�o inflingido
-      salud = 0;
-    }
-    return daño;
-  }
-
-  /**
-   * serDesenergizado(int daño).
-   *
-   * @param danio
-   *          daño a producir ?
-   * @return daño producido?
-   */
-  public int serDesernegizado(int daño) {
-    daño -= this.defensa;
-    if (daño <= 0) {
-      return 0;
-    }
-    if ((energia - daño) >= 0) {
-      energia -= daño;
-    } else {
-      daño = energia;// le queda menos energia que el daño inflingido
-      energia = 0;
-    }
-    return daño;
-  }
-
-  /**
-   * serCurado(int Salud).
-   *
-   * @param salud
-   *          salud final
-   */
-  public void serCurado(int salud) {
-    if ((this.salud + salud) <= this.saludTope) {
-      this.salud += salud;
-    } else {
-      this.salud = this.saludTope;
-    }
-  }
-
-  /**
-   * serEnergizado(int energia).
-   *
-   * @param energia
-   *          energia recibida
-   */
-  public void serEnergizado(int energia) {
-    if ((this.energia + energia) <= this.energiaTope) {
-      this.energia += energia;
-    } else {
-      this.energia = this.energiaTope;
-    }
-  }
-
-  /**
-   * crearAlianza(string nombre_alianza).
-   *
-   * @param nombreAlianza
-   *          nombre de la alianza
-   */
-  public void crearAlianza(String nombreAlianza) {
-    this.clan = new Alianza(nombreAlianza);
-    this.clan.añadirPersonaje(this);
-  }
-
-  /**
-   * salirDeAlianza(). Pone el clan de alianza en null
-   *
-   */
-  public void salirDeAlianza() {
-    if (this.clan != null) {
-      this.clan.eliminarPersonaje(this);
-      this.clan = null;
-    }
-  }
-
-  /**
-   * aliar(Personaje).
-   *
-   * @param nuevoAliado
-   *          personaje con el cual se alia
-   * @return true or false si pudo aliarse
-   */
-  public boolean aliar(Personaje nuevoAliado) {
-    if (this.clan == null) {
-      Alianza a = new Alianza("Alianza 1");
-      this.clan = a;
-      a.añadirPersonaje(this);
     }
 
-    if (nuevoAliado.clan == null) {
-      nuevoAliado.clan = this.clan;
-      this.clan.añadirPersonaje(nuevoAliado);
-      return true;
-    } else {
-      return false;
+    /**
+     * serDesenergizado(int daño).
+     *
+     * @param danio
+     *            daño a producir ?
+     * @return daño producido?
+     */
+    public int serDesernegizado(int daño) {
+        daño -= this.defensa;
+        if (daño <= 0) {
+            return 0;
+        }
+        if ((energia - daño) >= 0) {
+            energia -= daño;
+        } else {
+            daño = energia;// le queda menos energia que el daño inflingido
+            energia = 0;
+        }
+        return daño;
     }
-  }
 
-  /**
-   * AsignarPuntosSkills(int, int, int).
-   *
-   * @param fuerza
-   *          de skills
-   * @param destreza
-   *          de skills
-   * @param inteligencia
-   *          de skills
-   */
-  public void asignarPuntosSkills(int fuerza, int destreza, int inteligencia) {
-    if ((this.fuerza + fuerza) <= 200) {
-      this.fuerza += fuerza;
+    /**
+     * serCurado(int Salud).
+     *
+     * @param salud
+     *            salud final
+     */
+    public void serCurado(int salud) {
+        if ((this.salud + salud) <= this.saludTope) {
+            this.salud += salud;
+        } else {
+            this.salud = this.saludTope;
+        }
     }
-    if ((this.destreza + destreza) <= 200) {
-      this.destreza += destreza;
+
+    /**
+     * serEnergizado(int energia).
+     *
+     * @param energia
+     *            energia recibida
+     */
+    public void serEnergizado(int energia) {
+        if ((this.energia + energia) <= this.energiaTope) {
+            this.energia += energia;
+        } else {
+            this.energia = this.energiaTope;
+        }
     }
-    if ((this.inteligencia + inteligencia) <= 200) {
-      this.inteligencia += inteligencia;
+
+    /**
+     * crearAlianza(string nombre_alianza).
+     *
+     * @param nombreAlianza
+     *            nombre de la alianza
+     */
+    public void crearAlianza(String nombreAlianza) {
+        this.clan = new Alianza(nombreAlianza);
+        this.clan.añadirPersonaje(this);
     }
-    this.modificarAtributos();
-  }
 
-  /**
-   * subirNivel().
-   *
-   */
-  public void subirNivel() {
-
-    int acumuladorExperiencia = 0;
-    if (this.nivel == 100) {
-      return;
+    /**
+     * salirDeAlianza(). Pone el clan de alianza en null
+     *
+     */
+    public void salirDeAlianza() {
+        if (this.clan != null) {
+            this.clan.eliminarPersonaje(this);
+            this.clan = null;
+        }
     }
-    while ((this.nivel != 100) && (this.experiencia >= (Personaje.tablaDeNiveles[this.nivel + 1] + acumuladorExperiencia))) {
-      acumuladorExperiencia += Personaje.tablaDeNiveles[this.nivel + 1];
-      this.nivel++;
-      this.modificarAtributos();
-      this.saludTope += 25;
-      this.energiaTope += 20;
+
+    /**
+     * aliar(Personaje).
+     *
+     * @param nuevoAliado
+     *            personaje con el cual se alia
+     * @return true or false si pudo aliarse
+     */
+    public boolean aliar(Personaje nuevoAliado) {
+        if (this.clan == null) {
+            Alianza a = new Alianza("Alianza 1");
+            this.clan = a;
+            a.añadirPersonaje(this);
+        }
+
+        if (nuevoAliado.clan == null) {
+            nuevoAliado.clan = this.clan;
+            this.clan.añadirPersonaje(nuevoAliado);
+            return true;
+        } else {
+            return false;
+        }
     }
-    this.experiencia -= acumuladorExperiencia;
-  }
 
-  /**
-   * ganarExperiencia(int exp).
-   *
-   * @param exp
-   *          experiencia ganada
-   * @return true or false si se pudo aplicar la experiencia
-   */
-  @Override
-  public boolean ganarExperiencia(int exp) {
-    this.experiencia += exp;
-
-    if (experiencia >= Personaje.tablaDeNiveles[this.nivel + 1]) {
-      subirNivel();
-      return true;
+    /**
+     * AsignarPuntosSkills(int, int, int).
+     *
+     * @param fuerza
+     *            de skills
+     * @param destreza
+     *            de skills
+     * @param inteligencia
+     *            de skills
+     */
+    public void asignarPuntosSkills(int fuerza, int destreza,
+            int inteligencia) {
+        if ((this.fuerza + fuerza) <= 200) {
+            this.fuerza += fuerza;
+        }
+        if ((this.destreza + destreza) <= 200) {
+            this.destreza += destreza;
+        }
+        if ((this.inteligencia + inteligencia) <= 200) {
+            this.inteligencia += inteligencia;
+        }
+        this.modificarAtributos();
     }
-    return false;
-  }
 
-  /*
-   * (non-Javadoc)
-   *
-   * @see dominio.Peleable#otorgarExp()
-   */
-  @Override
-  public int otorgarExp() {
-    return this.nivel * 40;
-  }
+    /**
+     * subirNivel().
+     *
+     */
+    public void subirNivel() {
 
-  /*
-   * (non-Javadoc)
-   *
-   * @see java.lang.Object#clone()
-   */
-  @Override
-  protected Object clone() throws CloneNotSupportedException {
-    return super.clone();
-  }
+        int acumuladorExperiencia = 0;
+        if (this.nivel == 100) {
+            return;
+        }
+        while ((this.nivel != 100)
+                && (this.experiencia >= (Personaje.tablaDeNiveles[this.nivel
+                        + 1] + acumuladorExperiencia))) {
+            acumuladorExperiencia += Personaje.tablaDeNiveles[this.nivel + 1];
+            this.nivel++;
+            this.modificarAtributos();
+            this.saludTope += 25;
+            this.energiaTope += 20;
+        }
+        this.experiencia -= acumuladorExperiencia;
+    }
 
-  /**
-   * distanciaCon.
-   *
-   * @param p
-   * @return calcula la distancia
-   */
-  public double distanciaCon(Personaje p) {
-    return Math.sqrt(Math.pow(this.posX - p.posX, 2) + Math.pow(this.posY - p.posY, 2));
-  }
+    /**
+     * ganarExperiencia(int exp).
+     *
+     * @param exp
+     *            experiencia ganada
+     * @return true or false si se pudo aplicar la experiencia
+     */
+    @Override
+    public boolean ganarExperiencia(int exp) {
+        this.experiencia += exp;
 
-  /**
-   * @param atacado
-   * @return devuelve la habilidad de la casta 1
-   */
-  public boolean habilidadCasta1(Peleable atacado) {
-    return this.getCasta().habilidad1(this, atacado);
-  }
+        if (experiencia >= Personaje.tablaDeNiveles[this.nivel + 1]) {
+            subirNivel();
+            return true;
+        }
+        return false;
+    }
 
-  /**
-   * @param atacado
-   * @return devuelve la habilidad de la casta 2
-   */
-  public boolean habilidadCasta2(Peleable atacado) {
-    return this.getCasta().habilidad2(this, atacado);
-  }
+    /*
+     * (non-Javadoc)
+     *
+     * @see dominio.Peleable#otorgarExp()
+     */
+    @Override
+    public int otorgarExp() {
+        return this.nivel * 40;
+    }
 
-  /**
-   * @param atacado
-   * @return devuelve la habilidad de la casta 3
-   */
-  public boolean habilidadCasta3(Peleable atacado) {
-    return this.getCasta().habilidad3(this, atacado);
-  }
+    /*
+     * (non-Javadoc)
+     *
+     * @see java.lang.Object#clone()
+     */
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
 
-  @Override
-  public boolean esPersonaje() {//
-    return true;
-  }
+    /**
+     * distanciaCon.
+     *
+     * @param p
+     * @return calcula la distancia
+     */
+    public double distanciaCon(Personaje p) {
+        return Math.sqrt(Math.pow(this.posX - p.posX, 2)
+                + Math.pow(this.posY - p.posY, 2));
+    }
 
-  public abstract boolean habilidadRaza1(Peleable atacado);
+    /**
+     * @param atacado
+     * @return devuelve la habilidad de la casta 1
+     */
+    public boolean habilidadCasta1(Peleable atacado) {
+        return this.getCasta().habilidad1(this, atacado);
+    }
 
-  public abstract boolean habilidadRaza2(Peleable atacado);
-  
-  public void efectuarItem (Item item){
-		  int saludnueva = salud + salud*item.getValorSalud()/100;
-		  if(saludnueva > saludTope){
-			  salud = saludTope;
-		  }
-		  else{
-			  salud = saludnueva;
-		  }
-		  int energianueva = energia + energia*item.getValorEnergia()/100;
-		  if(energianueva > energiaTope){
-			  energia = energiaTope;
-		  }
-		  else{
-			  energia = energianueva;
-		  }
-		  destreza = destreza + destreza*item.getValorDestreza()/100;
-		  inteligencia = inteligencia + inteligencia*item.getValorInteligencia()/100;
-		  defensa = defensa + defensa*item.getValorDefensa()/100;
-		  fuerza = fuerza + fuerza*item.getValorFuerza()/100;
-  }
+    /**
+     * @param atacado
+     * @return devuelve la habilidad de la casta 2
+     */
+    public boolean habilidadCasta2(Peleable atacado) {
+        return this.getCasta().habilidad2(this, atacado);
+    }
 
+    /**
+     * @param atacado
+     * @return devuelve la habilidad de la casta 3
+     */
+    public boolean habilidadCasta3(Peleable atacado) {
+        return this.getCasta().habilidad3(this, atacado);
+    }
 
-public void setMochila2(Item item) {
-	this.mochila.add(item);
-	
-}
+    @Override
+    public boolean esPersonaje() {//
+        return true;
+    }
 
-public void recibirDatosReplicadosDePersonajeAtacar(int nuevaSaludPersonaje, int nuevaEnergiaPersonaje) {
-	this.salud = nuevaSaludPersonaje;
-	this.energia = nuevaEnergiaPersonaje;
-}
+    public abstract boolean habilidadRaza1(Peleable atacado);
+
+    public abstract boolean habilidadRaza2(Peleable atacado);
+
+    public void efectuarItem(Item item) {
+        int saludnueva = salud + salud * item.getValorSalud() / 100;
+        if (saludnueva > saludTope) {
+            salud = saludTope;
+        } else {
+            salud = saludnueva;
+        }
+        int energianueva = energia + energia * item.getValorEnergia() / 100;
+        if (energianueva > energiaTope) {
+            energia = energiaTope;
+        } else {
+            energia = energianueva;
+        }
+        destreza = destreza + destreza * item.getValorDestreza() / 100;
+        inteligencia = inteligencia
+                + inteligencia * item.getValorInteligencia() / 100;
+        defensa = defensa + defensa * item.getValorDefensa() / 100;
+        fuerza = fuerza + fuerza * item.getValorFuerza() / 100;
+    }
+
+    public void setMochila2(Item item) {
+        this.mochila.add(item);
+
+    }
+
+    public void recibirDatosReplicadosDePersonajeAtacar(int nuevaSaludPersonaje,
+            int nuevaEnergiaPersonaje) {
+        this.salud = nuevaSaludPersonaje;
+        this.energia = nuevaEnergiaPersonaje;
+    }
 
 }

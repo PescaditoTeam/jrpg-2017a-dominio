@@ -7,85 +7,75 @@ package dominio;
  *
  */
 public interface Peleable {
-  /**
- * @param daño
- * .
- * @return
- * .
- */
-int serAtacado(int daño);
+    /**
+     * @param daño
+     *            .
+     * @return .
+     */
+    int serAtacado(int daño);
 
-  /**
- * @return
- * .
- */
-int getSalud();
+    /**
+     * @return .
+     */
+    int getSalud();
 
-  /**
- *
- */
-void despuesDeTurno();
+    /**
+    *
+    */
+    void despuesDeTurno();
 
-  /**
- * @param atacado
- * .
- * @return
- * .
- */
-int atacar(Peleable atacado);
+    /**
+     * @param atacado
+     *            .
+     * @return .
+     */
+    int atacar(Peleable atacado);
 
-  /**
- * @return
- * .
- */
-int otorgarExp();
+    /**
+     * @return .
+     */
+    int otorgarExp();
 
-  /**
- * @return
- * .
- */
-int getAtaque();
+    /**
+     * @return .
+     */
+    int getAtaque();
 
-  /**
- * @param ataque
- * .
- */
-void setAtaque(int ataque);
+    /**
+     * @param ataque
+     *            .
+     */
+    void setAtaque(int ataque);
 
-  /**
- * @return
- * .
- */
-boolean estaVivo();
+    /**
+     * @return .
+     */
+    boolean estaVivo();
 
-  /**
- * @return
- * .
- */
-String getNombre();
+    /**
+     * @return .
+     */
+    String getNombre();
 
-  /**
- * @return
- * .
- */
-int getDefensa();
+    /**
+     * @return .
+     */
+    int getDefensa();
 
-  /**
- * @param defensa
- * .
- */
-void setDefensa(int defensa);
+    /**
+     * @param defensa
+     *            .
+     */
+    void setDefensa(int defensa);
 
-  /**
- * @return
- * .
- */
-boolean esPersonaje();
+    /**
+     * @return .
+     */
+    boolean esPersonaje();
 
-  /**
- * @return
- * .
- */
-boolean esAfectadoPorHechizo();
+    /**
+     * @return .
+     */
+    boolean esAfectadoPorHechizo();
 
 }
