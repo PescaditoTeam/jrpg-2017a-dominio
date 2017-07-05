@@ -18,7 +18,7 @@ public class NonPlayableCharacter extends Character {
 
     /**
      * constructor parametrizado.
-     * 
+     *
      * @param nombre
      *            .
      * @param nivel
@@ -56,11 +56,17 @@ public class NonPlayableCharacter extends Character {
         }
     }
 
+    /*
+     * avisa que no es un personaje sobre el cual se esta trabajando.
+     */
     @Override
     public boolean esPersonaje() {
         return false;
     }
 
+    /*
+     * otorga la experiencia sobre quien se este trabajando.
+     */
     @Override
     public int otorgarExp() {
         return this.nivel * 30;

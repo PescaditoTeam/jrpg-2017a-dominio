@@ -124,7 +124,7 @@ public abstract class Casta implements Serializable {
     }
 
     /**
-     * @param probabilidadEvitarDa�o
+     * @param probabilidadEvitarDaño
      *            .
      */
     public void setProbabilidadEvitarDaño(final double probabilidadEvitarDaño) {

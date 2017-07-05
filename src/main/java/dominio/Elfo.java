@@ -9,7 +9,7 @@ public class Elfo extends Personaje {
 
     /**
      * constructor parametrizado.
-     * 
+     *
      * @param nombre
      *            nombre del elfo.
      * @param casta
@@ -46,6 +46,8 @@ public class Elfo extends Personaje {
      *            .
      * @param idPersonaje
      *            .
+     * @param mochila
+     *            .
      */
     public Elfo(final String nombre, final int salud, final int energia,
             final int fuerza, final int destreza, final int inteligencia,
@@ -56,6 +58,28 @@ public class Elfo extends Personaje {
                 "Ataque Bosque", mochila);
     }
 
+    /**
+     * @param nombre
+     *            .
+     * @param salud
+     *            .
+     * @param energia
+     *            .
+     * @param fuerza
+     *            .
+     * @param destreza
+     *            .
+     * @param inteligencia
+     *            .
+     * @param casta
+     *            .
+     * @param experiencia
+     *            .
+     * @param nivel
+     *            .
+     * @param idPersonaje
+     *            .
+     */
     public Elfo(final String nombre, final int salud, final int energia,
             final int fuerza, final int destreza, final int inteligencia,
             final Casta casta, final int experiencia, final int nivel,
@@ -85,6 +109,9 @@ public class Elfo extends Personaje {
     }
 
     // Ataque Bosque
+    /*
+     * realiza la habilidad 2 de la raza.
+     */
     @Override
     public boolean habilidadRaza2(final Peleable atacado) {
         if (this.getEnergia() > 10) {
@@ -96,6 +123,9 @@ public class Elfo extends Personaje {
         return false;
     }
 
+    /*
+     * avisa si fue afectado el hecizo aplicaod en el.
+     */
     @Override
     public boolean esAfectadoPorHechizo() {
         return true;

@@ -9,7 +9,7 @@ public class Humano extends Personaje {
 
     /**
      * constructor parametrizado.
-     * 
+     *
      * @param nombre
      *            .
      * @param casta
@@ -57,6 +57,30 @@ public class Humano extends Personaje {
 
     }
 
+    /**
+     * @param nombre
+     *            .
+     * @param salud
+     *            .
+     * @param energia
+     *            .
+     * @param fuerza
+     *            .
+     * @param destreza
+     *            .
+     * @param inteligencia
+     *            .
+     * @param casta
+     *            .
+     * @param experiencia
+     *            .
+     * @param nivel
+     *            .
+     * @param idPersonaje
+     *            .
+     * @param mochila
+     *            .
+     */
     public Humano(final String nombre, final int salud, final int energia,
             final int fuerza, final int destreza, final int inteligencia,
             final Casta casta, final int experiencia, final int nivel,
@@ -85,6 +109,9 @@ public class Humano extends Personaje {
     }
 
     // Golpe Fatal
+    /*
+     * habilidad 3 del humano, el golpe fatal.
+     */
     @Override
     public boolean habilidadRaza2(final Peleable atacado) {
         if (this.getEnergia() > 10) {
@@ -97,6 +124,9 @@ public class Humano extends Personaje {
         return false;
     }
 
+    /*
+     * avisa que fue afectado por el hechizo.
+     */
     @Override
     public boolean esAfectadoPorHechizo() {
         return true;

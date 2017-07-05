@@ -53,6 +53,12 @@ public class Asesino extends Casta {
 
     // Aumentar Evasion
 
+    /*
+     * (non-Javadoc)
+     *
+     * @see dominio.Casta#habilidad2(dominio.Personaje, dominio.Peleable)
+     * habilidad2 para Aumentar la evasion y evitar mas daño
+     */
     @Override
     public boolean habilidad2(final Personaje caster, final Peleable atacado) {
         if (caster.getEnergia() > 10) {
@@ -68,11 +74,23 @@ public class Asesino extends Casta {
     }
 
     // Robar
+    /*
+     * (non-Javadoc)
+     *
+     * @see dominio.Casta#habilidad3(dominio.Personaje, dominio.Peleable)
+     * habilidad3 para robar, donde recibe un Personaje y un Peleable
+     */
     @Override
     public boolean habilidad3(final Personaje caster, final Peleable atacado) {
         return false;
     }
 
+    /*
+     * (non-Javadoc)
+     *
+     * @see dominio.Casta#addDestrezaInicial() metodos que agrega la destreza
+     * inicial
+     */
     @Override
     public int addDestrezaInicial() {
         return 5;

@@ -8,7 +8,7 @@ public class Guerrero extends Casta {
 
     /**
      * constructor parametrizado.
-     * 
+     *
      * @param prob_crit
      *            .
      * @param evasion
@@ -53,12 +53,18 @@ public class Guerrero extends Casta {
         return false;
     }
 
+    /*
+     * instancia la fuerza inicial.
+     */
     @Override
     public int addFuerzaInicial() {
         return 5;
     }
 
     // Aumentar Defensa
+    /*
+     * habilidad2 del guerrero.
+     */
     @Override
     public boolean habilidad2(final Personaje caster, final Peleable atacado) {
         if (caster.getEnergia() > 10) {
@@ -70,8 +76,11 @@ public class Guerrero extends Casta {
     }
 
     // Ignorar Defensa
+    /*
+     * habilidad 3 del guerrero.
+     */
     @Override
-    public boolean habilidad3(Personaje caster, Peleable atacado) {
+    public boolean habilidad3(final Personaje caster, final Peleable atacado) {
         if (caster.getEnergia() > 10) {
             caster.setEnergia(caster.getEnergia() - 10);
 

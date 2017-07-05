@@ -8,24 +8,88 @@ import java.io.Serializable;
  * apropiados para tener todo en cuenta.
  *
  */
+/**
+ * @author Usuario
+ *
+ */
+/**
+ * @author Usuario
+ *
+ */
+/**
+ * @author Usuario
+ *
+ */
+/**
+ * @author Usuario
+ *
+ */
 public abstract class Personaje extends Character
         implements Serializable, Cloneable {
     private static final long serialVersionUID = 1L;
+    /**
+     * energia del personaje.
+     */
     protected int energia;
-    protected int ataque;// depende de la fuerza
-    protected int magia;// depende de la inteligencia
+    /**
+     * ataque del personaje.
+     */
+    protected int ataque; // depende de la fuerza
+    /**
+     * magia del personaje.
+     */
+    protected int magia; // depende de la inteligencia
+    /**
+     * nombre de la raza.
+     */
     protected String nombreRaza;
+    /**
+     * saludo maxima del personaje.
+     */
     protected int saludTope;
+    /**
+     * energia maxima del personaje.
+     */
     protected int energiaTope;
+    /**
+     * destreza del personaje.
+     */
     protected int destreza;
+    /**
+     * inteligencia del personaje.
+     */
     protected int inteligencia;
+    /**
+     * casta a la cual pertenece el personaje.
+     */
     protected Casta casta;
+    /**
+     * posicion X en el mapa del personaje.
+     */
     protected int posX;
+    /**
+     * posicion y en el mapa del personaje.
+     */
     protected int posY;
+    /**
+     * experiencia del personaje.
+     */
     protected int experiencia;
+    /**
+     * id del personaje.
+     */
     protected int idPersonaje;
+    /**
+     * alianza del personaje.
+     */
     protected Alianza clan = null;
+    /**
+     * niveles del personaje.
+     */
     public static int[] tablaDeNiveles;
+    /**
+     * habilidades del personaje.
+     */
     protected String[] habilidadesRaza;
 
     /**
@@ -63,14 +127,20 @@ public abstract class Personaje extends Character
      * Personaje(String, Casta, int).
      *
      * @param nombre
-     *            nombre del personaje
+     *            nombre del personaje.
      * @param casta
-     *            casta a la cual pertenece
+     *            casta a la cual pertenece.
      * @param id
-     *            identificador
+     *            identificador.
+     * @param nomRaza
+     *            nombre de la raza.
+     * @param hab1
+     *            habilidad 1.
+     * @param hab2
+     *            habilidad 2.
      */
-    public Personaje(String nombre, Casta casta, int id, String nomRaza,
-            String hab1, String hab2) {
+    public Personaje(final String nombre, final Casta casta, final int id,
+            final String nomRaza, final String hab1, final String hab2) {
 
         super();
         this.nombre = nombre;
@@ -106,30 +176,39 @@ public abstract class Personaje extends Character
      * Personaje().
      *
      * @param nombre
-     *            nombre del personaje
+     *            nombre del personaje.
      * @param salud
-     *            salud inicial
+     *            salud inicial.
      * @param energia
-     *            energia inicial
+     *            energia inicial.
      * @param fuerza
-     *            fuerza inicial
+     *            fuerza inicial.
      * @param destreza
-     *            destreza inicial
+     *            destreza inicial.
      * @param inteligencia
-     *            inteligencia inicial
+     *            inteligencia inicial.
      * @param casta
-     *            casta a la que pertenece
+     *            casta a la que pertenece.
      * @param experiencia
-     *            experiencia inicial
+     *            experiencia inicial.
      * @param nivel
-     *            nivel inicial
+     *            nivel inicial.
      * @param idPersonaje
-     *            identificador del personaje
+     *            identificador del personaje.
+     * @param nomRaza
+     *            nombre de la raza.
+     * @param hab1
+     *            habilidad 1 del personaje.
+     * @param hab2
+     *            habilidad 2 del personaje.
+     * @param mochila
+     *            mochila del personaje.
      */
-    public Personaje(String nombre, int salud, int energia, int fuerza,
-            int destreza, int inteligencia, Casta casta, int experiencia,
-            int nivel, int idPersonaje, String nomRaza, String hab1,
-            String hab2, Mochila mochila) {
+    public Personaje(final String nombre, final int salud, final int energia,
+            final int fuerza, final int destreza, final int inteligencia,
+            final Casta casta, final int experiencia, final int nivel,
+            final int idPersonaje, final String nomRaza, final String hab1,
+            final String hab2, final Mochila mochila) {
 
         super();
         this.nombre = nombre;
@@ -156,10 +235,39 @@ public abstract class Personaje extends Character
         habilidadesRaza[1] = hab2;
     }
 
-    public Personaje(String nombre, int salud, int energia, int fuerza,
-            int destreza, int inteligencia, Casta casta, int experiencia,
-            int nivel, int idPersonaje, String nomRaza, String hab1,
-            String hab2) {
+    /**
+     * @param nombre
+     *            .
+     * @param salud
+     *            .
+     * @param energia
+     *            .
+     * @param fuerza
+     *            .
+     * @param destreza
+     *            .
+     * @param inteligencia
+     *            .
+     * @param casta
+     *            .
+     * @param experiencia
+     *            .
+     * @param nivel
+     *            .
+     * @param idPersonaje
+     *            .
+     * @param nomRaza
+     *            .
+     * @param hab1
+     *            .
+     * @param hab2
+     *            .
+     */
+    public Personaje(final String nombre, final int salud, final int energia,
+            final int fuerza, final int destreza, final int inteligencia,
+            final Casta casta, final int experiencia, final int nivel,
+            final int idPersonaje, final String nomRaza, final String hab1,
+            final String hab2) {
 
         super();
         this.nombre = nombre;
@@ -194,8 +302,9 @@ public abstract class Personaje extends Character
 
     /**
      * @param nombreRaza
+     *            .
      */
-    public void setNombreRaza(String nombreRaza) {
+    public void setNombreRaza(final String nombreRaza) {
         this.nombreRaza = nombreRaza;
     }
 
@@ -215,7 +324,7 @@ public abstract class Personaje extends Character
      * @see dominio.Peleable#setAtaque(int)
      */
     @Override
-    public void setAtaque(int ataque) {
+    public void setAtaque(final int ataque) {
         this.ataque = ataque;
     }
 
@@ -228,8 +337,9 @@ public abstract class Personaje extends Character
 
     /**
      * @param magia
+     *            .
      */
-    public void setMagia(int magia) {
+    public void setMagia(final int magia) {
         this.magia = magia;
     }
 
@@ -242,8 +352,9 @@ public abstract class Personaje extends Character
 
     /**
      * @param clan
+     *            .
      */
-    public void setClan(Alianza clan) {
+    public void setClan(final Alianza clan) {
         this.clan = clan;
         clan.añadirPersonaje(this);
     }
@@ -267,8 +378,9 @@ public abstract class Personaje extends Character
 
     /**
      * @param energia
+     *            .
      */
-    public void setEnergia(int energia) {
+    public void setEnergia(final int energia) {
         this.energia = energia;
     }
 
@@ -281,8 +393,9 @@ public abstract class Personaje extends Character
 
     /**
      * @param destreza
+     *            .
      */
-    public void setDestreza(int destreza) {
+    public void setDestreza(final int destreza) {
         this.destreza = destreza;
     }
 
@@ -295,8 +408,9 @@ public abstract class Personaje extends Character
 
     /**
      * @param inteligencia
+     *            .
      */
-    public void setInteligencia(int inteligencia) {
+    public void setInteligencia(final int inteligencia) {
         this.inteligencia = inteligencia;
     }
 
@@ -309,8 +423,9 @@ public abstract class Personaje extends Character
 
     /**
      * @param casta
+     *            .
      */
-    public void setCasta(Casta casta) {
+    public void setCasta(final Casta casta) {
         this.casta = casta;
     }
 
@@ -323,8 +438,9 @@ public abstract class Personaje extends Character
 
     /**
      * @param experiencia
+     *            .
      */
-    public void setExperiencia(int experiencia) {
+    public void setExperiencia(final int experiencia) {
         this.experiencia = experiencia;
     }
 
@@ -338,9 +454,10 @@ public abstract class Personaje extends Character
 
     /**
      * @param nivel
+     *            .
      */
     @Override
-    public void setNivel(int nivel) {
+    public void setNivel(final int nivel) {
         this.nivel = nivel;
     }
 
@@ -353,8 +470,9 @@ public abstract class Personaje extends Character
 
     /**
      * @param idPersonaje
+     *            .
      */
-    public void setIdPersonaje(int idPersonaje) {
+    public void setIdPersonaje(final int idPersonaje) {
         this.idPersonaje = idPersonaje;
     }
 
@@ -368,9 +486,10 @@ public abstract class Personaje extends Character
 
     /**
      * @param defensa
+     *            .
      */
     @Override
-    public void setDefensa(int defensa) {
+    public void setDefensa(final int defensa) {
         this.defensa = defensa;
     }
 
@@ -383,8 +502,9 @@ public abstract class Personaje extends Character
 
     /**
      * @param saludTope
+     *            .
      */
-    public void setSaludTope(int saludTope) {
+    public void setSaludTope(final int saludTope) {
         this.saludTope = saludTope;
     }
 
@@ -397,8 +517,9 @@ public abstract class Personaje extends Character
 
     /**
      * @param energiaTope
+     *            .
      */
-    public void setEnergiaTope(int energiaTope) {
+    public void setEnergiaTope(final int energiaTope) {
         this.energiaTope = energiaTope;
     }
 
@@ -408,7 +529,7 @@ public abstract class Personaje extends Character
      * @see dominio.Peleable#atacar(dominio.Peleable)
      */
     @Override
-    public int atacar(Peleable atacado) {
+    public int atacar(final Peleable atacado) {
         if (salud == 0) {
             return 0;
         }
@@ -462,14 +583,14 @@ public abstract class Personaje extends Character
     }
 
     /**
-     * Reestablece la salud del personaje
+     * Reestablece la salud del personaje.
      */
     public void restablecerSalud() {
         this.salud = this.saludTope;
     }
 
     /**
-     * Reestablece la energia del personaje
+     * Reestablece la energia del personaje.
      */
     public void restablecerEnergia() {
         this.energia = this.energiaTope;
@@ -515,7 +636,7 @@ public abstract class Personaje extends Character
     /**
      * serRobadoSalud(int danio).
      *
-     * @param danio
+     * @param daño
      *            da�o producido
      * @return da�o restante?_verificar
      */
@@ -527,7 +648,7 @@ public abstract class Personaje extends Character
         if ((salud - daño) >= 0) {
             salud -= daño;
         } else {
-            daño = salud;// le queda menos salud que el da�o inflingido
+            daño = salud; // le queda menos salud que el da�o inflingido
             salud = 0;
         }
         return daño;
@@ -536,7 +657,7 @@ public abstract class Personaje extends Character
     /**
      * serDesenergizado(int daño).
      *
-     * @param danio
+     * @param daño
      *            daño a producir ?
      * @return daño producido?
      */
@@ -548,7 +669,7 @@ public abstract class Personaje extends Character
         if ((energia - daño) >= 0) {
             energia -= daño;
         } else {
-            daño = energia;// le queda menos energia que el daño inflingido
+            daño = energia; // le queda menos energia que el daño inflingido
             energia = 0;
         }
         return daño;
@@ -558,9 +679,9 @@ public abstract class Personaje extends Character
      * serCurado(int Salud).
      *
      * @param salud
-     *            salud final
+     *            salud final.
      */
-    public void serCurado(int salud) {
+    public void serCurado(final int salud) {
         if ((this.salud + salud) <= this.saludTope) {
             this.salud += salud;
         } else {
@@ -572,9 +693,9 @@ public abstract class Personaje extends Character
      * serEnergizado(int energia).
      *
      * @param energia
-     *            energia recibida
+     *            energia recibida.
      */
-    public void serEnergizado(int energia) {
+    public void serEnergizado(final int energia) {
         if ((this.energia + energia) <= this.energiaTope) {
             this.energia += energia;
         } else {
@@ -586,9 +707,9 @@ public abstract class Personaje extends Character
      * crearAlianza(string nombre_alianza).
      *
      * @param nombreAlianza
-     *            nombre de la alianza
+     *            nombre de la alianza.
      */
-    public void crearAlianza(String nombreAlianza) {
+    public void crearAlianza(final String nombreAlianza) {
         this.clan = new Alianza(nombreAlianza);
         this.clan.añadirPersonaje(this);
     }
@@ -608,10 +729,10 @@ public abstract class Personaje extends Character
      * aliar(Personaje).
      *
      * @param nuevoAliado
-     *            personaje con el cual se alia
+     *            personaje con el cual se alia.
      * @return true or false si pudo aliarse
      */
-    public boolean aliar(Personaje nuevoAliado) {
+    public boolean aliar(final Personaje nuevoAliado) {
         if (this.clan == null) {
             Alianza a = new Alianza("Alianza 1");
             this.clan = a;
@@ -631,14 +752,14 @@ public abstract class Personaje extends Character
      * AsignarPuntosSkills(int, int, int).
      *
      * @param fuerza
-     *            de skills
+     *            de skills.
      * @param destreza
-     *            de skills
+     *            de skills.
      * @param inteligencia
-     *            de skills
+     *            de skills.
      */
-    public void asignarPuntosSkills(int fuerza, int destreza,
-            int inteligencia) {
+    public void asignarPuntosSkills(final int fuerza, final int destreza,
+            final int inteligencia) {
         if ((this.fuerza + fuerza) <= 200) {
             this.fuerza += fuerza;
         }
@@ -677,11 +798,11 @@ public abstract class Personaje extends Character
      * ganarExperiencia(int exp).
      *
      * @param exp
-     *            experiencia ganada
+     *            experiencia ganada.
      * @return true or false si se pudo aplicar la experiencia
      */
     @Override
-    public boolean ganarExperiencia(int exp) {
+    public boolean ganarExperiencia(final int exp) {
         this.experiencia += exp;
 
         if (experiencia >= Personaje.tablaDeNiveles[this.nivel + 1]) {
@@ -715,47 +836,68 @@ public abstract class Personaje extends Character
      * distanciaCon.
      *
      * @param p
+     *            .
      * @return calcula la distancia
      */
-    public double distanciaCon(Personaje p) {
+    public double distanciaCon(final Personaje p) {
         return Math.sqrt(Math.pow(this.posX - p.posX, 2)
                 + Math.pow(this.posY - p.posY, 2));
     }
 
     /**
      * @param atacado
+     *            .
      * @return devuelve la habilidad de la casta 1
      */
-    public boolean habilidadCasta1(Peleable atacado) {
+    public boolean habilidadCasta1(final Peleable atacado) {
         return this.getCasta().habilidad1(this, atacado);
     }
 
     /**
      * @param atacado
+     *            .
      * @return devuelve la habilidad de la casta 2
      */
-    public boolean habilidadCasta2(Peleable atacado) {
+    public boolean habilidadCasta2(final Peleable atacado) {
         return this.getCasta().habilidad2(this, atacado);
     }
 
     /**
      * @param atacado
+     *            .
      * @return devuelve la habilidad de la casta 3
      */
-    public boolean habilidadCasta3(Peleable atacado) {
+    public boolean habilidadCasta3(final Peleable atacado) {
         return this.getCasta().habilidad3(this, atacado);
     }
 
+    /*
+     * avisa que sobre el cual trabajamos es un personaje.
+     */
     @Override
-    public boolean esPersonaje() {//
+    public boolean esPersonaje() {
         return true;
     }
 
+    /**
+     * @param atacado
+     *            .
+     * @return .
+     */
     public abstract boolean habilidadRaza1(Peleable atacado);
 
+    /**
+     * @param atacado
+     *            .
+     * @return .
+     */
     public abstract boolean habilidadRaza2(Peleable atacado);
 
-    public void efectuarItem(Item item) {
+    /**
+     * @param item
+     *            efectuamos en la batalla el item que recibimos.
+     */
+    public void efectuarItem(final Item item) {
         int saludnueva = salud + salud * item.getValorSalud() / 100;
         if (saludnueva > saludTope) {
             salud = saludTope;
@@ -775,13 +917,23 @@ public abstract class Personaje extends Character
         fuerza = fuerza + fuerza * item.getValorFuerza() / 100;
     }
 
-    public void setMochila2(Item item) {
+    /**
+     * @param item
+     *            agregamos un item a la mochila.
+     */
+    public void setMochila2(final Item item) {
         this.mochila.add(item);
 
     }
 
-    public void recibirDatosReplicadosDePersonajeAtacar(int nuevaSaludPersonaje,
-            int nuevaEnergiaPersonaje) {
+    /**
+     * @param nuevaSaludPersonaje
+     *            .
+     * @param nuevaEnergiaPersonaje
+     *            recibimos los datos replicados de un personaje.
+     */
+    public void recibirDatosReplicadosDePersonajeAtacar(
+            final int nuevaSaludPersonaje, final int nuevaEnergiaPersonaje) {
         this.salud = nuevaSaludPersonaje;
         this.energia = nuevaEnergiaPersonaje;
     }

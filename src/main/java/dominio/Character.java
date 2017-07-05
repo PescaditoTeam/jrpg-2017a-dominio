@@ -17,6 +17,9 @@ public class Character implements Peleable {
      */
     protected int nivel;
 
+    /**
+     * @return atributo que representa la mochila del character.
+     */
     public Mochila getMochila() {
         return mochila;
     }
@@ -35,6 +38,9 @@ public class Character implements Peleable {
      */
     protected Mochila mochila;
 
+    /**
+     * constructor de la clase, instancia la mochila, es decir, la crea.
+     */
     public Character() {
         mochila = new Mochila();
 
@@ -42,7 +48,7 @@ public class Character implements Peleable {
 
     /**
      * metodo ganar experiencia.
-     * 
+     *
      * @param exp
      *            .
      * @return .
@@ -60,6 +66,12 @@ public class Character implements Peleable {
     public void despuesDeTurno() {
     }
 
+    /*
+     * (non-Javadoc)
+     *
+     * @see dominio.Peleable#estaVivo() metodo que devuelve si el character esta
+     * vivo o esta muerto.
+     */
     @Override
     public boolean estaVivo() {
         return salud > 0;
@@ -93,7 +105,7 @@ public class Character implements Peleable {
 
     /**
      * metodo para setear el nombre.
-     * 
+     *
      * @param nombre
      *            .
      */
@@ -133,30 +145,45 @@ public class Character implements Peleable {
         this.defensa = defensa;
     }
 
+    /*
+     * metodo que devuelve 0 si es atacado.
+     */
     @Override
     public int serAtacado(final int daño) {
         // TODO Auto-generated method stub
         return 0;
     }
 
+    /*
+     * getter de salud.
+     */
     @Override
     public int getSalud() {
         // TODO Auto-generated method stub
         return 0;
     }
 
+    /*
+     * metodo para atacar.
+     */
     @Override
     public int atacar(final Peleable atacado) {
         // TODO Auto-generated method stub
         return 0;
     }
 
+    /*
+     * metodo que otorga la experiencia.
+     */
     @Override
     public int otorgarExp() {
         // TODO Auto-generated method stub
         return 0;
     }
 
+    /*
+     * getter de ataque.
+     */
     @Override
     public int getAtaque() {
         // TODO Auto-generated method stub
@@ -169,12 +196,18 @@ public class Character implements Peleable {
 
     }
 
+    /*
+     * devuelve si es un personaje o no.
+     */
     @Override
     public boolean esPersonaje() {
         // TODO Auto-generated method stub
         return false;
     }
 
+    /*
+     * es un metodo que avisa si fue afectado por el hechizo o no.
+     */
     @Override
     public boolean esAfectadoPorHechizo() {
         // TODO Auto-generated method stub

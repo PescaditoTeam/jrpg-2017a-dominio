@@ -10,7 +10,7 @@ public class Mochila {
      * vector de inventario, representa cuantos items tiene el personaje
      * disponible de cada item existente.
      */
-    private int[] inventario = { 1, 0, 0, 0, 0, 0, 0, 0, 0, 1 };
+    private int[] inventario = {1, 0, 0, 0, 0, 0, 0, 0, 0, 1};
 
     /**
      * Constructor.
@@ -22,19 +22,28 @@ public class Mochila {
      * @param item
      *            se agrega un item a la mochila
      */
-    public void add(Item item) {
+    public void add(final Item item) {
         inventario[item.getId() - 1]++;
     }
-    
-    public void add(int idItem){
+
+    /**
+     * @param idItem
+     *            permite agregar un item al inventario.
+     */
+    public void add(final int idItem) {
         inventario[idItem]++;
     }
 
-    public void sacar(int idItem){
-        if(inventario[idItem] > 0){
+    /**
+     * @param idItem
+     *            permite sacar un item del inventario y eliminarlo.
+     */
+    public void sacar(final int idItem) {
+        if (inventario[idItem] > 0) {
             inventario[idItem]--;
         }
     }
+
     /**
      * @return devuelve el Inventario.
      */

@@ -12,7 +12,7 @@ public class MyRandomStub extends RandomGenerator {
 
     /**
      * constructor parametrizado.
-     * 
+     *
      * @param valorfijo
      *            .
      */
@@ -20,6 +20,10 @@ public class MyRandomStub extends RandomGenerator {
         this.valor = valorfijo;
     }
 
+    /*
+     * metodo que devuelte un numero al azar menor que el numero maximo
+     * recibido.
+     */
     @Override
     public int obtenerAleatorioMenorQue(final int maximo) {
         return this.valor;

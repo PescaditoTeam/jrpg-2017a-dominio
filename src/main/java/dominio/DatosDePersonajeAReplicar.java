@@ -44,11 +44,11 @@ public class DatosDePersonajeAReplicar {
     private int nivel;
 
     /**
-     * @param saludTope
-     *            .
-     * @param energiaTope
+     * @param salud
      *            .
      * @param fuerza
+     *            .
+     * @param energia
      *            .
      * @param destreza
      *            .
@@ -57,8 +57,6 @@ public class DatosDePersonajeAReplicar {
      * @param experiencia
      *            .
      * @param nivel
-     *            .
-     * @param defensa
      *            .
      */
     public DatosDePersonajeAReplicar(final int salud, final int energia,
@@ -102,7 +100,7 @@ public class DatosDePersonajeAReplicar {
     }
 
     /**
-     * @param salud
+     * @param saludTope
      *            setter de saludTope.
      */
     public void setSaludTope(final int saludTope) {
@@ -117,7 +115,7 @@ public class DatosDePersonajeAReplicar {
     }
 
     /**
-     * @param energia
+     * @param energiaTope
      *            setter de energiaTope.
      */
     public void setEnergiaTope(final int energiaTope) {

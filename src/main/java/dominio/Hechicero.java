@@ -52,6 +52,9 @@ public class Hechicero extends Casta {
     }
 
     // Curar Aliado
+    /*
+     * habilidad 2 del hechicero donde cura al aliado.
+     */
     @Override
     public boolean habilidad2(final Personaje caster, final Peleable aliado) {
         if (caster.getEnergia() > 10) {
@@ -68,6 +71,9 @@ public class Hechicero extends Casta {
     }
 
     // Robar Energia y Salud
+    /*
+     * habilidad 3 del hechicero donde roba la energia y la salud del atacado.
+     */
     @Override
     public boolean habilidad3(final Personaje caster, final Peleable atacado) {
         if (caster.getEnergia() > 10) {

@@ -1,5 +1,6 @@
 package dominio;
 
+
 import java.util.LinkedList;
 
 /**
@@ -12,7 +13,7 @@ public class Alianza {
     /**
      * atributos de la clase alianza.
      */
-    private String nombre;
+private String nombre;
 
     /**
      * lista de personajes de la alianza.

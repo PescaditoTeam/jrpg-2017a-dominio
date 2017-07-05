@@ -43,6 +43,8 @@ public class Orco extends Personaje {
      *            .
      * @param idPersonaje
      *            .
+     * @param mochila
+     *            .
      */
     public Orco(final String nombre, final int salud, final int energia,
             final int fuerza, final int destreza, final int inteligencia,
@@ -54,6 +56,28 @@ public class Orco extends Personaje {
 
     }
 
+    /**
+     * @param nombre
+     *            .
+     * @param salud
+     *            .
+     * @param energia
+     *            .
+     * @param fuerza
+     *            .
+     * @param destreza
+     *            .
+     * @param inteligencia
+     *            .
+     * @param casta
+     *            .
+     * @param experiencia
+     *            .
+     * @param nivel
+     *            .
+     * @param idPersonaje
+     *            construye el orco recibiendo parametros.
+     */
     public Orco(final String nombre, final int salud, final int energia,
             final int fuerza, final int destreza, final int inteligencia,
             final Casta casta, final int experiencia, final int nivel,
@@ -86,6 +110,9 @@ public class Orco extends Personaje {
     }
 
     // Mordisco de Vida
+    /*
+     * habilidad 2 del orco, el mordisco de vida.
+     */
     @Override
     public boolean habilidadRaza2(final Peleable atacado) {
         if (this.getEnergia() > 10) {
@@ -99,6 +126,9 @@ public class Orco extends Personaje {
         return false;
     }
 
+    /*
+     * avisa que fue afectado por el hechizo.
+     */
     @Override
     public boolean esAfectadoPorHechizo() {
         return true;

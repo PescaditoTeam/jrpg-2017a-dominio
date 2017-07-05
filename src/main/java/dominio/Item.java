@@ -41,18 +41,27 @@ public class Item {
     private int valorFuerza;
 
     /**
-     * @param id.
-     * @param nombre.
-     * @param valorDefensa.
-     * @param valorSalud.
-     * @param valorEnergia.
-     * @param valorDestreza.
-     * @param valorInteligencia.
-     * @param valorFuerza.
+     * @param id
+     *            .
+     * @param nombre
+     *            .
+     * @param valorDefensa
+     *            .
+     * @param valorSalud
+     *            .
+     * @param valorEnergia
+     *            .
+     * @param valorDestreza
+     *            .
+     * @param valorInteligencia
+     *            .
+     * @param valorFuerza
+     *            .
      */
-    public Item(final int id, final String nombre, int valorDefensa, int valorSalud,
-            int valorEnergia, int valorDestreza, int valorInteligencia,
-            int valorFuerza) {
+    public Item(final int id, final String nombre, final int valorDefensa,
+            final int valorSalud, final int valorEnergia,
+            final int valorDestreza, final int valorInteligencia,
+            final int valorFuerza) {
         this.id = id;
         this.nombre = nombre;
         this.valorDefensa = valorDefensa;
@@ -63,7 +72,11 @@ public class Item {
         this.valorFuerza = valorFuerza;
     }
 
-    public Item(Item item) {
+    /**
+     * @param item
+     *            constructor parametrizado para la clase Item.
+     */
+    public Item(final Item item) {
         this.id = item.id;
         this.nombre = item.nombre;
         this.valorDefensa = item.valorDefensa;
@@ -74,6 +87,9 @@ public class Item {
         this.valorFuerza = item.valorFuerza;
     }
 
+    /**
+     * constructor por defecto de prueba.
+     */
     public Item() {
         nombre = "nombrePrueba";
     }
@@ -86,9 +102,10 @@ public class Item {
     }
 
     /**
-     * @param valorFuerza.
+     * @param valorFuerza
+     *            .
      */
-    public void setValorFuerza(int valorFuerza) {
+    public void setValorFuerza(final int valorFuerza) {
         this.valorFuerza = valorFuerza;
     }
 
@@ -100,9 +117,10 @@ public class Item {
     }
 
     /**
-     * @param id.
+     * @param id
+     *            .
      */
-    public void setId(int id) {
+    public void setId(final int id) {
         this.id = id;
     }
 
@@ -114,9 +132,10 @@ public class Item {
     }
 
     /**
-     * @param nombre.
+     * @param nombre
+     *            .
      */
-    public void setNombre(String nombre) {
+    public void setNombre(final String nombre) {
         this.nombre = nombre;
     }
 
@@ -128,9 +147,10 @@ public class Item {
     }
 
     /**
-     * @param valorDefensa.
+     * @param valorDefensa
+     *            .
      */
-    public void setValorDefensa(int valorDefensa) {
+    public void setValorDefensa(final int valorDefensa) {
         this.valorDefensa = valorDefensa;
     }
 
@@ -142,9 +162,10 @@ public class Item {
     }
 
     /**
-     * @param valorSalud.
+     * @param valorSalud
+     *            .
      */
-    public void setValorSalud(int valorSalud) {
+    public void setValorSalud(final int valorSalud) {
         this.valorSalud = valorSalud;
     }
 
@@ -156,9 +177,10 @@ public class Item {
     }
 
     /**
-     * @param valorEnergia.
+     * @param valorEnergia
+     *            .
      */
-    public void setValorEnergia(int valorEnergia) {
+    public void setValorEnergia(final int valorEnergia) {
         this.valorEnergia = valorEnergia;
     }
 
@@ -170,9 +192,10 @@ public class Item {
     }
 
     /**
-     * @param valorDestreza.
+     * @param valorDestreza
+     *            .
      */
-    public void setValorDestreza(int valorDestreza) {
+    public void setValorDestreza(final int valorDestreza) {
         this.valorDestreza = valorDestreza;
     }
 
@@ -184,9 +207,10 @@ public class Item {
     }
 
     /**
-     * @param valorInteligencia.
+     * @param valorInteligencia
+     *            .
      */
-    public void setValorInteligencia(int valorInteligencia) {
+    public void setValorInteligencia(final int valorInteligencia) {
         this.valorInteligencia = valorInteligencia;
     }
 
