@@ -4,4 +4,10 @@
   <fileset name="all" enabled="true" check-config-name="Sun Checks" local="false">
     <file-match-pattern match-pattern="." include-pattern="true"/>
   </fileset>
+  <filter name="NonSrcDirs" enabled="false"/>
+  <filter name="FilesFromPackage" enabled="true">
+    <filter-data value="src/test/resources"/>
+    <filter-data value="src/test/java"/>
+    <filter-data value="src/main/resources"/>
+  </filter>
 </fileset-config>
