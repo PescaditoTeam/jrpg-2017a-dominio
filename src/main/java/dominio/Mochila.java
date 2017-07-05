@@ -22,6 +22,9 @@ public class Mochila {
      * @param item
      *            se agrega un item a la mochila
      */
+    public Mochila(int inventario[]){
+        this.inventario = inventario;
+    }
     public void add(final Item item) {
         inventario[item.getId() - 1]++;
     }
