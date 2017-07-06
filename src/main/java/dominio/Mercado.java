@@ -59,12 +59,4 @@ public class Mercado {
         ofertas.add(o);
     }
 
-    /**
-     * @param o1
-     *            eliminar una oferta
-     */
-    public void sacar(final Ofertas o1) {
-        ofertas.remove(o1);
-    }
-
 }
