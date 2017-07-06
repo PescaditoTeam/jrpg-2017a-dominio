@@ -87,6 +87,11 @@ public abstract class Personaje extends Character
      * niveles del personaje.
      */
     public static int[] tablaDeNiveles;
+
+    /**
+     * Constante usada para sacar porcentajes.
+     */
+    private static final int CIEN = 100;
     /**
      * habilidades del personaje.
      */
@@ -158,8 +163,8 @@ public abstract class Personaje extends Character
 
         posX = 0;
         posY = 0;
-        saludTope = 100;
-        energiaTope = 100;
+        saludTope = CIEN;
+        energiaTope = CIEN;
 
         ataque = this.calcularPuntosDeAtaque();
         defensa = this.calcularPuntosDeDefensa();
@@ -779,10 +784,10 @@ public abstract class Personaje extends Character
     public void subirNivel() {
 
         int acumuladorExperiencia = 0;
-        if (this.nivel == 100) {
+        if (this.nivel == CIEN) {
             return;
         }
-        while ((this.nivel != 100)
+        while ((this.nivel != CIEN)
                 && (this.experiencia >= (Personaje.tablaDeNiveles[this.nivel
                         + 1] + acumuladorExperiencia))) {
             acumuladorExperiencia += Personaje.tablaDeNiveles[this.nivel + 1];
@@ -898,23 +903,23 @@ public abstract class Personaje extends Character
      *            efectuamos en la batalla el item que recibimos.
      */
     public void efectuarItem(final Item item) {
-        int saludnueva = salud + salud * item.getValorSalud() / 100;
+        int saludnueva = salud + salud * item.getValorSalud() / CIEN;
         if (saludnueva > saludTope) {
             salud = saludTope;
         } else {
             salud = saludnueva;
         }
-        int energianueva = energia + energia * item.getValorEnergia() / 100;
+        int energianueva = energia + energia * item.getValorEnergia() / CIEN;
         if (energianueva > energiaTope) {
             energia = energiaTope;
         } else {
             energia = energianueva;
         }
-        destreza = destreza + destreza * item.getValorDestreza() / 100;
+        destreza = destreza + destreza * item.getValorDestreza() / CIEN;
         inteligencia = inteligencia
-                + inteligencia * item.getValorInteligencia() / 100;
-        defensa = defensa + defensa * item.getValorDefensa() / 100;
-        fuerza = fuerza + fuerza * item.getValorFuerza() / 100;
+                + inteligencia * item.getValorInteligencia() / CIEN;
+        defensa = defensa + defensa * item.getValorDefensa() / CIEN;
+        fuerza = fuerza + fuerza * item.getValorFuerza() / CIEN;
     }
 
     /**

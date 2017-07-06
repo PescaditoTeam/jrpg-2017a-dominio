@@ -56,5 +56,14 @@ public class TestItem {
         Assert.assertTrue(item2.getValorInteligencia() == -20);
         Assert.assertTrue(item2.getValorFuerza() == 20);
     }
+    @Test
+    public void testSacaryAddMochila(){
+        int[] inv = new int[10];
+        Mochila m = new Mochila(inv);
+        m.add(2);
+        Assert.assertTrue(m.getInventario()[1] == 1);
+        m.sacar(2);
+        Assert.assertTrue(m.getInventario()[1] == 0);
+    }
 
 }

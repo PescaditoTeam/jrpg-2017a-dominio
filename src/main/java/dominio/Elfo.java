@@ -6,7 +6,10 @@ package dominio;
  *
  */
 public class Elfo extends Personaje {
-
+    /**
+     * Constante para liitar la energia o salud a 10.
+     */
+    private static final int LIMITEENERGIA = 10;
     /**
      * constructor parametrizado.
      *
@@ -19,7 +22,7 @@ public class Elfo extends Personaje {
      */
     public Elfo(final String nombre, final Casta casta, final int id) {
         super(nombre, casta, id, "Elfo", "Golpe Level", "Ataque Bosque");
-        energiaTope += 10;
+        energiaTope += LIMITEENERGIA;
         salud = saludTope;
         energia = energiaTope;
 
@@ -98,10 +101,10 @@ public class Elfo extends Personaje {
      */
     @Override
     public boolean habilidadRaza1(final Peleable atacado) {
-        if (this.getEnergia() > 10) {
-            this.setEnergia(this.getEnergia() - 10);
+        if (this.getEnergia() > LIMITEENERGIA) {
+            this.setEnergia(this.getEnergia() - LIMITEENERGIA);
             if (atacado.serAtacado(
-                    this.getFuerza() + (this.getNivel() * 10)) > 0) {
+                    this.getFuerza() + (this.getNivel() * LIMITEENERGIA)) > 0) {
                 return true;
             }
         }
@@ -114,8 +117,8 @@ public class Elfo extends Personaje {
      */
     @Override
     public boolean habilidadRaza2(final Peleable atacado) {
-        if (this.getEnergia() > 10) {
-            this.setEnergia(this.getEnergia() - 10);
+        if (this.getEnergia() > LIMITEENERGIA) {
+            this.setEnergia(this.getEnergia() - LIMITEENERGIA);
             if (atacado.serAtacado((this.magia)) > 0) {
                 return true;
             }

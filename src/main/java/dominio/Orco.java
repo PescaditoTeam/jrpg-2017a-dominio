@@ -8,6 +8,11 @@ package dominio;
 public class Orco extends Personaje {
 
     /**
+     * Constante para liitar la energia o salud a 10.
+     */
+    private static final int LIMITEENERGIA = 10;
+
+    /**
      * @param nombre
      *            .
      * @param casta
@@ -17,7 +22,7 @@ public class Orco extends Personaje {
      */
     public Orco(final String nombre, final Casta casta, final int id) {
         super(nombre, casta, id, "Orco", "Golpe Defensa", "Mordisco de Vida");
-        saludTope += 10;
+        saludTope += LIMITEENERGIA;
         salud = saludTope;
         energia = energiaTope;
     }
@@ -97,8 +102,8 @@ public class Orco extends Personaje {
      */
     @Override
     public boolean habilidadRaza1(final Peleable atacado) {
-        if (this.getEnergia() > 10) {
-            this.setEnergia(this.getEnergia() - 10);
+        if (this.getEnergia() > LIMITEENERGIA) {
+            this.setEnergia(this.getEnergia() - LIMITEENERGIA);
             if (atacado.serAtacado(this.getDefensa() * 2) > 0) { // Pregunta si
                                                                  // pudo
                                                                  // hacer
@@ -115,8 +120,8 @@ public class Orco extends Personaje {
      */
     @Override
     public boolean habilidadRaza2(final Peleable atacado) {
-        if (this.getEnergia() > 10) {
-            this.setEnergia(this.getEnergia() - 10);
+        if (this.getEnergia() > LIMITEENERGIA) {
+            this.setEnergia(this.getEnergia() - LIMITEENERGIA);
             int danioCausado = atacado.serAtacado(this.getFuerza());
             if (danioCausado > 0) {
                 this.serCurado(danioCausado);

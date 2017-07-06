@@ -29,7 +29,16 @@ public class TestMercado {
         Assert.assertTrue(o3.getUser() == "Pablo");
         Assert.assertTrue(o3.getDemandado() == 3);
         Assert.assertTrue(o3.getOfertado() == 2);
+        Assert.assertTrue(o3.getIdUser() == 1);
 
     }
+    @Test
+    public void testSeHizoOfertas(){
+        Ofertas o = new Ofertas();
+        o.setYaSeHizo(true);
+        Assert.assertTrue(o.isYaSeHizo());
+        
+    }
+
 
 }

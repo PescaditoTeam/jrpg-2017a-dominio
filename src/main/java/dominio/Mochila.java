@@ -18,13 +18,18 @@ public class Mochila {
     public Mochila() {
     }
 
+
+    /**
+     * @param inventario. 
+     * Se construye una Mochila con un vector de inventario.
+     */
+    public Mochila(int inventario[]) {
+        this.inventario = inventario;
+    }
     /**
      * @param item
      *            se agrega un item a la mochila
      */
-    public Mochila(int inventario[]){
-        this.inventario = inventario;
-    }
     public void add(final Item item) {
         inventario[item.getId() - 1]++;
     }

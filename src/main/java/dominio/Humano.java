@@ -8,6 +8,10 @@ package dominio;
 public class Humano extends Personaje {
 
     /**
+     * Constante para liitar la energia o salud a 10.
+     */
+    private static final int LIMITEENERGIA = 10;
+    /**
      * constructor parametrizado.
      *
      * @param nombre
@@ -100,8 +104,8 @@ public class Humano extends Personaje {
      */
     @Override
     public boolean habilidadRaza1(final Peleable atacado) {
-        if (this.getEnergia() > 10) {
-            this.setEnergia(this.getEnergia() - 10);
+        if (this.getEnergia() > LIMITEENERGIA) {
+            this.setEnergia(this.getEnergia() - LIMITEENERGIA);
             atacado.setAtaque(atacado.getAtaque() + this.getMagia());
             return true;
         }
@@ -114,13 +118,13 @@ public class Humano extends Personaje {
      */
     @Override
     public boolean habilidadRaza2(final Peleable atacado) {
-        if (this.getEnergia() > 10) {
+        if (this.getEnergia() > LIMITEENERGIA) {
             if (atacado.serAtacado(atacado.getSalud() / 2) > 0) {
                 this.setEnergia(this.getEnergia() / 2);
                 return true;
             }
         }
-        this.setEnergia(this.getEnergia() - 10);
+        this.setEnergia(this.getEnergia() - LIMITEENERGIA);
         return false;
     }
 

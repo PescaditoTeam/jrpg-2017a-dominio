@@ -5,7 +5,10 @@ package dominio;
  *
  */
 public class Hechicero extends Casta {
-
+    /**
+     * Constante para liitar la energia o salud a 10.
+     */
+    private static final int LIMITEENERGIA = 10;
     /**
      * @param prob_crit
      *            .
@@ -41,7 +44,7 @@ public class Hechicero extends Casta {
      */
     @Override
     public boolean habilidad1(final Personaje caster, final Peleable atacado) {
-        if (caster.getEnergia() > 10) {
+        if (caster.getEnergia() > LIMITEENERGIA) {
             caster.setEnergia(caster.getEnergia() - 10);
             if (atacado.serAtacado(
                     (int) (caster.calcularPuntosDeMagia() * 1.5)) > 0) {
@@ -57,8 +60,8 @@ public class Hechicero extends Casta {
      */
     @Override
     public boolean habilidad2(final Personaje caster, final Peleable aliado) {
-        if (caster.getEnergia() > 10) {
-            caster.setEnergia(caster.getEnergia() - 10);
+        if (caster.getEnergia() > LIMITEENERGIA) {
+            caster.setEnergia(caster.getEnergia() - LIMITEENERGIA);
             // es personaje esta sobreescrito en Personaje y NPC. cada uno
             // devolvera V
             // & F respectivamente
@@ -76,8 +79,8 @@ public class Hechicero extends Casta {
      */
     @Override
     public boolean habilidad3(final Personaje caster, final Peleable atacado) {
-        if (caster.getEnergia() > 10) {
-            caster.setEnergia(caster.getEnergia() - 10);
+        if (caster.getEnergia() > LIMITEENERGIA) {
+            caster.setEnergia(caster.getEnergia() - LIMITEENERGIA);
 
             if (atacado.esAfectadoPorHechizo()) {
                 int energia_robada = ((Personaje) atacado)

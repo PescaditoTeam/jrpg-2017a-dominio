@@ -5,7 +5,12 @@ package dominio;
  * en el mercado.
  *
  */
-public class Ofertas {
+/**
+ * @author Usuario
+ *
+ */
+public class Ofertas implements Comparable<Ofertas>{
+
     /**
      * id del usuario que realiza la oferta.
      */
@@ -22,6 +27,11 @@ public class Ofertas {
      * item demandado.
      */
     private int demandado;
+
+    /**
+     * Inidica si la oferta ya fue utilizada y ya se hizo el intercambio.
+     */
+    private boolean yaSeHizo = false;
 
     /**
      * @param ofertado
@@ -45,7 +55,6 @@ public class Ofertas {
      * constructor por defecto vacio.
      */
     public Ofertas() {
-        // TODO Auto-generated constructor stub
     }
 
     /**
@@ -75,5 +84,23 @@ public class Ofertas {
     public int getIdUser() {
         return idUser;
     }
+
+    /**
+     * @return si la oferta ya fue hecha.
+     */
+    public boolean isYaSeHizo() {
+        return yaSeHizo;
+    }
+
+    /**
+     * @param yaSeHizo.
+     *            permite indicar cuando se haga una oferta.
+     */
+    public void setYaSeHizo(boolean yaSeHizo) {
+        this.yaSeHizo = yaSeHizo;
+    }
+
+
+
 
 }
