@@ -9,7 +9,7 @@ package dominio;
  * @author Usuario
  *
  */
-public class Ofertas implements Comparable<Ofertas>{
+public class Ofertas{
 
     /**
      * id del usuario que realiza la oferta.
