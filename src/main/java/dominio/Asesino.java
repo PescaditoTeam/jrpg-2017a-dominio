@@ -7,9 +7,17 @@ package dominio;
 public class Asesino extends Casta {
 
     /**
-     * Constante para liitar la energia o salud a 10.
+     * Constante para limitar la energia o salud a 10.
      */
     private static final int LIMITEENERGIA = 10;
+    /**
+     * Constante para definir la prob. de evitar daño.
+     */
+    private static final double PROBEVITARDAÑO1 = 0.15;
+    /**
+     * Constante para definir la prob. de evitar daño.
+     */
+    private static final double PROBEVITARDAÑO2 = 0.5;
     /**
      * @param prob_crit
      *            .
@@ -67,8 +75,8 @@ public class Asesino extends Casta {
     public boolean habilidad2(final Personaje caster, final Peleable atacado) {
         if (caster.getEnergia() > LIMITEENERGIA) {
             caster.setEnergia(caster.getEnergia() - LIMITEENERGIA);
-            if ((this.getProbabilidadEvitarDaño() + 0.15) < 0.5) {
-                this.probabilidadEvitarDaño += 0.15;
+            if ((this.getProbabilidadEvitarDaño() + PROBEVITARDAÑO1) < 0.5) {
+                this.probabilidadEvitarDaño += PROBEVITARDAÑO1;
             } else {
                 this.probabilidadEvitarDaño = 0.5;
             }

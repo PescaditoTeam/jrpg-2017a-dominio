@@ -43,33 +43,33 @@ public class Item {
     /**
      * @param id
      *            .
-     * @param nombre
+     * @param nom
      *            .
-     * @param valorDefensa
+     * @param Defensa
      *            .
-     * @param valorSalud
+     * @param Salud
      *            .
-     * @param valorEnergia
+     * @param Energia
      *            .
-     * @param valorDestreza
+     * @param Destreza
      *            .
-     * @param valorInteligencia
+     * @param Inteligencia
      *            .
-     * @param valorFuerza
+     * @param Fuerza
      *            .
      */
-    public Item(final int id, final String nombre, final int valorDefensa,
-            final int valorSalud, final int valorEnergia,
-            final int valorDestreza, final int valorInteligencia,
-            final int valorFuerza) {
+    public Item(final int id, final String nom, final int Defensa,
+            final int Salud, final int Energia,
+            final int Destreza, final int Inteligencia,
+            final int Fuerza) {
         this.id = id;
-        this.nombre = nombre;
-        this.valorDefensa = valorDefensa;
-        this.valorSalud = valorSalud;
-        this.valorEnergia = valorEnergia;
-        this.valorDestreza = valorDestreza;
-        this.valorInteligencia = valorInteligencia;
-        this.valorFuerza = valorFuerza;
+        this.nombre = nom;
+        this.valorDefensa = Defensa;
+        this.valorSalud = Salud;
+        this.valorEnergia = Energia;
+        this.valorDestreza = Destreza;
+        this.valorInteligencia = Inteligencia;
+        this.valorFuerza = Fuerza;
     }
 
     /**
@@ -117,11 +117,11 @@ public class Item {
     }
 
     /**
-     * @param id
+     * @param id1
      *            .
      */
-    public void setId(final int id) {
-        this.id = id;
+    public void setId(final int id1) {
+        this.id = id1;
     }
 
     /**

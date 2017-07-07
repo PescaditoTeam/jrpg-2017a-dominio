@@ -85,11 +85,11 @@ public class Character implements Peleable {
     }
 
     /**
-     * @param fuerza
+     * @param f
      *            .
      */
-    public void setFuerza(final int fuerza) {
-        this.fuerza = fuerza;
+    public void setFuerza(final int f) {
+        this.fuerza = f;
     }
 
     /*
@@ -106,11 +106,11 @@ public class Character implements Peleable {
     /**
      * metodo para setear el nombre.
      *
-     * @param nombre
+     * @param nom
      *            .
      */
-    public void setNombre(final String nombre) {
-        this.nombre = nombre;
+    public void setNombre(final String nom) {
+        this.nombre = nom;
     }
 
     /**
@@ -121,11 +121,11 @@ public class Character implements Peleable {
     }
 
     /**
-     * @param nivel
+     * @param n
      *            .
      */
-    public void setNivel(final int nivel) {
-        this.nivel = nivel;
+    public void setNivel(final int n) {
+        this.nivel = n;
     }
 
     /**
@@ -137,12 +137,12 @@ public class Character implements Peleable {
     }
 
     /**
-     * @param defensa
+     * @param def
      *            .
      */
     @Override
-    public void setDefensa(final int defensa) {
-        this.defensa = defensa;
+    public void setDefensa(final int def) {
+        this.defensa = def;
     }
 
     /*

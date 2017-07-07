@@ -24,6 +24,7 @@ import java.io.Serializable;
  * @author Usuario
  *
  */
+
 public abstract class Personaje extends Character
         implements Serializable, Cloneable {
     private static final long serialVersionUID = 1L;
@@ -93,6 +94,14 @@ public abstract class Personaje extends Character
      */
     private static final int CIEN = 100;
     /**
+     * Valor a asignar para fuerza, destreza e inteligencia.
+     */
+    private static final int VALORAASIGNAR = 10;
+    /**
+     * Valor para comparar las Skills.
+     */
+    private static final int COMPARADORPARASKILLS = 200;
+    /**
      * habilidades del personaje.
      */
     protected String[] habilidadesRaza;
@@ -153,9 +162,9 @@ public abstract class Personaje extends Character
         this.idPersonaje = id;
         experiencia = 0;
         nivel = 1;
-        fuerza = 10;
-        inteligencia = 10;
-        destreza = 10;
+        fuerza = VALORAASIGNAR;
+        inteligencia = VALORAASIGNAR;
+        destreza = VALORAASIGNAR;
 
         fuerza += casta.addFuerzaInicial();
         inteligencia += casta.addInteligenciaInicial();
@@ -180,64 +189,64 @@ public abstract class Personaje extends Character
     /**
      * Personaje().
      *
-     * @param nombre
+     * @param nom
      *            nombre del personaje.
-     * @param salud
+     * @param s
      *            salud inicial.
-     * @param energia
+     * @param e
      *            energia inicial.
-     * @param fuerza
+     * @param f
      *            fuerza inicial.
-     * @param destreza
+     * @param dest
      *            destreza inicial.
-     * @param inteligencia
+     * @param intel
      *            inteligencia inicial.
-     * @param casta
+     * @param c
      *            casta a la que pertenece.
-     * @param experiencia
+     * @param exp
      *            experiencia inicial.
-     * @param nivel
+     * @param n
      *            nivel inicial.
-     * @param idPersonaje
+     * @param id
      *            identificador del personaje.
-     * @param nomRaza
+     * @param nRaza
      *            nombre de la raza.
-     * @param hab1
+     * @param h1
      *            habilidad 1 del personaje.
-     * @param hab2
+     * @param h2
      *            habilidad 2 del personaje.
-     * @param mochila
+     * @param mochi
      *            mochila del personaje.
      */
-    public Personaje(final String nombre, final int salud, final int energia,
-            final int fuerza, final int destreza, final int inteligencia,
-            final Casta casta, final int experiencia, final int nivel,
-            final int idPersonaje, final String nomRaza, final String hab1,
-            final String hab2, final Mochila mochila) {
+    public Personaje(final String nom, final int s, final int e,
+            final int f, final int dest, final int intel,
+            final Casta c, final int exp, final int n,
+            final int id, final String nRaza, final String h1,
+            final String h2, final Mochila mochi) {
 
         super();
-        this.nombre = nombre;
-        this.salud = salud;
-        this.energia = energia;
-        this.fuerza = fuerza;
-        this.destreza = destreza;
-        this.inteligencia = inteligencia;
-        this.casta = casta;
-        this.experiencia = experiencia;
-        this.nivel = nivel;
+        this.nombre = nom;
+        this.salud = s;
+        this.energia = e;
+        this.fuerza = f;
+        this.destreza = dest;
+        this.inteligencia = intel;
+        this.casta = c;
+        this.experiencia = exp;
+        this.nivel = n;
 
         this.saludTope = this.salud;
         this.energiaTope = this.energia;
 
-        this.idPersonaje = idPersonaje;
+        this.idPersonaje = id;
         this.defensa = this.calcularPuntosDeDefensa();
         this.ataque = this.calcularPuntosDeAtaque();
         this.magia = this.calcularPuntosDeMagia();
-        nombreRaza = nomRaza;
+        nombreRaza = nRaza;
         this.mochila = mochila;
         habilidadesRaza = new String[2];
-        habilidadesRaza[0] = hab1;
-        habilidadesRaza[1] = hab2;
+        habilidadesRaza[0] = h1;
+        habilidadesRaza[1] = h2;
     }
 
     /**
@@ -474,11 +483,11 @@ public abstract class Personaje extends Character
     }
 
     /**
-     * @param idPersonaje
+     * @param id
      *            .
      */
-    public void setIdPersonaje(final int idPersonaje) {
-        this.idPersonaje = idPersonaje;
+    public void setIdPersonaje(final int id) {
+        this.idPersonaje = id;
     }
 
     /**
@@ -562,7 +571,7 @@ public abstract class Personaje extends Character
      * @return devuelve si puede atacar o no
      */
     public boolean puedeAtacar() {
-        return energia > 10; // En el CT cuando esta asi probar por V y por F
+        return energia > VALORAASIGNAR; // En el CT cuando esta asi probar por V y por F
                              // siempre para tener luz verde
     }
 
@@ -765,13 +774,13 @@ public abstract class Personaje extends Character
      */
     public void asignarPuntosSkills(final int fuerza, final int destreza,
             final int inteligencia) {
-        if ((this.fuerza + fuerza) <= 200) {
+        if ((this.fuerza + fuerza) <= COMPARADORPARASKILLS) {
             this.fuerza += fuerza;
         }
-        if ((this.destreza + destreza) <= 200) {
+        if ((this.destreza + destreza) <= COMPARADORPARASKILLS) {
             this.destreza += destreza;
         }
-        if ((this.inteligencia + inteligencia) <= 200) {
+        if ((this.inteligencia + inteligencia) <= COMPARADORPARASKILLS) {
             this.inteligencia += inteligencia;
         }
         this.modificarAtributos();

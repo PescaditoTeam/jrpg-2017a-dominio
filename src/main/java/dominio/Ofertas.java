@@ -34,21 +34,21 @@ public class Ofertas{
     private boolean yaSeHizo = false;
 
     /**
-     * @param ofertado
+     * @param ofert
      *            .
-     * @param demandado
+     * @param deman
      *            .
-     * @param user
+     * @param u
      *            .
-     * @param id
+     * @param id1
      *            constructor parametrizado por defecto.
      */
-    public Ofertas(final int ofertado, final int demandado, final String user,
-            final int id) {
-        this.ofertado = ofertado;
-        this.demandado = demandado;
-        this.user = user;
-        this.idUser = id;
+    public Ofertas(final int ofert, final int deman, final String u,
+            final int id1) {
+        this.ofertado = ofert;
+        this.demandado = deman;
+        this.user = u;
+        this.idUser = id1;
     }
 
     /**

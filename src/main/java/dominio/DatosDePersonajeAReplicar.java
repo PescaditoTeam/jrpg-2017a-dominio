@@ -44,31 +44,31 @@ public class DatosDePersonajeAReplicar {
     private int nivel;
 
     /**
-     * @param salud
+     * @param s
      *            .
-     * @param fuerza
+     * @param f
      *            .
-     * @param energia
+     * @param e
      *            .
-     * @param destreza
+     * @param dest
      *            .
-     * @param inteligencia
+     * @param intel
      *            .
-     * @param experiencia
+     * @param exp
      *            .
-     * @param nivel
+     * @param n
      *            .
      */
-    public DatosDePersonajeAReplicar(final int salud, final int energia,
-            final int fuerza, final int destreza, final int inteligencia,
-            final int experiencia, final int nivel) {
-        this.saludTope = salud;
-        this.energiaTope = energia;
-        this.fuerza = fuerza;
-        this.destreza = destreza;
-        this.inteligencia = inteligencia;
-        this.experiencia = experiencia;
-        this.nivel = nivel;
+    public DatosDePersonajeAReplicar(final int s, final int e,
+            final int f, final int dest, final int intel,
+            final int exp, final int n) {
+        this.saludTope = s;
+        this.energiaTope = e;
+        this.fuerza = f;
+        this.destreza = dest;
+        this.inteligencia = intel;
+        this.experiencia = exp;
+        this.nivel = n;
     }
 
     /**
@@ -115,11 +115,11 @@ public class DatosDePersonajeAReplicar {
     }
 
     /**
-     * @param energiaTope
+     * @param eTope
      *            setter de energiaTope.
      */
-    public void setEnergiaTope(final int energiaTope) {
-        this.energiaTope = energiaTope;
+    public void setEnergiaTope(final int eTope) {
+        this.energiaTope = eTope;
     }
 
     /**
@@ -130,11 +130,11 @@ public class DatosDePersonajeAReplicar {
     }
 
     /**
-     * @param fuerza
+     * @param f
      *            setter de fuerza.
      */
-    public void setFuerza(final int fuerza) {
-        this.fuerza = fuerza;
+    public void setFuerza(final int f) {
+        this.fuerza = f;
     }
 
     /**
@@ -145,11 +145,11 @@ public class DatosDePersonajeAReplicar {
     }
 
     /**
-     * @param destreza
+     * @param dest
      *            setter de destreza.
      */
-    public void setDestreza(final int destreza) {
-        this.destreza = destreza;
+    public void setDestreza(final int dest) {
+        this.destreza = dest;
     }
 
     /**
@@ -160,11 +160,11 @@ public class DatosDePersonajeAReplicar {
     }
 
     /**
-     * @param inteligencia
+     * @param intel
      *            setter de inteligencia.
      */
-    public void setInteligencia(final int inteligencia) {
-        this.inteligencia = inteligencia;
+    public void setInteligencia(final int intel) {
+        this.inteligencia = intel;
     }
 
     /**
@@ -175,11 +175,11 @@ public class DatosDePersonajeAReplicar {
     }
 
     /**
-     * @param experiencia
+     * @param exp
      *            setter de experiencia.
      */
-    public void setExperiencia(final int experiencia) {
-        this.experiencia = experiencia;
+    public void setExperiencia(final int exp) {
+        this.experiencia = exp;
     }
 
     /**
@@ -190,10 +190,10 @@ public class DatosDePersonajeAReplicar {
     }
 
     /**
-     * @param nivel
+     * @param n
      *            setter de nivel.
      */
-    public void setNivel(final int nivel) {
-        this.nivel = nivel;
+    public void setNivel(final int n) {
+        this.nivel = n;
     }
 }

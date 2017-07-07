@@ -22,11 +22,11 @@ private String nombre;
 
     /**
      *
-     * @param nombre
+     * @param nom
      *            Constructor parametizado.
      */
-    public Alianza(final String nombre) {
-        this.nombre = nombre;
+    public Alianza(final String nom) {
+        this.nombre = nom;
         this.aliados = new LinkedList<Personaje>();
     }
 
