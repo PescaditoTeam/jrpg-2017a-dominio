@@ -67,4 +67,10 @@ public class TestNPC {
         Assert.assertTrue(d.serAtacado(-1) == 0);
 
     }
+    @Test
+    public void testEsPersonaje(){
+        NonPlayableCharacter npc = new NonPlayableCharacter("prueba", 1, 1);
+        Assert.assertTrue(npc.esPersonaje() == false);
+        
+    }
 }

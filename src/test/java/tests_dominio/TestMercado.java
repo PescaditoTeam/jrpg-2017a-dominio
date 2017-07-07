@@ -39,6 +39,13 @@ public class TestMercado {
         Assert.assertTrue(o.isYaSeHizo());
         
     }
+    @Test
+    public void testConstructorArrayList(){
+        ArrayList<Ofertas> ao = new ArrayList<Ofertas>();
+        ao.add(new Ofertas(1, 2, "prueba", 2));
+        Mercado m = new Mercado(ao);
+        Assert.assertTrue(m.getOfertas().get(0).getIdUser() == 2);
+    }
 
 
 }

@@ -10,7 +10,7 @@ public class Mochila {
      * vector de inventario, representa cuantos items tiene el personaje
      * disponible de cada item existente.
      */
-    private int[] inventario = {1, 0, 0, 0, 0, 0, 0, 0, 0, 1};
+    private int[] inventario = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
     /**
      * Constructor.

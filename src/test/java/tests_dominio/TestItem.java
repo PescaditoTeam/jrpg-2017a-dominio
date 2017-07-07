@@ -61,9 +61,9 @@ public class TestItem {
         int[] inv = new int[10];
         Mochila m = new Mochila(inv);
         m.add(2);
-        Assert.assertTrue(m.getInventario()[1] == 1);
+        Assert.assertTrue(m.getInventario()[2] == 1);
         m.sacar(2);
-        Assert.assertTrue(m.getInventario()[1] == 0);
+        Assert.assertTrue(m.getInventario()[2] == 0);
     }
 
 }
