@@ -21,14 +21,14 @@ public class TestMercado {
         ArrayList<Ofertas> ao = new ArrayList<Ofertas>();
         ao = m.getOfertas();
         Ofertas o2 = ao.get(0);
-        Assert.assertTrue(o2.getUser() == "Pablo");
+        /*Assert.assertTrue(o2.getUser() == "Pablo");
         Assert.assertTrue(o2.getDemandado() == 3);
-        Assert.assertTrue(o2.getOfertado() == 2);
+        Assert.assertTrue(o2.getOfertado() == 2);*/
         m.AddOferta(o2);
         Ofertas o3 = m.getOfertas().get(1);
-        Assert.assertTrue(o3.getUser() == "Pablo");
-        Assert.assertTrue(o3.getDemandado() == 3);
-        Assert.assertTrue(o3.getOfertado() == 2);
+        Assert.assertTrue(o3.getUser() == "Pablo" && o2.getUser() == "Pablo");
+        Assert.assertTrue(o3.getDemandado() == 3 && o2.getDemandado() == 3);
+        Assert.assertTrue(o3.getOfertado() == 2 && o2.getOfertado() == 2);
         Assert.assertTrue(o3.getIdUser() == 1);
 
     }

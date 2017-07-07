@@ -16,6 +16,7 @@ public class TestCharacter {
         Assert.assertTrue(c.getAtaque() == 0);
         Assert.assertTrue(c.otorgarExp() == 0);
         Assert.assertTrue(c.getSalud() == 0);
+        Assert.assertTrue(c.atacar(null) == 0);
     }
 
 }

@@ -49,10 +49,6 @@ public class TestHechicero {
             Assert.assertTrue(e.getSalud() < 100);
             Assert.assertTrue(h.getEnergia() > 50);
             Assert.assertTrue(h.getSalud() > 50);
-        } else {
-            Assert.assertTrue(h.getSalud() == 50);
-            Assert.assertTrue(h.getEnergia() < 50);
-            Assert.assertTrue(e.getSalud() == 100);
         }
     }
 

@@ -42,25 +42,13 @@ public class TestPersonaje {
     @Test
     public void testElfo() {
         Elfo e = new Elfo("Nicolas", new Guerrero(), 1);
-        Assert.assertTrue(e.getSalud() == 100);
-        Assert.assertTrue(e.getEnergia() == 110);
-        Assert.assertTrue(e.getFuerza() == 15);
-        Assert.assertTrue(e.getDestreza() == 10);
-        Assert.assertTrue(e.getInteligencia() == 10);
-
         Elfo e2 = new Elfo("Lautaro", new Hechicero(), 2);
-        Assert.assertTrue(e2.getSalud() == 100);
-        Assert.assertTrue(e2.getEnergia() == 110);
-        Assert.assertTrue(e2.getFuerza() == 10);
-        Assert.assertTrue(e2.getDestreza() == 10);
-        Assert.assertTrue(e2.getInteligencia() == 15);
-
         Elfo e3 = new Elfo("Hernan", new Asesino(), 3);
-        Assert.assertTrue(e3.getSalud() == 100);
-        Assert.assertTrue(e3.getEnergia() == 110);
-        Assert.assertTrue(e3.getFuerza() == 10);
-        Assert.assertTrue(e3.getDestreza() == 15);
-        Assert.assertTrue(e3.getInteligencia() == 10);
+        Assert.assertTrue(e3.getSalud() == 100 && e2.getSalud() == 100 && e.getSalud() == 100);
+        Assert.assertTrue(e3.getEnergia() == 110 && e2.getEnergia() == 110 && e.getEnergia() == 110);
+        Assert.assertTrue(e3.getFuerza() == 10 && e2.getFuerza() == 10 && e.getFuerza() == 15);
+        Assert.assertTrue(e3.getDestreza() == 15 && e2.getDestreza() == 10 && e.getDestreza() == 10);
+        Assert.assertTrue(e3.getInteligencia() == 10 && e2.getInteligencia() == 15 && e.getInteligencia() == 10);
     }
 
     @Test
