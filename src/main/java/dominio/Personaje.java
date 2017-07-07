@@ -243,7 +243,7 @@ public abstract class Personaje extends Character
         this.ataque = this.calcularPuntosDeAtaque();
         this.magia = this.calcularPuntosDeMagia();
         nombreRaza = nRaza;
-        this.mochila = mochila;
+        this.mochila = mochi;
         habilidadesRaza = new String[2];
         habilidadesRaza[0] = h1;
         habilidadesRaza[1] = h2;
