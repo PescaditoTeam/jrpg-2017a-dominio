@@ -1,6 +1,5 @@
+[![Build Status](https://travis-ci.org/PescaditoTeam/jrpg-2017a-dominio.svg?branch=master)](https://travis-ci.org/PescaditoTeam/jrpg-2017a-dominio)
 # World Of Middle Earth (WOME) - dominio
-
-https://travis-ci.org/PescaditoTeam/jrpg-2017a-dominio.svg?branch=master
 
 ## Sobre las personas
 
