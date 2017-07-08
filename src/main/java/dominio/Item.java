@@ -102,11 +102,11 @@ public class Item {
     }
 
     /**
-     * @param valorFuerza
+     * @param valorF
      *            .
      */
-    public void setValorFuerza(final int valorFuerza) {
-        this.valorFuerza = valorFuerza;
+    public void setValorFuerza(final int valorF) {
+        this.valorFuerza = valorF;
     }
 
     /**
@@ -132,11 +132,11 @@ public class Item {
     }
 
     /**
-     * @param nombre
+     * @param nom
      *            .
      */
-    public void setNombre(final String nombre) {
-        this.nombre = nombre;
+    public void setNombre(final String nom) {
+        this.nombre = nom;
     }
 
     /**
@@ -147,11 +147,11 @@ public class Item {
     }
 
     /**
-     * @param valorDefensa
+     * @param valorD
      *            .
      */
-    public void setValorDefensa(final int valorDefensa) {
-        this.valorDefensa = valorDefensa;
+    public void setValorDefensa(final int valorD) {
+        this.valorDefensa = valorD;
     }
 
     /**
@@ -162,11 +162,11 @@ public class Item {
     }
 
     /**
-     * @param valorSalud
+     * @param valorS
      *            .
      */
-    public void setValorSalud(final int valorSalud) {
-        this.valorSalud = valorSalud;
+    public void setValorSalud(final int valorS) {
+        this.valorSalud = valorS;
     }
 
     /**
@@ -177,11 +177,11 @@ public class Item {
     }
 
     /**
-     * @param valorEnergia
+     * @param valorE
      *            .
      */
-    public void setValorEnergia(final int valorEnergia) {
-        this.valorEnergia = valorEnergia;
+    public void setValorEnergia(final int valorE) {
+        this.valorEnergia = valorE;
     }
 
     /**
@@ -192,11 +192,11 @@ public class Item {
     }
 
     /**
-     * @param valorDestreza
+     * @param valorD
      *            .
      */
-    public void setValorDestreza(final int valorDestreza) {
-        this.valorDestreza = valorDestreza;
+    public void setValorDestreza(final int valorD) {
+        this.valorDestreza = valorD;
     }
 
     /**
@@ -207,11 +207,11 @@ public class Item {
     }
 
     /**
-     * @param valorInteligencia
+     * @param valorInt
      *            .
      */
-    public void setValorInteligencia(final int valorInteligencia) {
-        this.valorInteligencia = valorInteligencia;
+    public void setValorInteligencia(final int valorInt) {
+        this.valorInteligencia = valorInt;
     }
 
 }
