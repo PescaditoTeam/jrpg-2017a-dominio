@@ -79,20 +79,6 @@ public class DatosDePersonajeAReplicar {
     }
 
     /**
-     * @param p
-     *            metodo para empaquetar los datos del personaje p.
-     */
-    /*
-     * public void empaquetarDatos(final Personaje p) { this.saludTope =
-     * p.getSalud(); this.energiaTope = p.getEnergia(); this.fuerza =
-     * p.getFuerza(); this.destreza = p.getDestreza(); this.inteligencia =
-     * p.getInteligencia(); this.experiencia = p.getExperiencia(); this.nivel =
-     * p.getNivel(); }
-     */
-    // ----------------------------
-    // Getters Setters.
-    // ----------------------------
-    /**
      * @return getter de saludTope.
      */
     public int getSaludTope() {
